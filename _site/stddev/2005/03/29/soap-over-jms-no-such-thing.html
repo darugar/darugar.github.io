@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>SOAP over JMS: No Such Thing</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">SOAP over JMS: No Such Thing</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p><a href='/web/20101223063601/http://www.subbu.org/weblogs/welcome/2005/03/soap_over_jms.html'>Subbu Allamaraju</a> makes an excellent point: there is no such thing as SOAP over JMS. It simply doesn&#8217;t make sense.</p>
+
+<p>JMS is a set of APIs. It is not a transport or a protocol. You can implement JMS on any kind of transport; I could use messenger pigeons or smoke signals as the transport for a JMS system.</p>
+
+<p>So let&#8217;s stop saying SOAP over JMS. It&#8217;s very misleading - the majority of people, particularly those a vendor has spoken to, assume it&#8217;s possible to have something that listens to any JMS system and picks messages off the wire. I&#8217;ve heard smart people ask for &#8220;a generic monitoring system for SOAP messages over JMS&#8221;. There&#8217;s no standard wire, so you really can&#8217;t do that.</p>
+
+<p>JMS specifies the two ends (publishing and subscribing APIs), but not the middle. A transport specifies the middle. That&#8217;s what you need to send SOAP over.</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 29 Mar 2005
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

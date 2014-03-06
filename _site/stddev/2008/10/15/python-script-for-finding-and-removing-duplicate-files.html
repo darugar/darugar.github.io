@@ -1,0 +1,84 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Python Script For Finding And Removing Duplicate Files</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Python Script For Finding And Removing Duplicate Files</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>My image, mp3, and ebook collection were a mess after years of copying to various servers, consolidating, and re-copying. I had lots of duplicates.</p>
+
+<p>I looked for an app to find and remove duplicates but surprisingly didn&#8217;t find anything very good. So I had to write my own.</p>
+
+<p>This is a very simple script - it scans the directory tree you specify, looks for exact duplicates, and removes the duplicates.</p>
+
+<p>It&#8217;s not very smart about which copy it removes. It&#8217;s not smart about finding files that are &#8220;similar&#8221; - it only finds exact matches. It ignores small files (intentionally - it&#8217;s easy to make it deal with small files).</p>
+
+<p>It uses /temp for its output and cache files, so it&#8217;s targeting windows. Change that to /tmp if you&#8217;re running unix.</p>
+
+<p>I built in a caching mechanism to save the results of scanning the disk, but it turned out not to be too useful and the script ran faster than I expected, so the caching is commented out.</p>
+
+<p>Here it is: <a href='/web/20101222041308/http://parand.com/say/misc/FileInfo.py'>FileInfo.py</a> .</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 15 Oct 2008
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

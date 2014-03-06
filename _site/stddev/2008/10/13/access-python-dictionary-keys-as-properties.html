@@ -1,0 +1,101 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Access Python Dictionary Keys As Properties</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Access Python Dictionary Keys As Properties</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>Say you want to access the values if your dictionary via the dot notation instead of the dictionary syntax. That is, you have:</p>
+
+<pre><code>d = {&#39;name&#39;:&#39;Joe&#39;, &#39;mood&#39;:&#39;grumpy&#39;}</code></pre>
+
+<p>And you want to get at &#8220;name&#8221; and &#8220;mood&#8221; via</p>
+
+<pre><code>d.name
+d.mood</code></pre>
+
+<p>instead of the usual</p>
+
+<pre><code>d[&#39;name&#39;]
+d[&#39;mood&#39;]</code></pre>
+
+<p>Why would you want to do this? Maybe you&#8217;re fond of the Javascript Way. Or you find it more aesthetic. In my case I need to have the same piece of code deal with items that are either instances of Django models or plain dictionaries, so I need to provide a uniform way of getting at the attributes.</p>
+
+<p>Turns out it&#8217;s pretty simple:</p>
+
+<pre><code>class DictObj(object):
+    def __init__(self, d):
+        self.d = d
+
+    def __getattr__(self, m):
+        return self.d.get(m, None)
+
+d = DictObj(d)
+d.name
+# prints Joe
+d.mood
+# prints grumpy</code></pre>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 13 Oct 2008
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

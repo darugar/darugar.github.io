@@ -1,0 +1,80 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>MemCache as a General Protocol</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">MemCache as a General Protocol</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>I&#8217;ve been messing around with <a href='/web/20101222033503/http://rubyforge.org/projects/starling/'>Starling</a>. Working well so far, although I haven&#8217;t done anything fancy with it yet.</p>
+
+<p>I also need to create several simple, small, single purpose servers (eg. one to translate IP addresses to country codes). I have the python code, I just need to turn them into network accessible servers.</p>
+
+<p>HTTP/JSON would&#8217;ve been my default choice for the service interface. However, taking inspiration from Starling, I&#8217;m thinking the memcache protocol is a great general purpose way of exposing services.</p>
+
+<p>The memcache API is simple - get and set - and the data is (key, value). The set and get translate well to my interpretation of RESTful GET and POST, and I don&#8217;t have to worry about the data encoding. There are many memcache client libraries available for many languages, and they&#8217;ve been built with efficiency and speed in mind. Seems like a winner to me.</p>
+
+<p>So all I&#8217;d need is a framework for easily putting a memcache interface on a python code base. Know of any?</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 03 Mar 2008
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

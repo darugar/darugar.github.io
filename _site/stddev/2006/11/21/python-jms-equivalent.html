@@ -1,0 +1,82 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Python JMS Equivalent?</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Python JMS Equivalent?</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>I&#8217;m thinking through an implementation that I&#8217;d like to scale some day. Essentially it&#8217;s a message processing system with a small bit of state to pass around. Mostly it&#8217;s a matter of handing messages off between various workers.</p>
+
+<p>In Java world I&#8217;d do this with threads. If I wanted to think across boxes I&#8217;d throw in some sort of persistent queue, likely JMS.</p>
+
+<p>But I&#8217;m in the Python world. I could do threads (btw, how well do threads work in Python in both windows and linux?), but I&#8217;m on a non-threads kick at the moment and would like to go the multi-process/message passing route.</p>
+
+<p>What I&#8217;m looking for is a JMS equivalent for Python - a persistent, reliable message passing system with a clean API that can be used on a single machine/single processor system just as well as on a multi-machine/multi-processor network of systems.</p>
+
+<p>I looked briefly - I could do something with <a href='/web/20101222035826/http://www.xmpp.org/'>xmpp</a>, there&#8217;s <a href='/web/20101222035826/http://www.spread.org/'>spread</a>, or I could put the queue in a database. But none of them are satisfactory.</p>
+
+<p>How are people doing persistent queues in Python? Is there a JMS like device?</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 21 Nov 2006
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

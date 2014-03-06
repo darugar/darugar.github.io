@@ -1,0 +1,145 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Django-mptt: Tree Storage in Django: A Brief Overview</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Django-mptt: Tree Storage in Django: A Brief Overview</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p><a href='/web/20120414080551/http://code.google.com/p/django-mptt/'>django-mptt</a> is a library for storing tree oriented data using the Django ORM. It allows you to place your model instances into a tree structure and efficiently query for ancestors and children.</p>
+
+<p>Here&#8217;s a brief tutorial on how to use it:</p>
+
+<p>After installing, you&#8217;ll need to modify your model to include a &#8220;parent&#8221; field, and register it with mptt:</p>
+
+<pre><code>class Person(models.Model):
+    contact   = models.ForeignKey( Contact, db_index=True )
+    role      = models.CharField(max_length=20, blank=True)
+    parent    = models.ForeignKey(&#39;self&#39;, null=True, blank=True, related_name=&#39;children&#39;)
+
+    def __unicode__(self):
+        return &quot;Person: &lt;%s&gt;&quot; % (self.contact.email, )
+
+mptt.register(Person)</code></pre>
+
+<p>mptt dynamically adds fields to your model, so you&#8217;ll need to syncdb after you&#8217;ve added the parent attribute and the mptt.register call to your model.</p>
+
+<p>The basics are fairly easy to use:</p>
+
+<p>To move a node to the root of the tree, use move_to with a targe of None:</p>
+
+<pre><code>person1.move_to(None)
+person1.save()</code></pre>
+
+<p>To make a node the child of another, set its parent:</p>
+
+<pre><code>person2.parent = person1
+person2.save()</code></pre>
+
+<p>To find the children of a node, use the children field:</p>
+
+<pre><code>&gt;&gt;&gt;person1.children.all()
+[&lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;, &lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;]</code></pre>
+
+<p>Here&#8217;s a little snippet of code to setup a 15 node tree where each node has two child nodes:</p>
+
+<p>[UPDATE] The code in this snippet is not correct - you have to save each node as you update it, then look it up again. You can&#8217;t modify a node, save it, then use the reference you already have for it. I&#8217;ll update the code when I get a chance</p>
+
+<pre><code>contacts = []
+people = []
+for n in range(15):
+    c = mod.Contact(email=&quot;test&quot; + str(n) + &quot;@testing.com&quot;)
+    c.save()
+    contacts.append(c)
+    p = mod.Person(contact=c)
+    p.save()
+    people.append(p)
+
+people[0].move_to(None)  # Root
+people[0].save()
+for n in range(1,15):
+    people[n].parent = people[(n-1)/2]
+    people[n].save()</code></pre>
+
+<p>Now let&#8217;s take a look around:</p>
+
+<pre><code>&gt;&gt;&gt;people[7].parent
+&lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;
+
+&gt;&gt;&gt;people[3].children.all()
+[&lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;, &lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;]</code></pre>
+
+<p>Now let&#8217;s move things around a bit; we&#8217;ll take person3, which is 2 levels down from the root, and make it a direct child of the root:</p>
+
+<pre><code>&gt;&gt;&gt;people[3].parent = people[0]
+&gt;&gt;&gt;people[3].save()
+
+&gt;&gt;&gt;people[0].children.all()
+[&lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt; &lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;, &lt;Person: Person: &lt;[[email protected]](/web/20120414080551/http://cloudflare.com/email-protection.html)&gt;&gt;]</code></pre>
+
+<p>And we can look at the ancestors of a given node:</p>
+
+<pre><code>people[14].get_ancestors()</code></pre>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 24 Jan 2010
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

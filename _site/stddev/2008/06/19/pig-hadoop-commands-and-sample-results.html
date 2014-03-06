@@ -1,0 +1,189 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Pig (Hadoop) Commands And Sample Results</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Pig (Hadoop) Commands And Sample Results</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>I find seeing the results of <a href='/web/20101222043006/http://incubator.apache.org/pig/'>Pig</a> commands on sample data a good companion to the <a href='/web/20101222043006/http://wiki.apache.org/pig/PigLatin'>PigLatin language reference</a>, so I setup some simple sample data and ran commands, capturing the results.Here&#8217;s the sample data as well as the commands:</p>
+
+<p><strong>/data/one:</strong></p>
+
+<pre><code>a	A	1
+b	B	2
+c	C	3
+a	AA	11
+a	AAA	111
+b	BB	22</code></pre>
+
+<p><strong>/data/two:</strong></p>
+
+<pre><code>x	X	a
+y	Y	b
+x	XX	b
+z	Z	c</code></pre>
+
+<p><strong>Pig commands and their results:</strong></p>
+
+<pre><code>one = load &#39;data/one&#39; using PigStorage();
+two = load &#39;data/two&#39; using PigStorage();
+
+generated = FOREACH one GENERATE $0, $2;
+(a, 1)
+(b, 2)
+(c, 3)
+(a, 11)
+(a, 111)
+(b, 22)
+
+grouped = GROUP one BY $0;
+(a, {(a, A, 1), (a, AA, 11), (a, AAA, 111)})
+(b, {(b, B, 2), (b, BB, 22)})
+(c, {(c, C, 3)})
+
+grouped2 = GROUP one BY ($0, $1);
+((a, A), {(a, A, 1)})
+((a, AA), {(a, AA, 11)})
+((a, AAA), {(a, AAA, 111)})
+((b, B), {(b, B, 2)})
+((b, BB), {(b, BB, 22)})
+((c, C), {(c, C, 3)})
+
+summed = FOREACH grouped GENERATE group, SUM(one.$2);
+(a, 123.0)
+(b, 24.0)
+(c, 3.0)
+
+counted = FOREACH grouped GENERATE group, COUNT(one);
+(a, 3)
+(b, 2)
+(c, 1)
+
+flat = FOREACH grouped GENERATE FLATTEN(one);
+(a, A, 1)
+(a, AA, 11)
+(a, AAA, 111)
+(b, B, 2)
+(b, BB, 22)
+(c, C, 3)
+
+cogrouped = COGROUP one BY $0, two BY $2;
+(a, {(a, A, 1), (a, AA, 11), (a, AAA, 111)}, {(x, X, a)})
+(b, {(b, B, 2), (b, BB, 22)}, {(y, Y, b), (x, XX, b)})
+(c, {(c, C, 3)}, {(z, Z, c)})
+
+flatc = FOREACH cogrouped GENERATE FLATTEN(one.($0,$2)), FLATTEN(two.$1);
+(a, 1, X)
+(a, 11, X)
+(a, 111, X)
+(b, 2, Y)
+(b, 22, Y)
+(b, 2, XX)
+(b, 22, XX)
+(c, 3, Z)
+
+joined = JOIN one BY $0, two BY $2;
+(a, A, 1, x, X, a)
+(a, AA, 11, x, X, a)
+(a, AAA, 111, x, X, a)
+(b, B, 2, y, Y, b)
+(b, BB, 22, y, Y, b)
+(b, B, 2, x, XX, b)
+(b, BB, 22, x, XX, b)
+(c, C, 3, z, Z, c)
+
+crossed = CROSS one, two;
+(a, AA, 11, z, Z, c)
+(a, AA, 11, x, XX, b)
+(a, AA, 11, y, Y, b)
+(a, AA, 11, x, X, a)
+(c, C, 3, z, Z, c)
+(c, C, 3, x, XX, b)
+(c, C, 3, y, Y, b)
+(c, C, 3, x, X, a)
+(b, BB, 22, z, Z, c)
+(b, BB, 22, x, XX, b)
+(b, BB, 22, y, Y, b)
+(b, BB, 22, x, X, a)
+(a, AAA, 111, x, XX, b)
+(b, B, 2, x, XX, b)
+(a, AAA, 111, z, Z, c)
+(b, B, 2, z, Z, c)
+(a, AAA, 111, y, Y, b)
+(b, B, 2, y, Y, b)
+(b, B, 2, x, X, a)
+(a, AAA, 111, x, X, a)
+(a, A, 1, z, Z, c)
+(a, A, 1, x, XX, b)
+(a, A, 1, y, Y, b)
+(a, A, 1, x, X, a)
+
+SPLIT one INTO one_under IF $2 &lt; 10, one_over IF $2 &gt;= 10;
+-- one_under:
+(a, A, 1)
+(b, B, 2)
+(c, C, 3)</code></pre>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 19 Jun 2008
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

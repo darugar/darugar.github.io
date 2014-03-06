@@ -1,0 +1,7 @@
+---
+layout: parand
+title:  "Son Of A &#8230;"
+date:   2008-05-03 10:00:00
+categories: stddev
+---
+And that's all I'm gonna say about that.

@@ -1,0 +1,161 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>XML Namespaces must die</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">XML Namespaces must die</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>I <em>hate</em> XML namespaces. I strongly dislike them.</p>
+
+<p>I will rant about this in detail in the future, as if there hasn&#8217;t been enough vitriol on this topic already. But let me present my current problem:</p>
+
+<p>gsoap is returning this:</p>
+
+<p><code>  
+&lt;soap-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+xmlns:SOAP-ENC=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:cmoda=&quot;urn:ows:cmoda:0.1&quot;&gt;  
+&lt;/soap&gt;&lt;soap-ENV:Body&gt;  
+&lt;cmoda:updateOfferBidsResponse&gt;  
+&lt;setofresults&gt;  
+&lt;item&gt;  
+&lt;source-id&gt;1&lt;/source&gt;  
+&lt;sequence-num&gt;1&lt;/sequence&gt;  
+&lt;offer-id&gt;123&lt;/offer&gt;  
+&lt;success&gt;true&lt;/success&gt;  
+&lt;reason&gt;CMODA-UPDATE-OFFER-BID-UNDEF&lt;/reason&gt;  
+&lt;/item&gt;  
+&lt;/setofresults&gt;  
+&lt;/cmoda&gt;  
+&lt;/soap&gt;  
+</code></p>
+
+<p>Axis is the client, and doesn&#8217;t like it. Complains of source-id not being correct. Turns out, it has a problem with the namespace. Most SOAP servers would return the result as:</p>
+
+<p><code> &lt;updateOfferBidsResponse xmlns=&quot;urn:ows:cmoda:0.1&quot;&gt;  
+</code></p>
+
+<p>Note the inclusion of the namespace within this tag.</p>
+
+<p>I looked thru the XML namespace tutorials, and I can tell this version means the child nodes of updateOfferBidsResponse are in the namespace specified here. But what does the gsoap version mean? Does</p>
+
+<p><code> &lt;cmoda:updateOfferBidsResponse&gt;</code></p>
+
+<p>also mean all children of updateOfferBidsResponse are in the cmoda namespace, or are they in some other namespace? I&#8217;m no genius, but I&#8217;ve looked around a bit and I can&#8217;t find the answer. In any case, either the <a href='/web/20120203082040/http://ws.apache.org/axis/'>Axis</a> or the <a href='/web/20120203082040/http://gsoap2.sourceforge.net/'>gSOAP</a> folks didn&#8217;t quite get it either, or better yet, the XML libraries they&#8217;re looking at got it wrong or disagree.</p>
+
+<p>I&#8217;m saying, people smarter than I don&#8217;t get it.</p>
+
+<p>I&#8217;m trackback&#8217;ing <a href='/web/20120203082040/http://www.tbray.org/ongoing/'>Mr. Tim Bray&#8217;s</a> long ago post in case by some magic he becomes aware of this and sheds some light my way (he&#8217;s the co-author of the spec, and I&#8217;ve met him once or twice, so why not bother him)…</p>
+
+<h2 id='7_comments_so_far'>7 Comments so far</h2>
+
+<p>1. <a href='/web/20120203082040/http://www.tbray.org/ongoing/'>Tim Bray</a> on March 4th, 2005</p>
+
+<p>Who needs trackback when there&#8217;s Technorati?</p>
+
+<p>That message is completely hosed. First off, there&#8217;s no header, there are a couple of spurious instances of with no corresponding start-tag. Also you declare the prefix as SOAP-ENV and then use as soap-ENV. There may be a namespace problem here, but it&#8217;s hiding behind a basic correctness problem.</p>
+
+<p>2. <a href='/web/20120203082040/http://www.parand.com/'>Administrator</a> on March 5th, 2005</p>
+
+<p>Hi Tim,<br />This is great! Blogging works!<br />Right, the message is hosed, but can you help with the basic question: does including the namespace prefix on a tag inherit down to the children? Are the children of updateOfferBidsResponse in the cmoda namespace or in some other? In other words, does including a prefix have the same inheritence properties as explicitly putting in the namespace as an attribute?<br />Btw, I&#8217;m a big fan of everything else you&#8217;ve done outside of namespaces <img src='/web/20120203082040im_/http://parand.com/say/wp-
+includes/images/smilies/icon_wink.gif' alt=';-)' /></p>
+
+<p>3. <a href='/web/20120203082040/http://www.parand.com/'>Administrator</a> on March 5th, 2005</p>
+
+<p>I should also mention, true that the message is hosed in several ways, but this appears specifically to be a namespace problem because if I change<br /><code> &lt;cmoda:updateOfferBidsResponse&gt;  </code> to<br /><code> &lt;updateOfferBidsResponse xmlns=&quot;urn:ows:cmoda:0.1″&gt;  </code> the rest of the message works.</p>
+
+<p>The message is being produced by gSOAP, which tells me SOAP is too difficult, which I will complain about later…</p>
+
+<p>4. <a href='/web/20120203082040/http://www.tbray.org/ongoing/'>Tim Bray</a> on March 15th, 2005</p>
+
+<p>Yes, when you declare a namespace prefix, that declaration applies to the tag where it&#8217;s declared and everything inside it. But it&#8217;s not possible to have any sensible further discussion until you debug the message so it&#8217;s actually XML, which it isn&#8217;t at the moment.</p>
+
+<p>5. <a href='/web/20120203082040/http://www.parand.com/'>Parand Darugar</a> on March 15th, 2005</p>
+
+<p>I absolutely concede that this message is not in good shape; it&#8217;s been through a text editor, MS word, Outlook, and Wordpress, each of which has inflicted its very own version of pain on it. I&#8217;ll see if I can figure out how to attach a file to a wordpress post so we get the actual valid XML on its own. It was valid XML at one point, as verified by Xerces and XML Beans.</p>
+
+<p>Putting that aside, let me make sure I understand what declaring a namespace prefix means. Is it only when you include an xmlns attribute in your tag, or does it also mean when you simply prefix your tag with the namespace? In other words, in the fragment</p>
+
+<p><code> &lt;ns:a&gt;  </code> <b /><br /><code>&lt;/ns:a&gt; </code></p>
+
+<p>a is not declaring a namespace, right? Further, the namespace identified by &#8220;ns&#8221; does not get inherited by b simply because b is a child of a, right? If the last statement is correct, then I believe misunderstanding this was causing the problem with gsoap, which I believe was assuming the prefix on a caused inheritence of that namespace by b.</p>
+
+<p>6. Dale Georg on March 17th, 2005</p>
+
+<p>Hey Tony! Pooya pointed to be your blog. <img src='/web/20120203082040im_/http://parand.com/say/wp-
+includes/images/smilies/icon_smile.gif' alt=':)' /> I have to say I agree with you on this. As I was telling Pooya, namespaces may be a good idea in theory, but in practice they only serve to cause problems and be a pain in the butt.</p>
+
+<p>7. <a href='/web/20120203082040/http://computinglife.wordpress.com/'>Arun</a> on September 5th, 2007</p>
+
+<p>namespaces seems necessary from a logical point of view. But i asbolutely agree the differences between implementations is a pain.</p>
+
+<p>I&#8217;m currently trying the reverse - AXIS server with a gsoap client and its paining me no end.</p>
+
+<p>Do drop me a line if you have figured out how to get gsoap working with AXIS.</p>
+
+<p>Posting your comment.</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 04 Mar 2005
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

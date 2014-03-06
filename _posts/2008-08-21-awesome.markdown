@@ -1,0 +1,7 @@
+---
+layout: parand
+title:  "Awesome"
+date:   2008-08-21 10:00:00
+categories: stddev
+---
+[Parand](/web/20101222052012/http://www.urbandictionary.com/define.php?term=parand).

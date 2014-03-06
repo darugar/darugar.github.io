@@ -1,0 +1,36 @@
+body {
+    background-color: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.right  { float: right; }
+.tright { text-align: right; }
+
+.navigation { padding-top: 40px; padding-bottom: 30px; color: #bbb;}
+.navigation a { color: #bbb; }
+.navigation a:hover { color: #000; }
+
+.nav { padding-left: 30px; }
+
+.headerrow { padding-bottom: 60px; line-height: 1.2; }
+.headerrow a { color: black; }
+.heading { font-size: 40px; }
+
+.subheading {
+    color: #bbb; float: right; font-size: 24px; line-height: 60px;
+}
+
+.titlerow { padding-bottom: 40px; }
+.title { font-size: 32px; line-height: 1.2; }
+.title-details { font-size: 18px; color: #bbb; line-height: 45px; }
+
+.contents { line-height: 1.5; padding-top: 25px; }
+p { line-height: 1.5; padding-top: 25px; }
+
+.content img {
+	padding: 4px; background-color: #fff; border: 1px solid #ccc; border: 1px solid rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1); -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.signature { font-family: "Italianno", cursive; font-size: 30px; padding-bottom: 60px; padding-top: 30px; }

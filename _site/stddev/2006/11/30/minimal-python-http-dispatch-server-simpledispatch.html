@@ -1,0 +1,84 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Minimal Python HTTP Dispatch Server: simpledispatch</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Minimal Python HTTP Dispatch Server: simpledispatch</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>I was looking for a way to put together simple HTTP based services with as little fuss as possible. In this case that meant having a self contained script with minimal external dependencies, skipping even apache (for various reasons such as not having root access on the box, not having apache installed, and just plain being lazy).</p>
+
+<p>I&#8217;m also generally interested in <a href='/web/20101222035722/http://www.parand.com/say/index.php/2005/12/20/script-only-http-servers/'>script-only http servers</a> and wanted to experiment.</p>
+
+<p>Unfortunately I didn&#8217;t immediately find anything that fit the bill, so I decided to hack something up. I&#8217;m fairly happy with the result. This is not intended to be a general purpose HTTP server; in fact, it&#8217;s intended to be the opposite, serving small, specialized, self contained services. It doesn&#8217;t serve static content (files and images); Apache and others do a great job of that already.</p>
+
+<p>To use it, you simply define a function called <em>method_yourmethod</em> and add it to the handler, either by extending the base handler or by <a href='/web/20101222035722/http://www.parand.com/say/index.php/2006/07/17/ruby-style-adding-methods-to-existing-classes-in-python/'>monkey patching</a> it in. This method becomes accessible as http://yoursite/yourmethod . Parameters are passed to it by just adding more to the url path; for example: http://yoursite/yourmethod/param1/param2/param3 . These are received by <em>method_yourmethod</em> as a list.</p>
+
+<p>Under the hood it uses introspection via getattr to find a method to match the URL, and passes it the remaining parameters.</p>
+
+<p>The easiest way to understand it is to download the <a href='/web/20101222035722/http://www.parand.com/say/misc/simpledispatch.py'>simpledispatch.py</a> file and look at the <a href='/web/20101222035722/http://www.parand.com/say/misc/use_simpledispatch.py'>use_simpledispatch.py</a> for usage examples. Run simpledispatch.py and access it at <a href='/web/20101222035722/http://localhost:8000/extended'>http://localhost:8000/test/a/b/c</a> . Run use_simpledispatch.py and try it out at <a href='/web/20101222035722/http://localhost:8000/extended'>http://localhost:8000/extended</a> and <a href='/web/20101222035722/http://localhost:8000/monkey'>http://localhost:8000/monkey</a> .</p>
+
+<p>Yes, I do know about the myriad wonderful frameworks out there (<a href='/web/20101222035722/http://www.djangoproject.com/'>django</a> is my framework of choice at the moment) and I do know about <a href='/web/20101222035722/http://twistedmatrix.com/trac/'>twisted</a>. simpledispatch is not a replacement for any of those; it&#8217;s just a very simple dispatcher.</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 30 Nov 2006
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

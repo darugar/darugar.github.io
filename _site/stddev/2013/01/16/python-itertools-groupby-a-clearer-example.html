@@ -1,0 +1,92 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Python itertools.groupby : a clearer example</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Python itertools.groupby : a clearer example</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>itertools.groupby allows you to group a sorted list (or any sorted iterable) by some key, giving you the grouping key and the list of items grouped by that key.</p>
+
+<p>For example, say you have a Django the model:</p>
+
+<pre><code>class Item(models.Model):
+    user     = models.ForeignKey( User, verbose_name=&quot;User&quot;, db_index=True )
+    amount   = models.DecimalField( max_digits=19, decimal_places=2, default=0, null=True, blank=True )</code></pre>
+
+<p>And you want to group your Items by User. It&#8217;d be something like this:</p>
+
+<pre><code>ordered_items = Item.objects.all().order_by(&#39;user&#39;)
+for user, item_list in itertools.groupby( ordered_items, lambda item: item.user ):
+    print user, list(item_list)</code></pre>
+
+<p>That&#8217;ll display the user, followed by all of the Items for that user, for each user.</p>
+
+<p>Now let&#8217;s say you wanted to display the user and the total amount for all of the items. You&#8217;d do something like this:</p>
+
+<pre><code>ordered_items = Item.objects.all().order_by(&#39;user&#39;)
+for user, item_list in itertools.groupby( ordered_items, lambda item: item.user ):
+    print user, sum( item.amount for item in item_list)</code></pre>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 16 Jan 2013
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

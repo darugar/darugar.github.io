@@ -1,0 +1,102 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>On RSS/Atom replacing SOAP</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">On RSS/Atom replacing SOAP</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>Kurt Cagle has some interesting thoughts on <a href='/web/20101222035935/http://www.understandingxml.com/archives/2005/07/how_rssatom_is.html'>RSS/Atom as a replacement for SOAP</a>. He mentions WS vendors will likely poo-poo the idea, so I&#8217;m compelled as a reformed former vendor to comment.</p>
+
+<p>I think Kurt makes excellent points. A lot of the Web is syndication oriented, and certainly RSS/Atom will be a better solution than SOAP for those cases. I generally agree that RSS/Atom will gain acceptance and be used in a variety of interesting places faster and wider than SOAP. In fact I just ran into a surprising one that will be unveiled to the public a bit later.</p>
+
+<p>As Kurt says:</p>
+
+<blockquote>
+<p>If you make the syndication format too complex for people to use (as I believe is the case with SOAP) then they will migrate to simpler formats as they become available.</p>
+</blockquote>
+
+<p>Agreed.</p>
+
+<p>However, there&#8217;s an important difference between SOAP and RSS/Atom that Kurt doesn&#8217;t cover. Besides the basic complexity issue associated with SOAP, there&#8217;s the issue of being able to process the data being passed around. The issue of encoding. This usually shows up as interop issues between toolkits, as well as in the XML-to-language-specific serialization / deserialization errors. It&#8217;s part of what makes WSDL so complex (although to be sure there are plenty of other factors).</p>
+
+<p>With SOAP, you have to get the payload very exactly right. Otherwise your consumer or producer will get very angry and spew bile all over you. The SOAP oriented world has attempted to specify encoding in the description (WSDL) and use it in the protocol (SOAP). The implementation hasn&#8217;t been pretty. To this day it&#8217;s still difficult to pass around something as simple as an array and be sure the various toolkits can handle it.</p>
+
+<p>RSS and Atom basically punt on this point. They specify the framework for where to put your data and get out of the way. The actual content is a free for all. In Kurt&#8217;s example, he declares it &#8220;text/xml&#8221;, and goes on to put Job Control Language (JCL) in there. Nice.</p>
+
+<p>How is the consumer to know that the contents are JCL, what JCL is, and how to handle it? RSS/Atom don&#8217;t really say. There&#8217;s the namespace declaration at the top, but that&#8217;s about it.</p>
+
+<p>Compare this with WSDL/SOAP. Your WSDL would have to contain the schema for JCL. You&#8217;d likely break it up into methods. You&#8217;d figure out what the appropriate input/output for each method should be. Then you&#8217;d hope each toolkit calling your service produces exactly the XML you&#8217;re looking for. If not, you&#8217;d get a nasty message telling you some bizarre looking thing could not serialize.</p>
+
+<p>So which is better? Specifying it exactly or making it a free for all?</p>
+
+<p>To be fair, free for all is not a great description of what RSS/Atom lead to. It&#8217;s better described as specifying the core information exchange framework and relying on existing/external means for understanding the specifics of the contents. At a base level, any RSS reader could read my feed and display it, if nothing else. No ugly serialization errors.</p>
+
+<p>Now all the enterprise architects, the folks who do serious things with serious systems, the ones who frown and grimace to keep our country running, will tell you that we need law and order. We need specific specifications. We need to know exaclty what is in that payload, and by golly, if you can&#8217;t get it right, you&#8217;ve got no business talking to business.</p>
+
+<p>So which is it?</p>
+
+<p><strong>For the Web, free for all is better</strong>. As <a href='/web/20101222035935/http://www.adambosworth.net/'>smart</a> <a href='/web/20101222035935/http://www.tbray.org/ongoing/'>people</a> have said over and over, successful Web specifications are forgiving of errors. They&#8217;re easy and forgiving. SOAP is trending towards neither of those. RSS and Atom will boldly go where SOAP should&#8217;ve gone if we&#8217;d done it better.</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 21 Jul 2005
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

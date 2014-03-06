@@ -1,0 +1,58 @@
+---
+layout: parand
+title:  "This came from the blog"
+date:   2014-08-21 17:43:39
+categories: marketing
+---
+
+I needed to efficiently find large images (those with dimensions greater than
+x). Here's what I came up with:
+
+First, find images whose file size is greater than 3M:
+
+    
+    
+    find . -name '*jpg' -size 3M > /tmp/big-receipts.txt
+
+Now, get the dimensions of each of those images using imagemagick's identify
+command line utility. The key to using this thing efficiently is to include
+the "-ping" flag (believe it or not that took me quite a while to figure out):
+
+    
+    
+    identify -ping filename.jpg
+
+displays this type of output:
+
+    
+    
+    /tmp/big.jpg JPEG 10200x13200 10200x13200+0+0 8-bit DirectClass 5.54MB 0.000u 0:00.000
+
+Now we can put the two together:
+
+    
+    
+    for fname in `cat /tmp/big-receipts.txt`; do identify -ping $fname; done
+
+##  2 Comments so far
+
+  1. [Mark](/web/20130205133159/http://mark.ossdl.de/) on May 10th, 2012 
+
+No need for the dot in "find", the intermediate text-file and the for-loop:  
+
+    find -name '*jpg' -size 3M -exec identify -ping '{}' \;
+
+If you more than one CPU (say, 4) this could be faster:  
+
+    find -name '*jpg' -size 3M | xargs -max-args=1 -max-procs=4 identify -ping
+
+Too much output? "cut" is your friend:  
+
+    … | cut -d ' ' -f 1,3
+
+  2. Parand on May 10th, 2012 
+
+Thanks Mark, that's excellent.
+
+Posting your comment.
+

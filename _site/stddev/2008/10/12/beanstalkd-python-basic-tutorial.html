@@ -1,0 +1,128 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/parand.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Italianno' rel='stylesheet' type='text/css'>
+    <title>Beanstalkd / Python Basic Tutorial</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row navigation">
+        <div class="span3">
+            Parand Tony Darugar
+        </div>
+        <div class="span8 offset1">
+            <span class="nav right"><a href="">About me</a></span>
+            <span class="nav right"><a href="http://twitter.com/parand/">@parand</a></span>
+            <span class="nav right">s@parand.com</span>
+            <!-- span class="nav right"><input type="text" class="input-medium search-query"></span -->
+            
+        </div>
+    </div>
+
+    <div class="row headerrow">
+        <div class="span7 heading"><a href="">Beanstalkd / Python Basic Tutorial</a></div>
+        <div class="span5 subheading text-right">A Cruel and Petty Dictator</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row content">
+        <div class="span12">
+<p>(First <a href='/web/20101222041156/http://parand.com/say/index.php/2008/10/12/setting-up-beanstalkd-on-ubuntu-for-python/'>install beanstalkd and pybeanstalk</a>)</p>
+
+<p>Beanstalkd is an in-memory queuing system. It supports named queues (called &#8216;tubes&#8217;), priorities, and delayed delivery of messages.</p>
+
+<p>Terminology: a message is called a <em>job</em>, and queues are called <em>tubes</em>.</p>
+
+<p>Let&#8217;s look at an example scenario. Say you want to create 2 tubes, one called &#8220;orders&#8221; and another called &#8220;emails&#8221;, place orders into the first tube (or queue) and emails into the second, and have different processes handle orders and emails.</p>
+
+<p>You can create queues by simply naming and putting messages into them. On the producer side:</p>
+
+<pre><code>from beanstalk import serverconn
+c = serverconn.ServerConn(&#39;localhost&#39;, 99988)
+
+# put a message (or job) into the default queue:
+c.put(&#39;first message, into default tube&#39;)
+
+# now start using a named tube:
+c.use(&#39;orders&#39;)
+c.put(&#39;second message, into orders tube&#39;)</code></pre>
+
+<p>Now on the consumer:</p>
+
+<pre><code>from beanstalk import serverconn
+c = serverconn.ServerConn(&#39;localhost&#39;, 99988)
+
+# by default your connection will be listening on the &#39;default&#39; tube.
+# switch it to use the &#39;orders&#39; tube.
+# This should return the &#39;orders&#39; message and ignore the &#39;default&#39; message:
+c.watchlist = [&#39;orders&#39;]
+j = c.reserve()
+print j
+# {&#39;data&#39;: &#39;second message, into orders tube&#39;, &#39;jid&#39;: 39, &#39;bytes&#39;: 32, &#39;state&#39;: &#39;ok&#39;}</code></pre>
+
+<p>You can similarly setup another consumer to listen on only the &#8216;emails&#8217; tube, or both, or any other scenario you want.</p>
+
+<p>Beanstalkd also supports priorities, with 0 being highest priority and higher numbers meaning lower priority. You define message priority with:</p>
+
+<pre><code>c.put(&#39;low priority message&#39;, pri=999 )
+c.put(&#39;high priority message&#39;, pri=0 )
+
+j = c.reserve()
+print j
+# {&#39;data&#39;: &#39;high priority message&#39;, &#39;jid&#39;: 41, &#39;bytes&#39;: 21, &#39;state&#39;: &#39;ok&#39;}
+# the high priority message was delivered before the low priority message, even
+# though the low priority message was first into the queue</code></pre>
+
+<p>The beanstalkd consumption model is to &#8220;reserve&#8221; a message (or job), process it, and then tell beanstalkd you&#8217;ve successfully dealt with the message so it can be thrown away. When you first get the job via c.reserve() you haven&#8217;t actually fully consumed it; you&#8217;ve just reserved it for processing.</p>
+
+<p>What does this mean? Imagine a scenario where you reserve a message but your process dies before you have a chance to fully process it. Beanstalkd holds your message in reserve for a period of time, but since it hasn&#8217;t heard from you confirming you&#8217;ve successfully dealt with the message, it eventually removes the reservation and makes the message available once again for the next consumer to grab. This is a basic handshake between the consumer and the server to allow for some level of resiliency.</p>
+
+<p>So once you&#8217;re finished dealing with the message you&#8217;ve reserved, be sure to &#8220;delete&#8221; it, letting the beanstalkd server know it can throw that message away:</p>
+
+<pre><code>j = c.reserve()
+# do some processing with j
+c.delete(j[&#39;jid&#39;])</code></pre>
+
+<p>So there you have the basics. Let me know if you&#8217;re interested and I can cover a few more topics.</p>
+        </div>
+    </div>
+
+    <!-- div class="row contents">
+        <div class="span12">
+            <img class="img-polaroid" src="http://farm5.staticflickr.com/4148/5066965098_f73170bbf6_b.jpg">
+        </div>
+    </div>
+
+
+    <div class="row contents">
+        <div class="span12">
+<em>What about our student loans?</em> asked one of the students.
+        </div>
+    </div -->
+
+    <div class="row contents">
+        <div class="span12 signature">
+            Parand Tony Darugar - 12 Oct 2008
+        </div>
+    </div>
+
+    <div class="row titlerow">
+        <div class="span9 title">More:</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; Martin the Silly Rainbow</div>
+        <div class="span3 title-details text-right">January 1st, 2013</div>
+    </div>
+    <div class="row ">
+        <div class="span9 title">&raquo; If I Fell In Love With You</div>
+        <div class="span3 title-details text-right">November 16th, 2013</div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
