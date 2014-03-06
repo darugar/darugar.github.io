@@ -8,4 +8,4 @@ Slides from my [Data Processing in the Cloud talk](http://dataservicesworld.sys-
 
 [Cloud Computing: Hadoop](/web/20101222041425/http://www.slideshare.net/darugar/cloud-computing-hadoop-presentation?type=powerpoint)
 
-View SlideShare [presentation](/web/20101222041425/http://www.slideshare.net/darugar/cloud-computing-hadoop-presentation?type=powerpoint) or [Upload](/web/20101222041425/http://www.slideshare.net/upload?type=powerpoint) your own. \(tags: [pig](/web/20101222041425/http://slideshare.net/tag/pig) [cloud](/web/20101222041425/http://slideshare.net/tag/cloud)\)
+View SlideShare [presentation](http://www.slideshare.net/darugar/cloud-computing-hadoop-presentation?type=powerpoint) or [Upload](/web/20101222041425/http://www.slideshare.net/upload?type=powerpoint) your own. \(tags: [pig](/web/20101222041425/http://slideshare.net/tag/pig) [cloud](/web/20101222041425/http://slideshare.net/tag/cloud)\)
