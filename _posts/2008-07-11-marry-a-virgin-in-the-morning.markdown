@@ -2,9 +2,9 @@
 layout: parand
 title:  "Marry A Virgin In The Morning&#8230;"
 date:   2008-07-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![Genie](/web/20101222045801im_/http://farm3.static.flickr.com/2195/1545647072_0b055fafc2_m_d.jpg)
+![Genie](http://farm3.static.flickr.com/2195/1545647072_0b055fafc2_m_d.jpg)
 
 My brother-in-law bought Arabian Nights \(aka 1001 nights\) to read to his 2 year old daughter, thinking they'd be nice, quaint stories. He thought better of it and gave it to me, so I gave it a quick read.
 
@@ -34,4 +34,4 @@ The brothers, convinced that the genie is indeed more miserable than them, retur
 
 Now with a start like that, how can you not read the rest? Enchanting stories indeed.
 
-[Photo by PrincessAshley.](/web/20101222045801/http://flickr.com/photos/7917567@N07/1545647072/)
+[Photo by PrincessAshley.](http://flickr.com/photos/7917567@N07/1545647072/)

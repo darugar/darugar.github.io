@@ -2,9 +2,9 @@
 layout: parand
 title:  "The Performance Penalty of Virtualization"
 date:   2008-06-27 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-If you've spent any time with virtualized environments you know how effective and productive they are. The process of expanding capacity for [FaceDouble](/web/20101222043115/http://faceddouble.com/), for example, became significantly simpler once they moved to depolying virtual servers, and SmugMug has been [singing the praises of Amazon's EC2](/web/20101222043115/http://blogs.smugmug.com/don/2008/06/03/skynet-lives-aka-ec2-smugmug/) with a clever system to provision and remove capacity based on load. My own experiments with [Hadoop](/web/20101222043115/http://hadoop.apache.org/core/) and EC2 have been similarly fruitful.
+If you've spent any time with virtualized environments you know how effective and productive they are. The process of expanding capacity for [FaceDouble](http://faceddouble.com/), for example, became significantly simpler once they moved to depolying virtual servers, and SmugMug has been [singing the praises of Amazon's EC2](http://blogs.smugmug.com/don/2008/06/03/skynet-lives-aka-ec2-smugmug/) with a clever system to provision and remove capacity based on load. My own experiments with [Hadoop](http://hadoop.apache.org/core/) and EC2 have been similarly fruitful.
 
 So I'm wondering what the downside to aggressively going virtual is - why not make all servers virtual?
 

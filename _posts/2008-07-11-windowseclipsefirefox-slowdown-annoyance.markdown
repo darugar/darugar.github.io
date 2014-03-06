@@ -2,7 +2,7 @@
 layout: parand
 title:  "Windows/Eclipse/FireFox Slowdown Annoyance"
 date:   2008-07-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Update: Gotta love it. Genius, I am. Turns out the laptop was on "Power Saver" mode.
 

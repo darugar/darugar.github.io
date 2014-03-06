@@ -2,7 +2,7 @@
 layout: parand
 title:  "Sickening Olympic Coverage"
 date:   2008-08-18 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Watching the women's uneven bars. The announcers have spent the vast majority of the time whining and moaning Nastia's the 2nd place finish.
 

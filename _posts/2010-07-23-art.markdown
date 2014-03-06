@@ -2,7 +2,7 @@
 layout: parand
 title:  "Art"
 date:   2010-07-23 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I don't know why but I'm seriously in love with this drawing from the six year old; it seems to have a real style. Better than anything I could draw, methinks.  
-![Desert Scene by Kamran](/web/20101222033306im_/http://farm5.static.flickr.com/4078/4797873058_2cbb738eb5.jpg)
+![Desert Scene by Kamran](http://farm5.static.flickr.com/4078/4797873058_2cbb738eb5.jpg)

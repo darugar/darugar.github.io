@@ -2,9 +2,9 @@
 layout: parand
 title:  "Your Choice of University Is Key"
 date:   2008-03-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Continuing the [conversation with Daniel](/web/20101222033429/http://www.daniel-lemire.com/blog/archives/2008/03/13/the-2-myths-that-gets-students-into-heavy-league-schools/),
+Continuing the [conversation with Daniel](http://www.daniel-lemire.com/blog/archives/2008/03/13/the-2-myths-that-gets-students-into-heavy-league-schools/),
 
 » Lectures are not where you learn, I agree. I missed as many lectures as I attended as an undergrad. Grad school is a different story as lectures tend to be more conversational and informative and the material more challenging.
 
@@ -12,7 +12,7 @@ Continuing the [conversation with Daniel](/web/20101222033429/http://www.daniel-
 
 » The best pre-recorded lecturers are likely better than your average live lecture. But most learning takes place outside the lecture.
 
-» **Being there physically is still very important**. A study at Google found [physical proximity is the single highest determinant of people voting the same way](/web/20101222033429/http://blog.wired.com/business/2008/03/etech-google-pr.html), which is interpreted as a good measure of information flow. I'm a big [believer in telepresence](/web/20101222033429/http://parand.com/say/index.php/2007/09/13/telepresence-im-a-believer/), but there is no way telepresence is a substitute for physically attending the same university as someone else. At one point in undergrad my friend and I spent 3 days physically locked up in a lab creating a visual perception system, on a whim. No way that would've happened over telepresence. Eating tacos at 3am with your cohorts is an integral part of the experience. This is why Paul Graham \(since we're quoting Paul ![;-\)](/web/20101222033429im_/http://parand.com/say/wp-includes/images/smilies/icon_wink.gif) \) forces the startups he funds to move to where he is.
+» **Being there physically is still very important**. A study at Google found [physical proximity is the single highest determinant of people voting the same way](http://blog.wired.com/business/2008/03/etech-google-pr.html), which is interpreted as a good measure of information flow. I'm a big [believer in telepresence](/say/index.php/2007/09/13/telepresence-im-a-believer.html), but there is no way telepresence is a substitute for physically attending the same university as someone else. At one point in undergrad my friend and I spent 3 days physically locked up in a lab creating a visual perception system, on a whim. No way that would've happened over telepresence. Eating tacos at 3am with your cohorts is an integral part of the experience. This is why Paul Graham \(since we're quoting Paul ![;-\)](/web/20101222033429im_/http://parand.com/say/wp-includes/images/smilies/icon_wink.gif) \) forces the startups he funds to move to where he is.
 
 » Chance interactions with people due to physical proximity carry as much or more information as pre-scheduled meetings. The same professor who would stare at the board in his lectures was incredibly insightful and helpful when I asked for his help as I ran into him in the hallway of the CS department. So were any number of my classmates that co-habitated that dungeon of a building.
 

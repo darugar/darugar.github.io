@@ -2,7 +2,7 @@
 layout: parand
 title:  "GMail Contact Groups: Add By Tag / Search"
 date:   2008-10-20 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm trying to setup ad-hoc small mailing lists using GMail. They have a contact groups feature that mostly does what I need. However, the interface for adding contacts is quite limited - you pick from a list.
 

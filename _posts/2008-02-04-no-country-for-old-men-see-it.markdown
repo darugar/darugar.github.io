@@ -2,9 +2,9 @@
 layout: parand
 title:  "No Country For Old Men: See it"
 date:   2008-02-04 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[No Country For Old Men](/web/20101222053818/http://www.imdb.com/title/tt0477348/) is an odd film. The film ends and you're sitting there thinking: huh, that was strange…
+[No Country For Old Men](http://www.imdb.com/title/tt0477348/) is an odd film. The film ends and you're sitting there thinking: huh, that was strange…
 
 The next day: that was a good movie, I should watch it again…
 

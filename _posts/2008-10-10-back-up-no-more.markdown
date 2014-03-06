@@ -2,7 +2,7 @@
 layout: parand
 title:  "Back Up No More?"
 date:   2008-10-10 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 My laptop suddenly stopped working, throwing me into panic - what if it's a problem with the motherboard, the same problem that killed my last laptop?
 

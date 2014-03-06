@@ -2,7 +2,7 @@
 layout: parand
 title:  "Starling in Python?"
 date:   2008-02-26 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 [Starling](/web/20101222053735/https://rubyforge.org/projects/starling/) looks very interesting - it's a "light-weight persistent queue server that speaks the MemCache protocol". To use it you fire up your regular memcached client library, point it at the Starling server, and do a regular _set_ to put an item on the queue, and a _get_ to read an item from the queue. 
     

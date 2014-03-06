@@ -2,7 +2,7 @@
 layout: parand
 title:  "Where Are the Python/Ruby/etc Messaging Systems?"
 date:   2007-09-16 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Scaling requires the ability to decompose apps into pieces which can be spread across multiple boxes. An application composed of multiple pieces needs an efficient, reliable way to communicate between the pieces. 
 

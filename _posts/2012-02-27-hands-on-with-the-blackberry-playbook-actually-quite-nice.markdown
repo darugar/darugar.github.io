@@ -2,11 +2,11 @@
 layout: parand
 title:  "Hands On With the BlackBerry Playbook: Actually Quite Nice"
 date:   2012-02-27 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Over the weekend I attended the Blackberry hackathon with the hopes of creating an [Xpenser](/web/20120918052602/http://xpenser.com/) blackberry app. The RIM folks were nice enough to give away a Playbook to everyone who presented, so I ended up with one.
+Over the weekend I attended the Blackberry hackathon with the hopes of creating an [Xpenser](http://xpenser.com/) blackberry app. The RIM folks were nice enough to give away a Playbook to everyone who presented, so I ended up with one.
 
-![Blackberry Playbook](/web/20120918052602im_/http://static8.businessinsider.com/image/4ca106617f8b9a5354760400/blackberry-playbook.jpg)
+![Blackberry Playbook](http://static8.businessinsider.com/image/4ca106617f8b9a5354760400/blackberry-playbook.jpg)
 
 I was skeptical, to say the least. I expected a sluggish, ugly interface with a dearth of applications.
 

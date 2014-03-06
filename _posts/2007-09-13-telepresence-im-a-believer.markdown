@@ -2,7 +2,7 @@
 layout: parand
 title:  "Telepresence: I&#8217;m a Believer"
 date:   2007-09-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 We've been using Cisco Telepresence systems for a month or two at work. I have to say, I'm a believer.
 

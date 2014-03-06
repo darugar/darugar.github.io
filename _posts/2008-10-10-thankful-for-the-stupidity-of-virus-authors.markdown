@@ -2,7 +2,7 @@
 layout: parand
 title:  "Thankful For The Stupidity of Virus Authors"
 date:   2008-10-10 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 For about a week now the network at home has been slow. Just as I'd get frustrated enough to do something about it it'd get fast again, so I procrastinated.
 

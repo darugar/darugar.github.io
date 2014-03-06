@@ -2,7 +2,7 @@
 layout: parand
 title:  "Using Django Signals To Watch For Changes To Instances"
 date:   2008-06-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Say you want to monitor changes to instances of a model and update something based on the changes. In my example I wanted to maintain a sum of the values that had certain characteristics. You can accomplish this with [Django Signals](/web/20101222043406/http://code.djangoproject.com/wiki/Signals).
 

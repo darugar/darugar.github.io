@@ -2,7 +2,7 @@
 layout: parand
 title:  "The Case For Teaching Calculus Early"
 date:   2008-05-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I remember when I finally had Calculus, my final year of high school. It took a bit of effort to get my head around it, but once I got it I remember the distinct feeling of being pissed off. Pissed off about all the time wasted in Physics class. In Chemistry. And in all the other math classes I'd taken up to that point.
 

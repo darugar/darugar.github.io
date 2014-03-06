@@ -2,6 +2,6 @@
 layout: parand
 title:  "Awesome"
 date:   2008-08-21 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[Parand](/web/20101222052012/http://www.urbandictionary.com/define.php?term=parand).
+[Parand](http://www.urbandictionary.com/define.php?term=parand).

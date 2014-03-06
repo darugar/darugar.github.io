@@ -2,7 +2,7 @@
 layout: parand
 title:  "Windows Should Include Virtual Machines For Virus Protection"
 date:   2008-06-30 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm about buy a new laptop for my wife, and it has me thinking about how to keep computers for non-technical folks virus free.
 

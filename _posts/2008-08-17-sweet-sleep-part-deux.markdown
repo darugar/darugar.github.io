@@ -2,7 +2,7 @@
 layout: parand
 title:  "Sweet Sleep, Part Deux"
 date:   2008-08-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Wife is in Florida with the youngest kid, and the other two spent most of the weekend at my parents', giving me a chance to engage in plenty of bad habits. Mostly work and sleep.
 

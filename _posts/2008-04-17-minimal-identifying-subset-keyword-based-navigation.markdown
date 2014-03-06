@@ -2,7 +2,7 @@
 layout: parand
 title:  "Minimal-Identifying-Subset Keyword Based Navigation"
 date:   2008-04-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Operating systems and applications need to support a mode wherein typing the smallest identifying subset of keys will cause the appropriate file/function to be opened. Firefox 3 does this for history urls - start typing and you'll see URLs that contain that set of keystrokes anywhere in them. iPhone's safari also does a decent job. Adium does a basic version: you can hit apple-N to get a New Message window and type the start of the person's name. I think Quicksilver also does this although I've never been able to make heads or tails of it.
 

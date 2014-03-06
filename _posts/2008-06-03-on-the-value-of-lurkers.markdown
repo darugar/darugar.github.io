@@ -2,7 +2,7 @@
 layout: parand
 title:  "On The Value of Lurkers"
 date:   2008-06-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 [Don Dodge](/web/20101222043204/http://dondodge.typepad.com/the_next_big_thing/2008/06/social-networks-1-rule-or-the-community-pyramid.html) discussed the very small percentage of content creators versus viewers:
 

@@ -2,7 +2,7 @@
 layout: parand
 title:  "How To Enable Vi Syntax Highlighting In Ubuntu"
 date:   2009-10-28 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Note to self, as I seem to need to do this on every new install:
 

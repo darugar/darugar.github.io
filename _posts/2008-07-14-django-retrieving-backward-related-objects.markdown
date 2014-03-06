@@ -2,7 +2,7 @@
 layout: parand
 title:  "Django: Retrieving Backward Related Objects"
 date:   2008-07-14 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Another one in the category of always-forget-how-to-do-this-so-noting-here:
     

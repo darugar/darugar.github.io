@@ -2,10 +2,10 @@
 layout: parand
 title:  "Three"
 date:   2008-08-25 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 **Three.**
 
 > The number of programmers who will write most of the code in a system developed by a team of 24 engineers, two project managers, three group leaders, a quality lead and an office manager.
 
-From [Russ Olsen](/web/20101222052248/http://www.jroller.com/rolsen/entry/some_important_numbers_for_developers).
+From [Russ Olsen](http://www.jroller.com/rolsen/entry/some_important_numbers_for_developers).

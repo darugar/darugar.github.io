@@ -2,7 +2,7 @@
 layout: parand
 title:  "Ubuntu For Your Momma"
 date:   2008-03-28 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I spent 5 hours last weekend trying to get rid of the multitude of the viruses and bugs that had taken over my parent's laptop. Apparently they literally had little bugs and critters running around their screen singing and playing music.
 
@@ -16,7 +16,7 @@ It comes back with an error - _there was an error in resizing_ - but when I hit 
 
 Too many blank or non-responsive screens - is it still alive or dead?
 
-![](/web/20101222032427im_/http://farm4.static.flickr.com/3149/2368527409_ea1228a4b7_d.jpg)
+![](http://farm4.static.flickr.com/3149/2368527409_ea1228a4b7_d.jpg)
 
 Dead I guess, it seemed to not be doing anything. 
 

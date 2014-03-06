@@ -2,9 +2,9 @@
 layout: parand
 title:  "Parsing (Top-Down) in Python"
 date:   2008-07-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Excellent article on [Simple Top-Down Parsing in Python](/web/20101222045855/http://effbot.org/zone/simple-top-down-parsing.htm). The nud and led business could be better explained, but the rest of the article and code is great. I learned several things I hope to employ shortly.
+Excellent article on [Simple Top-Down Parsing in Python](http://effbot.org/zone/simple-top-down-parsing.htm). The nud and led business could be better explained, but the rest of the article and code is great. I learned several things I hope to employ shortly.
 
 I'm trying to remember if we studied this in compiler class or not. I think not, although I have terrible memory, so it's possible we did.
 

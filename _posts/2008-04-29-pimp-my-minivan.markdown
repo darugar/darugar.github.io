@@ -2,7 +2,7 @@
 layout: parand
 title:  "Pimp My Minivan"
 date:   2008-04-29 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 With 3 kids in tow I'm on the inevitable slope towards owning a minivan. Having long ago given up the last vestiges of pride in what type of car I drive, I'm perfectly ok with this, but the wife is not into minivans.
 

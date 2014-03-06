@@ -2,9 +2,9 @@
 layout: parand
 title:  "HTML ID Syntax"
 date:   2008-04-16 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-From [W3C HTML Recommendation](/web/20081018204336/http://www.w3.org/TR/REC-html40/types.html#type-name):
+From [W3C HTML Recommendation](http://www.w3.org/TR/REC-html40/types.html#type-name):
 
 > ID and NAME tokens must begin with a letter \(\[A-Za-z\]\) and may be followed by any number of letters, digits \(\[0-9\]\), hyphens \("-"\), underscores \("\_"\), colons \(":"\), and periods \("."\).
 

@@ -2,9 +2,9 @@
 layout: parand
 title:  "Evangelical Pastor Buys Acid From Male Prostitute, Throws it Away , Doesn&#8217;t Sleep With Him"
 date:   2006-11-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[This is just priceless.](/web/20101222035813/http://www.charlotte.com/mld/charlotte/news/nation/15924898.htm)
+[This is just priceless.](http://www.charlotte.com/mld/charlotte/news/nation/15924898.htm)
 
 > The Rev. Ted Haggard admitted Friday he bought methamphetamine from a male prostitute but maintained he never had sex with the man and never used the drug.
 

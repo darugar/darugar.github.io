@@ -2,7 +2,7 @@
 layout: parand
 title:  "Uniforms"
 date:   2011-03-04 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I went to a school that required uniforms \(private school in England\). We were forced to be uniform.
 

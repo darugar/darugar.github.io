@@ -2,7 +2,7 @@
 layout: parand
 title:  "Leaving Bloglines for Google Reader"
 date:   2006-10-24 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I've been a long time user of Bloglines, but I kept hearing good things about Google Reader and decided to give it a try…
 

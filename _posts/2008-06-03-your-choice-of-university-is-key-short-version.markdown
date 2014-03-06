@@ -2,7 +2,7 @@
 layout: parand
 title:  "Your Choice of University Is Key, Short Version"
 date:   2008-06-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 In case you didn't believe my [earlier ramblings](/web/20101222043140/http://parand.com/say/index.php/2008/03/13/your-choice-of-university-is-key/), here's the short version:
 

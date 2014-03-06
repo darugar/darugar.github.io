@@ -2,7 +2,7 @@
 layout: parand
 title:  "Parsing and Normalizing Dates with Timezones in Python"
 date:   2008-02-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 This was a bit painful and not well documented, so documenting here for future reference.
 

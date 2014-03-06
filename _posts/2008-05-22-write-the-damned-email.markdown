@@ -2,7 +2,7 @@
 layout: parand
 title:  "Write The Damned Email"
 date:   2008-05-22 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I gave a talk at UCSD a couple of days ago. After the talk several students came up to me asking about how to find internships and full time positions at Yahoo. As it so happened we had our HR folks right there and they got connected up.
 

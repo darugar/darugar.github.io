@@ -2,9 +2,9 @@
 layout: parand
 title:  "San Diego Housing Market Declines"
 date:   2006-10-27 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I've been following various [learned](/web/20101222050523/http://www.econbrowser.com/archives/2006/10/more_evidence_t.html) [discussions](/web/20101222050523/http://apnews.myway.com/article/20061026/D8L0GI9O0.html) of housing prices and thought I'd add my own mini-view on the San Diego market.
+I've been following various [learned](http://www.econbrowser.com/archives/2006/10/more_evidence_t.html) [discussions](http://apnews.myway.com/article/20061026/D8L0GI9O0.html) of housing prices and thought I'd add my own mini-view on the San Diego market.
 
 In my neighbourhood there is a significant decline in housing prices \(probably about 15% off the peak\), and the number of houses for sale is significantly higher than it's ever been \(it's a new neighbourhood\). Houses are on the market for much longer than they used to be - a year ago they'd sell in a week, now it's a matter of months.
 
@@ -20,4 +20,4 @@ New home builders, of which there are plenty within striking distance of where I
 
 And then there's the historical housing prices graph…
 
-![Historical Home Values](/web/20101222050523im_/http://graphics8.nytimes.com/images/2006/08/26/weekinreview/27leon_graph2.large.gif)
+![Historical Home Values](http://graphics8.nytimes.com/images/2006/08/26/weekinreview/27leon_graph2.large.gif)

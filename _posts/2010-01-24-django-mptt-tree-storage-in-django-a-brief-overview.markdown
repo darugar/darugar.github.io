@@ -2,7 +2,7 @@
 layout: parand
 title:  "Django-mptt: Tree Storage in Django: A Brief Overview"
 date:   2010-01-24 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 [django-mptt](/web/20120414080551/http://code.google.com/p/django-mptt/) is a library for storing tree oriented data using the Django ORM. It allows you to place your model instances into a tree structure and efficiently query for ancestors and children.
 

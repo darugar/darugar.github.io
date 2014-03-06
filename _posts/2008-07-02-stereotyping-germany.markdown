@@ -2,7 +2,7 @@
 layout: parand
 title:  "Stereotyping Germany"
 date:   2008-07-02 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Watching the Euro 2008 games. Yes, many days late.
 

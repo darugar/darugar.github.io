@@ -2,11 +2,11 @@
 layout: parand
 title:  "Future of Work and New Dial Tones"
 date:   2010-12-08 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-My friend [Paul Kedrosky's post on one of his main investment theses](/web/20101213011206/http://paul.kedrosky.com/archives/2010/12/the_future_of_w.html), the application of currently consumer oriented technologies to business \(DropBox, Twitter, FaceBook, Yelp, …\), got me thinking about how the future of work will look.
+My friend [Paul Kedrosky's post on one of his main investment theses](http://paul.kedrosky.com/archives/2010/12/the_future_of_w.html), the application of currently consumer oriented technologies to business \(DropBox, Twitter, FaceBook, Yelp, …\), got me thinking about how the future of work will look.
 
-![](/web/20101213011206im_/http://parand.com/say/misc/retro-phone.jpg)
+![](http://parand.com/say/misc/retro-phone.jpg)
 
 I've made a career of working far from where I live. I've generally considered this a significant pain - there are disadvantages and inefficiencies in being geographically separated from coworkers. Hence I've endured horrible commutes and frequent travel.
 

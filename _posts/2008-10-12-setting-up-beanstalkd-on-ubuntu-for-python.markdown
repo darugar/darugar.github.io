@@ -2,9 +2,9 @@
 layout: parand
 title:  "Setting Up Beanstalkd on Ubuntu for Python"
 date:   2008-10-12 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[beanstalkd](/web/20101222041045/http://xph.us/software/beanstalkd/) is a promising in-memory queuing system in the mold of memcached \(minimal configuration, just works\) with client libraries in a variety of languages. The following worked for me for installing it on Ubuntu 8.04:
+[beanstalkd](http://xph.us/software/beanstalkd/) is a promising in-memory queuing system in the mold of memcached \(minimal configuration, just works\) with client libraries in a variety of languages. The following worked for me for installing it on Ubuntu 8.04:
     
     
     mkdir ~/packages

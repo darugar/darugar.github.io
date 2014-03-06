@@ -2,7 +2,7 @@
 layout: parand
 title:  "Javascript Array Deferencing?"
 date:   2008-05-19 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I have an array, say:
     

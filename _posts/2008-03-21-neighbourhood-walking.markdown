@@ -2,7 +2,7 @@
 layout: parand
 title:  "Neighbourhood Walking"
 date:   2008-03-21 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 There was a [massive collision](/web/20101222033743/http://www.signonsandiego.com/news/metro/20080321-1304-bn21drifting.html) this morning blocking off the main road connecting our neighbourhood to the rest of the world. We were all trapped in our little parcel of the world, unable to get to school, work, etc.
 

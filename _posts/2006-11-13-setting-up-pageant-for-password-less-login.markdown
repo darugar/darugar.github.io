@@ -2,7 +2,7 @@
 layout: parand
 title:  "Setting up pageant for password-less login"
 date:   2006-11-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 This is a recipe for setting up pageant.exe on windows to allow ssh login without having to type in the password every time. Mainly for my own notes.
 

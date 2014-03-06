@@ -2,7 +2,7 @@
 layout: parand
 title:  "How To Dynamically Select Part of a jQuery Call Chain"
 date:   2008-05-07 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Updated, thanks to [Simon Willison](/web/20101222040651/http://simonwillison.net/):
 

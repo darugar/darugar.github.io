@@ -2,7 +2,7 @@
 layout: parand
 title:  "Python Script For Finding And Removing Duplicate Files"
 date:   2008-10-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 My image, mp3, and ebook collection were a mess after years of copying to various servers, consolidating, and re-copying. I had lots of duplicates.
 
@@ -16,4 +16,4 @@ It uses /temp for its output and cache files, so it's targeting windows. Change 
 
 I built in a caching mechanism to save the results of scanning the disk, but it turned out not to be too useful and the script ran faster than I expected, so the caching is commented out.
 
-Here it is: [FileInfo.py](/web/20101222041308/http://parand.com/say/misc/FileInfo.py) .
+Here it is: [FileInfo.py](http://parand.com/say/misc/FileInfo.py) .

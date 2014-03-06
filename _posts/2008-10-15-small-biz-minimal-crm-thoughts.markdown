@@ -2,15 +2,15 @@
 layout: parand
 title:  "Small Biz Minimal CRM Thoughts"
 date:   2008-10-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![](/web/20101222041117im_/http://farm1.static.flickr.com/23/27707355_3c3adbb40a_m_d.jpg)
+![](http://farm1.static.flickr.com/23/27707355_3c3adbb40a_m_d.jpg)
 
 As the "computer guy" for my wife, various friends, and my own activities, I often see a need for a very simple "CRM" system. But it's not really CRM; it's more of a contact management system together with a way to send emails to various groups of friends / customers, a way to catalog past exchanges, and perhaps a simple to-do system.
 
 Periodically I look at the various available options \(there are many\), give one or more of them a try, and give up, generally because they're too complex and too capable.
 
-The most promising is [High Rise](/web/20101222041117/http://www.highrisehq.com/), but I don't think it provides a way to send emails, so it doesn't qualify.
+The most promising is [High Rise](http://www.highrisehq.com/), but I don't think it provides a way to send emails, so it doesn't qualify.
 
 Here are my requirements for my imaginary Pony CRM:
 

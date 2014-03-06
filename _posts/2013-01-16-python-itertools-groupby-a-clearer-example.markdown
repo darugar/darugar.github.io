@@ -2,7 +2,7 @@
 layout: parand
 title:  "Python itertools.groupby : a clearer example"
 date:   2013-01-16 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 itertools.groupby allows you to group a sorted list \(or any sorted iterable\) by some key, giving you the grouping key and the list of items grouped by that key.
 

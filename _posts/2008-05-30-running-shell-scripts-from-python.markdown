@@ -2,7 +2,7 @@
 layout: parand
 title:  "Running Shell Scripts from Python"
 date:   2008-05-30 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 There are about a million different ways to execute an external program from Python. Here's the right way:
     

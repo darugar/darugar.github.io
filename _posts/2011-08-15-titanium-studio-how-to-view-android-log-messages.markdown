@@ -2,7 +2,7 @@
 layout: parand
 title:  "Titanium Studio: How To View Android Log Messages"
 date:   2011-08-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Apparently with Titanium Studio it's not possible to see log messages in the Titanium console.
 

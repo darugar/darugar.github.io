@@ -2,9 +2,9 @@
 layout: parand
 title:  "Books Cannot Be Owned"
 date:   2009-01-25 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Wikihow's [How To Stop Accumulating Books](/web/20090201172627/http://www.wikihow.com/Stop-Accumulating-Books) has been making the rounds in blogs and delicious popular. Reminds me of the ultimate book non-accumulator, a good friend of my dad's.
+Wikihow's [How To Stop Accumulating Books](http://www.wikihow.com/Stop-Accumulating-Books) has been making the rounds in blogs and delicious popular. Reminds me of the ultimate book non-accumulator, a good friend of my dad's.
 
 This particular friend of my dad's would always bring me books when he came to visit. I was a voracious reader, to the point where people made fun of me for it, so I always loved his visits. And he brought interesting books - not children's books, but histories, etc. I think he brought me Animal Farm when I was 8 or 9.
 

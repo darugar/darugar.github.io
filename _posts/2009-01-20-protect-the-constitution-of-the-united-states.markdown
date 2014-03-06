@@ -2,7 +2,7 @@
 layout: parand
 title:  "Protect The Constitution Of The United States"
 date:   2009-01-20 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Inaugration day, and I missed just about all the festivities. One thing did stand out for me: the text of the [Oath of the Office of the President](/web/20090201030654/http://en.wikipedia.org/wiki/Oath_of_office_of_the_President_of_the_United_States):
 

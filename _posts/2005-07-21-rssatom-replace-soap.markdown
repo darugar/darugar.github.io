@@ -2,9 +2,9 @@
 layout: parand
 title:  "On RSS/Atom replacing SOAP"
 date:   2005-07-21 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Kurt Cagle has some interesting thoughts on [RSS/Atom as a replacement for SOAP](/web/20101222035935/http://www.understandingxml.com/archives/2005/07/how_rssatom_is.html). He mentions WS vendors will likely poo-poo the idea, so I'm compelled as a reformed former vendor to comment.
+Kurt Cagle has some interesting thoughts on [RSS/Atom as a replacement for SOAP](http://www.understandingxml.com/archives/2005/07/how_rssatom_is.html). He mentions WS vendors will likely poo-poo the idea, so I'm compelled as a reformed former vendor to comment.
 
 I think Kurt makes excellent points. A lot of the Web is syndication oriented, and certainly RSS/Atom will be a better solution than SOAP for those cases. I generally agree that RSS/Atom will gain acceptance and be used in a variety of interesting places faster and wider than SOAP. In fact I just ran into a surprising one that will be unveiled to the public a bit later.
 
@@ -32,4 +32,4 @@ Now all the enterprise architects, the folks who do serious things with serious 
 
 So which is it? 
 
-**For the Web, free for all is better**. As [smart](/web/20101222035935/http://www.adambosworth.net/) [people](/web/20101222035935/http://www.tbray.org/ongoing/) have said over and over, successful Web specifications are forgiving of errors. They're easy and forgiving. SOAP is trending towards neither of those. RSS and Atom will boldly go where SOAP should've gone if we'd done it better.
+**For the Web, free for all is better**. As [smart](http://www.adambosworth.net/) [people](http://www.tbray.org/ongoing/) have said over and over, successful Web specifications are forgiving of errors. They're easy and forgiving. SOAP is trending towards neither of those. RSS and Atom will boldly go where SOAP should've gone if we'd done it better.

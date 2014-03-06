@@ -2,7 +2,7 @@
 layout: parand
 title:  "Pig (Hadoop) Commands And Sample Results"
 date:   2008-06-19 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I find seeing the results of [Pig](/web/20101222043006/http://incubator.apache.org/pig/) commands on sample data a good companion to the [PigLatin language reference](/web/20101222043006/http://wiki.apache.org/pig/PigLatin), so I setup some simple sample data and ran commands, capturing the results.Here's the sample data as well as the commands:
 

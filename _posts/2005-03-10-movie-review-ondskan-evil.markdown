@@ -2,9 +2,9 @@
 layout: parand
 title:  "Movie Review: Ondskan (Evil)"
 date:   2005-03-10 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I watched [Ondskan \(Evil\)](/web/20120203073636/http://www.imdb.com/title/tt0338309/).
+I watched [Ondskan \(Evil\)](http://www.imdb.com/title/tt0338309/).
 
 Decent movie, fairly juvenile. It pushes all the buttons to build the tension, the hatred of the mean mean bad guys. The hero is so noble, so cute, such a good boy really. It's one of those experiences where you find yourself rooting for the good guy and hating the bad guys with a visceral, childish surge. The ploy at the end is predictable and not overly satisfying.
 

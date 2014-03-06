@@ -2,7 +2,7 @@
 layout: parand
 title:  "Student Loans Are Killing Entrepreneurship"
 date:   2012-02-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 If you know me you know I'm a huge fan of entrepreneurship - instead of renting yourself out to someone else, start a business that scales. Be your own pimp.
 

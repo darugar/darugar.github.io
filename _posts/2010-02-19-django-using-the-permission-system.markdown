@@ -2,7 +2,7 @@
 layout: parand
 title:  "Django: Using The Permission System"
 date:   2010-02-19 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I was surprised at how little information I found on making use of Django's permission system. Here are some quick notes on one way to use it:
 

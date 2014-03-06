@@ -2,9 +2,9 @@
 layout: parand
 title:  "Bug Labs: Good Stuff"
 date:   2008-03-06 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![Bug Labs Logo](/web/20101222033653im_/http://www.buglabs.net/images/nav/logo.gif?1202843410)
+![Bug Labs Logo](http://www.buglabs.net/images/nav/logo.gif?1202843410)
 
 I caught Peter Semmelhack's talk at ETech and also had a chance to chat with him and [Mershad](/web/20101222033653/http://www.buglabs.net/users/mehrshad) over lunch. [Bug Labs](/web/20101222033653/http://www.buglabs.net/) sounded interesting - an open hardware platform where functionality can be added as modules, almost like connecting legos together. But it turns out there's more to it than that.
 

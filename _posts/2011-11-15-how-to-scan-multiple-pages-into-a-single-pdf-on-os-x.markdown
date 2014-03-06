@@ -2,7 +2,7 @@
 layout: parand
 title:  "How To Scan Multiple Pages Into a Single PDF on OS X"
 date:   2011-11-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 My new printer has a document feeder which makes scanning of multiple pages easy, but I didn't know how to kick off the scan on OS X. Turns out it's quite easy:
 

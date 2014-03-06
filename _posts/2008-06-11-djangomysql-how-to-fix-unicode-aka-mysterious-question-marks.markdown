@@ -2,7 +2,7 @@
 layout: parand
 title:  "Django+MySQL: How To Fix Unicode (aka Mysterious Question Marks)"
 date:   2008-06-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 If you're running into the problem where unicode items in your Django / MySQL project are displayed as question marks, here's the likely problem and solution, found in this [django-users thread](/web/20101222043056/http://groups.google.com/group/django-users/browse_thread/thread/a9b53db451aa4590/0b99a2f071cc4404#0b99a2f071cc4404):
 

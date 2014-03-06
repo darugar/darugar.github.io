@@ -2,7 +2,7 @@
 layout: parand
 title:  "Ideal Startup Space = Large Fishbowl"
 date:   2007-09-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm with [Dick on this one](/web/20101222051652/http://www.burningdoor.com/askthewizard/2007/09/no_offices.html): ideal office space for a startup is a big fishbowl with no/few offices. Read Dick's post for the benefits; I largely agree with everything he says. 
 

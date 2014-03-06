@@ -2,7 +2,7 @@
 layout: parand
 title:  "Taste Vectors: Own, Share Your Tastes via XML"
 date:   2005-03-10 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Each time you use Amazon it assembles a better profile of your tastes, your habits, your likes and dislikes. Why should they own your profile? I propose you publish your likes and dislikes via a simple XML format \(RSS? Atom?\), and we build collaborative filtering tools to help you find people who share your tastes and lead you to new things you'd like to taste. 
 
@@ -23,8 +23,8 @@ But now we're publishing lots of details about what people like. What about priv
 
 With me so far? If we can get enough people to do this, a bunch of tools will emerge to gather intelligence from it and suggest new things for you to try. Believe me, this is data people would kill for - better yet, it's data marketers pay lots of money for today. 
 
-Why do I care? Because my tastes are sometimes outside of the norm, and I want to find the other wierdos to turn me onto new wierd things to try. If you've been following the [long tail](/web/20101222050120/http://technorati.com/tag/long+tail) discussions, I may be able to convince you that there are a lot of outside-the-norm people there - in fact, it's very likely you are one yourself.
+Why do I care? Because my tastes are sometimes outside of the norm, and I want to find the other wierdos to turn me onto new wierd things to try. If you've been following the [long tail](http://technorati.com/tag/long+tail) discussions, I may be able to convince you that there are a lot of outside-the-norm people there - in fact, it's very likely you are one yourself.
 
-Why do I think this may work? Well, it'd take a miracle to get this to really go where it could, but the success of [technorati](/web/20101222050120/http://technorati.com/tag/technorati) style [folksonomies](/web/20101222050120/http://technorati.com/tag/technorati) has me thinking miracles are happening these days. 
+Why do I think this may work? Well, it'd take a miracle to get this to really go where it could, but the success of [technorati](http://technorati.com/tag/technorati) style [folksonomies](http://technorati.com/tag/technorati) has me thinking miracles are happening these days. 
 
 If you've read this far you must be interested, so drop a comment in here and we can see if this has any legs…

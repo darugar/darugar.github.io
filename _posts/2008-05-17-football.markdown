@@ -2,9 +2,9 @@
 layout: parand
 title:  "Football"
 date:   2008-05-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![Giant](/web/20101222040451im_/http://farm4.static.flickr.com/3223/2471424820_90ee870eb0_m_d.jpg)
+![Giant](http://farm4.static.flickr.com/3223/2471424820_90ee870eb0_m_d.jpg)
 
 After a lovely day at the [Cystic Fibrosis walk](/web/20101222040451/http://www.cff.org/great%5Fstrides/), I fell asleep in the toy room.
 
@@ -22,4 +22,4 @@ As I bolted into wakefulness, only to drop into a groaning heap, several women, 
 
 And that's how I woke up.
 
-Photo by [Jurvetson](/web/20101222040451/http://flickr.com/photos/jurvetson/2471424820/).
+Photo by [Jurvetson](http://flickr.com/photos/jurvetson/2471424820/).

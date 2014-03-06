@@ -2,7 +2,7 @@
 layout: parand
 title:  "RESTful URL Design For Search And Collections"
 date:   2008-10-16 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm trying to find the appropriate design for RESTful design of URLs for search and for collections of items.
 
@@ -44,4 +44,4 @@ Now a slightly different case - let's find all the cars in a given garage:
 
 1 seems pretty good in this case.
 
-Please chime in with your thoughts, either in the comments here or in the [Stackoverflow thread](/web/20101222040909/http://stackoverflow.com/questions/207477/restful-url-design-for-search).
+Please chime in with your thoughts, either in the comments here or in the [Stackoverflow thread](http://stackoverflow.com/questions/207477/restful-url-design-for-search).

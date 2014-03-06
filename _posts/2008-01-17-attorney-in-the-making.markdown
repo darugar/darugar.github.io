@@ -2,7 +2,7 @@
 layout: parand
 title:  "Attorney in the Making"
 date:   2008-01-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I send my older son to get my middle son so they can get to bed. The conversation that ensues:
 

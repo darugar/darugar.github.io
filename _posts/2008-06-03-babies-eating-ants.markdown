@@ -2,7 +2,7 @@
 layout: parand
 title:  "Babies Eating Ants"
 date:   2008-06-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Step 1: Give the baby some inappropriate sugary thing since mom is not home.
 

@@ -2,7 +2,7 @@
 layout: parand
 title:  "Hackintosh Accomplished"
 date:   2009-01-25 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 After 2 days of pain, finally a hackintosh is born. My advice to you if you're thinking of setting up a hackintosh: don't. Go buy a cheap mac instead.
 

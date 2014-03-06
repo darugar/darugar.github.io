@@ -2,7 +2,7 @@
 layout: parand
 title:  "The Soft Minded Man Always Fears Change"
 date:   2005-07-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I shaved my head yesterday. People always ask why when I do something like that. Mostly because I'm an idiot, but also because of something Dr. Martin Luther King Jr. said:
 

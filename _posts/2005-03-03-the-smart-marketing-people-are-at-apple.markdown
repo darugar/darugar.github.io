@@ -2,9 +2,9 @@
 layout: parand
 title:  "The Smart Marketing People are at Apple"
 date:   2005-03-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I bought a [Creative Nomad Muvo MP3 Player](/web/20120203080910/http://www.parand.com/reviews/CreativeMuvoMp3.html) a little while back. I love this thing; it's exactly what I wanted.
+I bought a [Creative Nomad Muvo MP3 Player](http://www.parand.com/reviews/CreativeMuvoMp3.html) a little while back. I love this thing; it's exactly what I wanted.
 
 Before buying that, I tried a Lexar MPC-231 JumpGear, which is basically a cap for a USB memory stick that turns it into an MP3 player. I wasn't happy with it; there wasn't enough control, the screen was too small, it just didn't feel right. This was generally my opinion of the stick type MP3 players, although my brother has the same Lexar and is happy with it. 
 

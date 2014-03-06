@@ -2,6 +2,6 @@
 layout: parand
 title:  "SOA is not complex. You are just dumb."
 date:   2006-11-02 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Via [SOA Facts](/web/20101222035732/http://soafacts.com/).
+Via [SOA Facts](http://soafacts.com/).

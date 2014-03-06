@@ -2,7 +2,7 @@
 layout: parand
 title:  "Facebook&#8217;s Spam Problem"
 date:   2008-01-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Facebook grew by providing a safe-haven from spam, an access controlled area where interactions could be limited to those desired by the user.
 

@@ -2,7 +2,7 @@
 layout: parand
 title:  "There Will Be Blood: Surprisingly Good"
 date:   2008-04-12 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I had watched about half of [There Will Be Blood](/web/20081227235805/http://www.imdb.com/title/tt0469494/), enjoyed it, but was surprisingly un-motivated to watch the rest. Tonight I finally watched the second half.
 

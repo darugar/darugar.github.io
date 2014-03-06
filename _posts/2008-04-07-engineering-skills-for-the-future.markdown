@@ -2,7 +2,7 @@
 layout: parand
 title:  "Engineering Skills For The Future"
 date:   2008-04-07 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I was part of the industry panel at the American Society for Engineering Education's [Engineering Dean's Institute Conference](/web/20101222034703/http://www.asee.org/conferences/edi/2008/Program.cfm) last week on the "Defining the Engineer of the Future - What are the skill sets industry is looking for?" panel.
 

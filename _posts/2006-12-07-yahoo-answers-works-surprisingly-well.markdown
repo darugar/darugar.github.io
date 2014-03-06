@@ -2,7 +2,7 @@
 layout: parand
 title:  "Yahoo Answers works surprisingly well"
 date:   2006-12-07 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I tried [Yahoo Answers](/web/20101222042556/http://answers.yahoo.com/) when it first came out \(I'm a Yahoo employee so I got a sneak preview\). Interesting concept, I thought, let's see how it turns out.
 

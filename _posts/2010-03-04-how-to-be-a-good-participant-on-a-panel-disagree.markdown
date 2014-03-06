@@ -2,9 +2,9 @@
 layout: parand
 title:  "How To Be A Good Participant On A Panel: Disagree"
 date:   2010-03-04 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[Mark Suster](/web/20120204011742/http://www.bothsidesofthetable.com/2010/03/03/making-the-most-out-of-sitting-on-panels/) and [Fred Wilson](/web/20120204011742/http://www.avc.com/a_vc/2010/03/panels.html) have both posted on the topic of being a good panelist. I'll throw in the best advice I ever got on the topic \(from [Alex](/web/20120204011742/http://teamsoa.com/), who got it from someone else\):
+[Mark Suster](http://www.bothsidesofthetable.com/2010/03/03/making-the-most-out-of-sitting-on-panels/) and [Fred Wilson](http://www.avc.com/a_vc/2010/03/panels.html) have both posted on the topic of being a good panelist. I'll throw in the best advice I ever got on the topic \(from [Alex](http://teamsoa.com/), who got it from someone else\):
 
 **Disagree with other panelists.**
 

@@ -2,9 +2,9 @@
 layout: parand
 title:  "The Nose of Your Uncle"
 date:   2008-03-14 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[Jaime Lerner's Ted Talk](/web/20101222033513/http://www.ted.com/index.php/talks/view/id/213) on sustainable cities is pretty funny. A couple of choice quotes:
+[Jaime Lerner's Ted Talk](http://www.ted.com/index.php/talks/view/id/213) on sustainable cities is pretty funny. A couple of choice quotes:
 
 > A City is like a family portrait - we don't rip our photo even if we don't like the nose of our uncle.
 

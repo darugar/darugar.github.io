@@ -2,7 +2,7 @@
 layout: parand
 title:  "Queueing Benefits"
 date:   2009-01-19 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Queues are nice things. We should be using more of them.
 

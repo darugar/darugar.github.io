@@ -2,9 +2,9 @@
 layout: parand
 title:  "MMA"
 date:   2008-05-20 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![MMA](/web/20101222040355im_/http://farm1.static.flickr.com/53/172146585_b4263bddb3_m_d.jpg)
+![MMA](http://farm1.static.flickr.com/53/172146585_b4263bddb3_m_d.jpg)
 
 I'm really into [Mixed Martial Arts](/web/20101222040355/http://en.wikipedia.org/wiki/Mixed_martial_arts) these days. Watching that is - I'm as lazy and immobile as ever, and I'm pretty sure my 6 year old could beat my sorry ass.
 

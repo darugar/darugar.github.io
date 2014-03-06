@@ -2,7 +2,7 @@
 layout: parand
 title:  "Russia Wins!"
 date:   2008-06-22 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Just finished watching Russia vs. Netherlands. Most of it anyway - I'd only DVR'd the main match, missed most of the extra time.
 

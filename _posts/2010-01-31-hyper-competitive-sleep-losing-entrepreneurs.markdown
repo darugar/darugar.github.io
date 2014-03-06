@@ -2,13 +2,13 @@
 layout: parand
 title:  "Hyper Competitive Sleep Losing Entrepreneurs?"
 date:   2010-01-31 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I remarked to a friend that [Mark Suster](/web/20120316045557/http://www.bothsidesofthetable.com/)'s entrepreneurial roots show in his approach to being a VC - he's come out of nowhere and in short order aggressively pushed himself into being one of the most relevant voices out there. He seems to be working a lot harder than the others guys, exactly as you'd expect an entrepreneur to be. Not exactly what you'd expect of a VC.
+I remarked to a friend that [Mark Suster](http://www.bothsidesofthetable.com/)'s entrepreneurial roots show in his approach to being a VC - he's come out of nowhere and in short order aggressively pushed himself into being one of the most relevant voices out there. He seems to be working a lot harder than the others guys, exactly as you'd expect an entrepreneur to be. Not exactly what you'd expect of a VC.
 
-[His blog](/web/20120316045557/http://www.bothsidesofthetable.com/) is fantastic, and I quite often agree with his advice. 
+[His blog](http://www.bothsidesofthetable.com/) is fantastic, and I quite often agree with his advice. 
 
-That's why I found it odd that his [The Best Entrepreneurs Are Hyper Competitive & Hate Losing](/web/20120316045557/http://www.bothsidesofthetable.com/2010/01/29/the-best-entrepreneurs-are-hyper-competitive-hate-losing/) struck such a dissonant chord with me. 
+That's why I found it odd that his [The Best Entrepreneurs Are Hyper Competitive & Hate Losing](http://www.bothsidesofthetable.com/2010/01/29/the-best-entrepreneurs-are-hyper-competitive-hate-losing/) struck such a dissonant chord with me. 
 
 Shuffling through the successful business people I know and trying to gauge whether they would be the type of people who are obsessed with winning, even in a family game of scrabble, I don't come to a clear conclusion. I know hyper competitive people, but I also know plenty of people who are able to separate their business behavior from their personal behavior. And not obsess with beating the competition.
 

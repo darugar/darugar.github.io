@@ -2,9 +2,9 @@
 layout: parand
 title:  "BlackBerry + Decent Browser = iPhone Killer"
 date:   2008-07-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I'm a bit of an iPhone fanboy, it's true. However, [Fred Wilson's post on mobile apps](/web/20101222045935/http://avc.blogs.com/a_vc/2008/07/thinking-abou-2.html) has me thinking - the main reason I carry an iPhone as well as a BlackBerry is the iPhone's browser. The rest of the stuff is great, but the killer app is the browser.
+I'm a bit of an iPhone fanboy, it's true. However, [Fred Wilson's post on mobile apps](http://avc.blogs.com/a_vc/2008/07/thinking-abou-2.html) has me thinking - the main reason I carry an iPhone as well as a BlackBerry is the iPhone's browser. The rest of the stuff is great, but the killer app is the browser.
 
 And the BlackBerry has its own advantages. It's much easier to type on, for example. The camera quality is also better as Fred points out.
 

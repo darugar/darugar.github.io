@@ -2,7 +2,7 @@
 layout: parand
 title:  "Google Reader interface everywhere"
 date:   2006-12-08 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 As I was moderating the 37 pieces of comment spam I received this morning \(must've been a hiccup in [Akismet](/web/20101222040836/http://akismet.com/)\) I was struck by how much the activity resembles reading RSS feeds. Quick scan of the contents, followed by an action. Not to mention the abundance of junk in both cases ![;-\)](/web/20101222040836im_/http://parand.com/say/wp-includes/images/smilies/icon_wink.gif)
 

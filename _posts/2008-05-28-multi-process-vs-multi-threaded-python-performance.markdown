@@ -2,7 +2,7 @@
 layout: parand
 title:  "Multi-Process vs. Multi-Threaded Python Performance"
 date:   2008-05-28 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Interesting benchmarks in [PEP 371 -- Addition of the Processing module to the standard library](/web/20101222040541/http://www.python.org/dev/peps/pep-0371/). In short, standard Python threads perform worse than non-threaded in almost every benchmark, while the multi-process Processing module generally does as you'd expect and reduces processing time proportional to the number of processors / cores.
 

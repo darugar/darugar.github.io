@@ -2,7 +2,7 @@
 layout: parand
 title:  "How Interviewing Job Applicants Has Changed"
 date:   2009-10-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm noticing how much the practice of finding a candidate and interviewing them has changed over the years.
 

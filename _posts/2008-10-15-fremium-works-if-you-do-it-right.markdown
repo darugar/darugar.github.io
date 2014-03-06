@@ -2,9 +2,9 @@
 layout: parand
 title:  "Fremium Works If You Do It Right"
 date:   2008-10-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![](/web/20101222040847im_/http://l.yimg.com/g/images/flickr_logo_gamma.gif.v59899.14)
+![](http://l.yimg.com/g/images/flickr_logo_gamma.gif.v59899.14)
 
 I am an incredibly cheap bastard frugal. I don't like to pay for things.
 

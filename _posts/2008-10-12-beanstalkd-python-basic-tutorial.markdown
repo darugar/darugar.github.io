@@ -2,9 +2,9 @@
 layout: parand
 title:  "Beanstalkd / Python Basic Tutorial"
 date:   2008-10-12 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-\(First [install beanstalkd and pybeanstalk](/web/20101222041156/http://parand.com/say/index.php/2008/10/12/setting-up-beanstalkd-on-ubuntu-for-python/)\)
+\(First [install beanstalkd and pybeanstalk](/say/index.php/2008/10/12/setting-up-beanstalkd-on-ubuntu-for-python.html)\)
 
 Beanstalkd is an in-memory queuing system. It supports named queues \(called 'tubes'\), priorities, and delayed delivery of messages.
 

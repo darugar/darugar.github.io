@@ -2,9 +2,9 @@
 layout: parand
 title:  "Norm&#8217;s Service Description Language"
 date:   2005-03-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-Check it out: [http://norman.walsh.name/2005/03/12/nsdl](/web/20110106035935/http://norman.walsh.name/2005/03/12/nsdl) .
+Check it out: <http://norman.walsh.name/2005/03/12/nsdl> .
 
 I like it a lot. **Specifying the parameters via XPath statements is dead on**. The POST body as template is also excellent, although I'm not crazy about the syntax. How do you feel about expressing the input parameters as XPath too? So maybe the XML fragment, with the parts that should be filled in specified separately as XPath. XPath is not just for selecting; it can get you to the element you want to fill in or modify as well.
 

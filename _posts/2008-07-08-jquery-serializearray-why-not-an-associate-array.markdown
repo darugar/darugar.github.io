@@ -2,7 +2,7 @@
 layout: parand
 title:  "jQuery serializeArray: Why Not An Associative Array?"
 date:   2008-07-08 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm trying to examine and modify form variables from jQuery by catching the submit event. jQuery has a serializeArray method that hands you the form variables in a nice array. For example:
     

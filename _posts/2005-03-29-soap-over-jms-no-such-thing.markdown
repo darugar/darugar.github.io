@@ -2,9 +2,9 @@
 layout: parand
 title:  "SOAP over JMS: No Such Thing"
 date:   2005-03-29 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-[Subbu Allamaraju](/web/20101223063601/http://www.subbu.org/weblogs/welcome/2005/03/soap_over_jms.html) makes an excellent point: there is no such thing as SOAP over JMS. It simply doesn't make sense.
+[Subbu Allamaraju](http://www.subbu.org/weblogs/welcome/2005/03/soap_over_jms.html) makes an excellent point: there is no such thing as SOAP over JMS. It simply doesn't make sense.
 
 JMS is a set of APIs. It is not a transport or a protocol. You can implement JMS on any kind of transport; I could use messenger pigeons or smoke signals as the transport for a JMS system. 
 

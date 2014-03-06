@@ -2,7 +2,7 @@
 layout: parand
 title:  "What Are You Using for Contact Management?"
 date:   2008-05-01 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Most of my contacts are in LinkedIn, but you can't store phones numbers, IM addresses, etc, there. The vast majority of my phone contacts are in my cell phone, but those die every time I kill a phone, which is about every 3-6 months these days. I used to use Yahoo Mail contacts, but since I couldn't get that contact list to sync with my phone it stopped being useful. GMail contacts are generally fairly useless as well.
 

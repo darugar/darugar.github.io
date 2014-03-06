@@ -2,7 +2,7 @@
 layout: parand
 title:  "Pursuit of Happyness: It&#8217;s an Indian Movie"
 date:   2007-03-12 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Watched Pursuit of Happyness the other night. My wife summed it up beautifully: it's an Indian movie. That is: it's a monotone of bad, sad, down-on-your-luck, with a final redemeption.
 

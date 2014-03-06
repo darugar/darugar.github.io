@@ -2,11 +2,11 @@
 layout: parand
 title:  "Experiences with DabbleDB?"
 date:   2006-11-02 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I've been interested in [DabbleDB](/web/20101222035742/http://dabbledb.com/) for some time now, since they first showed up on the scene with their [Under The Radar](/web/20101222035742/http://dabbledb.com/explore/7minutedemo/) demo. I immediately pointed a friend at them, who in turn got very excited and spent a few days integrating his app with theirs, only to give up as he hit scaling issues on the DabbleDB side \(his data set was too large\).
+I've been interested in [DabbleDB](/web/20101222035742/http://dabbledb.com/) for some time now, since they first showed up on the scene with their [Under The Radar](http://dabbledb.com/explore/7minutedemo/) demo. I immediately pointed a friend at them, who in turn got very excited and spent a few days integrating his app with theirs, only to give up as he hit scaling issues on the DabbleDB side \(his data set was too large\).
 
-I took another look, prompted by [Jon Udell's latest screencast](/web/20101222035742/http://weblog.infoworld.com/udell/screenroom/dabble_flv.html) \(via [Kedrosky](/web/20101222035742/http://paul.kedrosky.com/archives/2006/11/01/jon_udell_visit.html)\), and I understand better what they're going after. Seems they're targeting small business, where DabbleDB is used as a stand-alone app, very much as Excel on the Web with sharing built in.
+I took another look, prompted by [Jon Udell's latest screencast](http://weblog.infoworld.com/udell/screenroom/dabble_flv.html) \(via [Kedrosky](/web/20101222035742/http://paul.kedrosky.com/archives/2006/11/01/jon_udell_visit.html)\), and I understand better what they're going after. Seems they're targeting small business, where DabbleDB is used as a stand-alone app, very much as Excel on the Web with sharing built in.
 
 I could see that working for them, although the install base and more importantly experience base around Excel is a tough nut to crack. And then there is [Google Docs](/web/20101222035742/http://docs.google.com/) of course, which is not nearly as rich of an experience, but if the use case is excel-on-the-web-with-sharing, it may be good enough.
 

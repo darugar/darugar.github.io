@@ -2,9 +2,9 @@
 layout: parand
 title:  "Feels Like A New Stage Of The Web"
 date:   2010-01-09 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I was doing some log analysis this morning and was struck by the variety of user agents accessing [Xpenser](/web/20120914064712/http://xpenser.com/). Quite a bit of mobile access with quite a variety of different browsers, as well as some more exotic items \(various tablet PCs I don't recognize, etc\). 
+I was doing some log analysis this morning and was struck by the variety of user agents accessing [Xpenser](http://xpenser.com/). Quite a bit of mobile access with quite a variety of different browsers, as well as some more exotic items \(various tablet PCs I don't recognize, etc\). 
 
 Then there's the API access that's been picking up quite significantly - in fact, I wouldn't be surprised if it overtakes regular web access in a little while.
 

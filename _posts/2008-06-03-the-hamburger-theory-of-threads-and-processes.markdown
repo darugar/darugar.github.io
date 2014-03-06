@@ -2,9 +2,9 @@
 layout: parand
 title:  "The Hamburger Theory of Threads and Processes"
 date:   2008-06-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-![Hamburger](/web/20101222043127im_/http://farm4.static.flickr.com/3103/2516409131_a7770858bf_m_d.jpg)
+![Hamburger](http://farm4.static.flickr.com/3103/2516409131_a7770858bf_m_d.jpg)
 
 You're busy making hamburgers and suddenly you get lots of customers. You want to scale your service to take care of more customers more quickly.
 
@@ -18,4 +18,4 @@ If the tools and utensils are very large and valuable, perhaps threads will work
 
 When the tools are small their duplication is less wasteful. The simplicity of the rules makes it easy for you to get your system going, add new items to the menu, and spend a lot less time worrying about your workers waiting for somebody else to put down the cheese.
 
-Photo by [JustABigGeek](/web/20101222043127/http://flickr.com/photos/justabiggeek/).
+Photo by [JustABigGeek](http://flickr.com/photos/justabiggeek/).

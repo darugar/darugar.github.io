@@ -2,7 +2,7 @@
 layout: parand
 title:  "iTunes SUCKS"
 date:   2008-06-18 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I revived a bunch of mp3 onto my windows box. I want to get them onto my iPhone. Should be drop-dead simple.
 

@@ -2,7 +2,7 @@
 layout: parand
 title:  "Python JMS Equivalent?"
 date:   2006-11-21 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I'm thinking through an implementation that I'd like to scale some day. Essentially it's a message processing system with a small bit of state to pass around. Mostly it's a matter of handing messages off between various workers.
 

@@ -2,7 +2,7 @@
 layout: parand
 title:  "America&#8217;s Equipment Obssession"
 date:   2008-04-28 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I haven't yet met a nation more in love with its equipment.
 

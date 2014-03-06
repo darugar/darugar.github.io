@@ -2,7 +2,7 @@
 layout: parand
 title:  "Depressed"
 date:   2008-10-02 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Watching the Palin/Biden debate and the subsequent babbling by the TV talking heads has me depressed. Nothing of substance was said during the entire debate. What we witnessed was an audition for a supporting role in a B movie, not a debate between potential 2nd in commands of the most powerful country in the world.
 

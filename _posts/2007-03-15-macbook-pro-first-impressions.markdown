@@ -2,7 +2,7 @@
 layout: parand
 title:  "MacBook Pro: First Impressions"
 date:   2007-03-15 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 My impressions of the MacBook Pro after 24 hours. This is my first Mac and I have virtually no previous experience with Mac or OS X.
 

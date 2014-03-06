@@ -2,7 +2,7 @@
 layout: parand
 title:  "Access Python Dictionary Keys As Properties"
 date:   2008-10-13 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Say you want to access the values if your dictionary via the dot notation instead of the dictionary syntax. That is, you have:
     

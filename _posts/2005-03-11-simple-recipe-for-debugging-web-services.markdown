@@ -2,13 +2,13 @@
 layout: parand
 title:  "Simple Recipe for Debugging Web Services"
 date:   2005-03-11 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Debugging Web services seems to be a black art, entirely related to your knowledge of the arcane details of your SOAP toolkit. Here's one approach I've found useful:
 
 A SOAP call is just XML over HTTP. All you have to do is capture the XML sent by the SOAP client, inspect it, modify it as you like, and send it to the SOAP provider. 
 
-Grab yourself a copy of [netcat](/web/20101222021439/http://netcat.sourceforge.net/). This is a great little command line utility that "reads and writes data across network connections, using the TCP/IP protocol." You can use it to capture data and send data on a socket very simply, which is what HTTP is about. Unfortunately I don't think there's a windows version; there are alternatives, but I'm too lazy to dig.
+Grab yourself a copy of [netcat](http://netcat.sourceforge.net/). This is a great little command line utility that "reads and writes data across network connections, using the TCP/IP protocol." You can use it to capture data and send data on a socket very simply, which is what HTTP is about. Unfortunately I don't think there's a windows version; there are alternatives, but I'm too lazy to dig.
 
 Compiling and installing this thing is a breeze, and trust me, you'll be happy you did. It's quite a useful little tool. You can follow the supplied instructions for installation, or just do this:
 
@@ -55,7 +55,7 @@ Content-Length: 411
 `
 
 Followed by the XML for the SOAP message. This is the request sent by your SOAP client in all its glory. The very first line and the very last line are the ones you care about. Modify the first line, changing `/test` to whatever path the soap provider lives at. How do you find the value for this? By looking at the WSDL for the service. As an example, open up the XMethods stock quote WSDL:  
-[http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl](/web/20101222021439/http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl)
+<http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl>
 
 You're looking for the location attribute of the address element under the port element, which typically appears at the very end of the WSDL file. In this case:  
 `<soap:address location="http://64.124.140.30:9090/soap"/>`

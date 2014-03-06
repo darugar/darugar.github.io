@@ -2,7 +2,7 @@
 layout: parand
 title:  "How To Run A Command On Multiple Linux Boxes"
 date:   2010-10-29 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 Here's a handy way of running a command on multiple boxes. In this case I wanted to check disk space on a series of machines.
 

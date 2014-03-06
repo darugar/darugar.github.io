@@ -2,7 +2,7 @@
 layout: parand
 title:  "MemCache as a General Protocol"
 date:   2008-03-03 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I've been messing around with [Starling](/web/20101222033503/http://rubyforge.org/projects/starling/). Working well so far, although I haven't done anything fancy with it yet.
 

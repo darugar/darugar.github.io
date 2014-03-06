@@ -2,7 +2,7 @@
 layout: parand
 title:  "Efficiently finding large (size and dimension) images"
 date:   2012-05-09 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 I needed to efficiently find large images \(those with dimensions greater than x\). Here's what I came up with:
 

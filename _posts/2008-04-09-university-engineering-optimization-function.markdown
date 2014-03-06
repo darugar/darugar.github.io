@@ -2,9 +2,9 @@
 layout: parand
 title:  "University Engineering Optimization Function"
 date:   2008-04-09 10:00:00
-categories: stddev
+categories: say/index.php
 ---
-I was surprised by the persistent constraint of "4 years, x dollars" that came up in the [Engineering Dean's conference](/web/20101222034724/http://parand.com/say/index.php/2008/04/07/engineering-skills-for-the-future/). Apparently any change to the university curriculum that challenges the 4 years or the cost basis for graduating is virtually impossible to make. This came up in the context of input from the industry panel suggesting new and increased requirements for graduates \(things like "ability to communicate" and "leadership", which, frankly, I'm not entirely on-board with\).
+I was surprised by the persistent constraint of "4 years, x dollars" that came up in the [Engineering Dean's conference](/say/index.php/2008/04/07/engineering-skills-for-the-future.html). Apparently any change to the university curriculum that challenges the 4 years or the cost basis for graduating is virtually impossible to make. This came up in the context of input from the industry panel suggesting new and increased requirements for graduates \(things like "ability to communicate" and "leadership", which, frankly, I'm not entirely on-board with\).
 
 Apparently the reasons for the immovability of the "4 years, x dollars" are numerous and complex, but an over-riding one is driven by students. If your university takes 4 1/2 years and mine takes 4, it is thought that students will go to mine instead of yours.
 

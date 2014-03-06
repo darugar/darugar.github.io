@@ -2,7 +2,7 @@
 layout: parand
 title:  "The Problem with DSLs"
 date:   2008-01-17 10:00:00
-categories: stddev
+categories: say/index.php
 ---
 DSLs pop up as a Good Thing\(TM\) every once in a while. I'm not entirely opposed to DSLs - there are certainly many cases where they make a lot of sense. But I am opposed to them as a general, let's throw it in there kind of tool.
 
