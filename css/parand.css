@@ -2,6 +2,7 @@ body {
     background-color: #f3f3f3;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
+    line-height: 1.5;
 }
 
 .right  { float: right; }
@@ -34,3 +35,6 @@ p { line-height: 1.5; padding-top: 25px; }
 }
 
 .signature { font-family: "Italianno", cursive; font-size: 30px; padding-bottom: 60px; padding-top: 30px; }
+
+.footer { font-size: 20px; color: #bbb; border-top: 1px solid #ddd; padding-top: 20px; }
+.footer a { color: #69C4F1; }
