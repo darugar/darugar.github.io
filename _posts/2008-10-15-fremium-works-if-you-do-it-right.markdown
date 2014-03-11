@@ -6,7 +6,7 @@ categories: say/index.php
 ---
 ![](http://l.yimg.com/g/images/flickr_logo_gamma.gif.v59899.14)
 
-I am an incredibly cheap bastard frugal. I don't like to pay for things.
+I am an <del>incredibly cheap bastard</del> frugal. I don't like to pay for things.
 
 Yet I just paid for Flickr without hesitation or a moment of doubt. Odd.
 
