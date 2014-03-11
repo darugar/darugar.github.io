@@ -6,7 +6,7 @@ categories: say/index.php
 ---
 [Mark Suster](http://www.bothsidesofthetable.com/2010/03/03/making-the-most-out-of-sitting-on-panels/) and [Fred Wilson](http://www.avc.com/a_vc/2010/03/panels.html) have both posted on the topic of being a good panelist. I'll throw in the best advice I ever got on the topic \(from [Alex](http://teamsoa.com/), who got it from someone else\):
 
-**Disagree with other panelists.**
+__Disagree with other panelists.__
 
 A panel of people agreeing with each other is generally tremendously boring, and any topic that's interesting enough to be brought up as a question to panel must have at least two sides that can be argued.
 
