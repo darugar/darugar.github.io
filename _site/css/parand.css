@@ -16,7 +16,7 @@ body {
 
 .headerrow { padding-bottom: 60px; line-height: 1.2; }
 .headerrow a { color: black; }
-.heading { font-size: 40px; }
+.heading { font-size: 40px; color: #9E0000;}
 
 .subheading {
     color: #bbb; float: right; font-size: 24px; line-height: 60px;
@@ -38,3 +38,5 @@ p { line-height: 1.5; padding-top: 25px; }
 
 .footer { font-size: 20px; color: #bbb; border-top: 1px solid #ddd; padding-top: 20px; }
 .footer a { color: #69C4F1; }
+
+li { line-height: 1.5; }
