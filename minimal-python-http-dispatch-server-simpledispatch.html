@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Minimal Python HTTP Dispatch Server: simpledispatch" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="minimal-python-http-dispatch-server-simpledispatch.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Minimal Python HTTP Dispatch Server: simpledispatch"</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 30 November 2006</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>I was looking for a way to put together simple HTTP based services with as little fuss as possible. In this case that meant having a self contained script with minimal external dependencies, skipping even apache (for various reasons such as not having root access on the box, not having …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>I was looking for a way to put together simple HTTP based services with as little fuss as possible. In this case that meant having a self contained script with minimal external dependencies, skipping even apache (for various reasons such as not having root access on the box, not having apache installed, and just plain being lazy).</p>
+<p>I'm also generally interested in <a href="/web/20101222035722/http://www.parand.com/say/index.php/2005/12/20/script-only-http-servers/">script-only http servers</a> and wanted to experiment.</p>
+<p>Unfortunately I didn't immediately find anything that fit the bill, so I decided to hack something up. I'm fairly happy with the result. This is not intended to be a general purpose HTTP server; in fact, it's intended to be the opposite, serving small, specialized, self contained services. It doesn't serve static content (files and images); Apache and others do a great job of that already.</p>
+<p>To use it, you simply define a function called <em>method_yourmethod</em> and add it to the handler, either by extending the base handler or by <a href="/web/20101222035722/http://www.parand.com/say/index.php/2006/07/17/ruby-style-adding-methods-to-existing-classes-in-python/">monkey patching</a> it in. This method becomes accessible as http://yoursite/yourmethod . Parameters are passed to it by just adding more to the url path; for example: http://yoursite/yourmethod/param1/param2/param3 . These are received by <em>method_yourmethod</em> as a list.</p>
+<p>Under the hood it uses introspection via getattr to find a method to match the URL, and passes it the remaining parameters.</p>
+<p>The easiest way to understand it is to download the <a href="http://www.parand.com/say/misc/simpledispatch.py">simpledispatch.py</a> file and look at the <a href="http://www.parand.com/say/misc/use_simpledispatch.py">use_simpledispatch.py</a> for usage examples. Run simpledispatch.py and access it at <a href="/web/20101222035722/http://localhost:8000/extended">http://localhost:8000/test/a/b/c</a> . Run use_simpledispatch.py and try it out at <a href="/web/20101222035722/http://localhost:8000/extended">http://localhost:8000/extended</a> and <a href="http://localhost:8000/monkey"> http://localhost:8000/monkey</a> .</p>
+<p>Yes, I do know about the myriad wonderful frameworks out there (<a href="/web/20101222035722/http://www.djangoproject.com/">django</a> is my framework of choice at the moment) and I do know about <a href="/web/20101222035722/http://twistedmatrix.com/trac/">twisted</a>. simpledispatch is not a replacement for any of those; it's just a very simple dispatcher.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

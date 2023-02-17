@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Access Python Dictionary Keys As Properties" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="access-python-dictionary-keys-as-properties.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Access Python Dictionary Keys As Properties"</a>
+    <header class="header-article">
+        <div class="text-sm">Mon 13 October 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Say you want to access the values if your dictionary via the dot notation instead of the dictionary syntax. That is, you have:</p>
+<div class="highlight"><pre><span></span><code>d = {&#39;name&#39;:&#39;Joe&#39;, &#39;mood&#39;:&#39;grumpy&#39;}
+</code></pre></div>
+
+<p>And you want to get at "name" and "mood" via </p>
+<div class="highlight"><pre><span></span><code>d.name
+d.mood
+</code></pre></div>
+
+<p>instead of the usual </p>
+<div class="highlight"><pre><span></span><code>d[&#39;name&#39;]
+d[&#39;mood …</code></pre></div>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Say you want to access the values if your dictionary via the dot notation instead of the dictionary syntax. That is, you have:</p>
+<div class="highlight"><pre><span></span><code>d = {&#39;name&#39;:&#39;Joe&#39;, &#39;mood&#39;:&#39;grumpy&#39;}
+</code></pre></div>
+
+<p>And you want to get at "name" and "mood" via </p>
+<div class="highlight"><pre><span></span><code>d.name
+d.mood
+</code></pre></div>
+
+<p>instead of the usual </p>
+<div class="highlight"><pre><span></span><code>d[&#39;name&#39;]
+d[&#39;mood&#39;]
+</code></pre></div>
+
+<p>Why would you want to do this? Maybe you're fond of the Javascript Way. Or you find it more aesthetic. In my case I need to have the same piece of code deal with items that are either instances of Django models or plain dictionaries, so I need to provide a uniform way of getting at the attributes. </p>
+<p>Turns out it's pretty simple: </p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">DictObj</span>(<span class="n">object</span>):
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="nb">d</span>):
+        <span class="nb">self</span>.<span class="nb">d</span> = <span class="nb">d</span>
+
+    <span class="n">def</span> <span class="n">__getattr__</span>(<span class="nb">self</span>, <span class="sr">m):</span>
+<span class="sr">        return self.d.get(m, None)</span>
+
+<span class="nb">d</span> = <span class="n">DictObj</span>(<span class="nb">d</span>)
+<span class="nb">d</span>.<span class="nb">name</span>
+<span class="c1"># prints Joe</span>
+<span class="nb">d</span>.<span class="n">mood</span>
+<span class="c1"># prints grumpy</span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Python Dot Notation Dictionary Access" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="python-dot-notation-dictionary-access.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Python Dot Notation Dictionary Access"</a>
+    <header class="header-article">
+        <div class="text-sm">Fri 24 October 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>In most cases I prefer dot notation over bracket notation for dictionary access. That is, I prefer <code>mydictionary.myfield</code> over <code>mydictionary\['myflield'\]</code>. I also prefer attempted access to undefined keys to return None instead of raising an exception.</p>
+<p>With the help of <a href="http://stackoverflow.com/questions/224026/javascript-style-dot-notation-for-dictionary-keys-unpythonic">this thread</a>, this is what I've been using …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>In most cases I prefer dot notation over bracket notation for dictionary access. That is, I prefer <code>mydictionary.myfield</code> over <code>mydictionary\['myflield'\]</code>. I also prefer attempted access to undefined keys to return None instead of raising an exception.</p>
+<p>With the help of <a href="http://stackoverflow.com/questions/224026/javascript-style-dot-notation-for-dictionary-keys-unpythonic">this thread</a>, this is what I've been using:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">dotdict</span>(<span class="n">dict</span>):
+    <span class="n">def</span> <span class="n">__getattr__</span>(<span class="nb">self</span>, <span class="n">attr</span>):
+        <span class="k">return</span> <span class="nb">self</span>.<span class="nb">get</span>(<span class="n">attr</span>, <span class="n">None</span>)
+    <span class="n">__setattr__</span>= <span class="n">dict</span>.<span class="n">__setitem__</span>
+    <span class="n">__delattr__</span>= <span class="n">dict</span>.<span class="n">__delitem__</span>
+
+&gt;&gt;&gt; <span class="n">dd</span> = <span class="n">dotdict</span>()
+&gt;&gt;&gt; <span class="n">dd</span>.<span class="n">a</span>
+&gt;&gt;&gt; <span class="n">dd</span>.<span class="n">a</span> = <span class="s">&#39;one&#39;</span>
+&gt;&gt;&gt; <span class="n">dd</span>.<span class="n">a</span>
+<span class="s">&#39;one&#39;</span>
+&gt;&gt;&gt; <span class="n">dd</span>.<span class="nb">keys</span>()
+[<span class="s">&#39;a&#39;</span>]
+
+&gt;&gt;&gt; <span class="n">existing</span> = {<span class="s">&#39;a&#39;</span>:<span class="s">&#39;A&#39;</span>, <span class="s">&#39;b&#39;</span>:<span class="s">&#39;B&#39;</span>}
+&gt;&gt;&gt; <span class="n">dot_existing</span> = <span class="n">dotdict</span>(<span class="n">existing</span>)
+&gt;&gt;&gt; <span class="n">dot_existing</span>.<span class="n">a</span>
+<span class="s">&#39;A&#39;</span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

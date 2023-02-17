@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Beanstalkd / Python Basic Tutorial" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="beanstalkd-python-basic-tutorial.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Beanstalkd / Python Basic Tutorial"</a>
+    <header class="header-article">
+        <div class="text-sm">Sun 12 October 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>(First <a href="/say/index.php/2008/10/12/setting-up-beanstalkd-on-ubuntu-for-python.html">install beanstalkd and pybeanstalk</a>)</p>
+<p>Beanstalkd is an in-memory queuing system. It supports named queues (called 'tubes'), priorities, and delayed delivery of messages.</p>
+<p>Terminology: a message is called a <em>job</em>, and queues are called <em>tubes</em>.</p>
+<p>Let's look at an example scenario. Say you want to create 2 tubes, one called …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>(First <a href="/say/index.php/2008/10/12/setting-up-beanstalkd-on-ubuntu-for-python.html">install beanstalkd and pybeanstalk</a>)</p>
+<p>Beanstalkd is an in-memory queuing system. It supports named queues (called 'tubes'), priorities, and delayed delivery of messages.</p>
+<p>Terminology: a message is called a <em>job</em>, and queues are called <em>tubes</em>.</p>
+<p>Let's look at an example scenario. Say you want to create 2 tubes, one called "orders" and another called "emails", place orders into the first tube (or queue) and emails into the second, and have different processes handle orders and emails.</p>
+<p>You can create queues by simply naming and putting messages into them. On the producer side:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">beanstalk</span> <span class="kn">import</span> <span class="n">serverconn</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">99988</span><span class="p">)</span>
+
+<span class="c1"># put a message (or job) into the default queue:</span>
+<span class="n">c</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;first message, into default tube&#39;</span><span class="p">)</span>
+
+<span class="c1"># now start using a named tube:</span>
+<span class="n">c</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;second message, into orders tube&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Now on the consumer:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">beanstalk</span> <span class="kn">import</span> <span class="n">serverconn</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">99988</span><span class="p">)</span>
+
+<span class="c1"># by default your connection will be listening on the &#39;default&#39; tube.</span>
+<span class="c1"># switch it to use the &#39;orders&#39; tube.</span>
+<span class="c1"># This should return the &#39;orders&#39; message and ignore the &#39;default&#39; message:</span>
+<span class="n">c</span><span class="o">.</span><span class="n">watchlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orders&#39;</span><span class="p">]</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">reserve</span><span class="p">()</span>
+<span class="nb">print</span> <span class="n">j</span>
+<span class="c1"># {&#39;data&#39;: &#39;second message, into orders tube&#39;, &#39;jid&#39;: 39, &#39;bytes&#39;: 32, &#39;state&#39;: &#39;ok&#39;}</span>
+</code></pre></div>
+
+<p>You can similarly setup another consumer to listen on only the 'emails' tube, or both, or any other scenario you want.</p>
+<p>Beanstalkd also supports priorities, with 0 being highest priority and higher numbers meaning lower priority. You define message priority with:</p>
+<div class="highlight"><pre><span></span><code>c.put(&#39;low priority message&#39;, pri=999 )
+c.put(&#39;high priority message&#39;, pri=0 )
+
+j = c.reserve()
+print j
+# {&#39;data&#39;: &#39;high priority message&#39;, &#39;jid&#39;: 41, &#39;bytes&#39;: 21, &#39;state&#39;: &#39;ok&#39;}
+# the high priority message was delivered before the low priority message, even
+# though the low priority message was first into the queue
+</code></pre></div>
+
+<p>The beanstalkd consumption model is to "reserve" a message (or job), process it, and then tell beanstalkd you've successfully dealt with the message so it can be thrown away. When you first get the job via c.reserve() you haven't actually fully consumed it; you've just reserved it for processing.</p>
+<p>What does this mean? Imagine a scenario where you reserve a message but your process dies before you have a chance to fully process it. Beanstalkd holds your message in reserve for a period of time, but since it hasn't heard from you confirming you've successfully dealt with the message, it eventually removes the reservation and makes the message available once again for the next consumer to grab. This is a basic handshake between the consumer and the server to allow for some level of resiliency.</p>
+<p>So once you're finished dealing with the message you've reserved, be sure to "delete" it, letting the beanstalkd server know it can throw that message away:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">c</span>.<span class="nv">reserve</span><span class="ss">()</span><span class="w"></span>
+#<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">some</span><span class="w"> </span><span class="nv">processing</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">j</span><span class="w"></span>
+<span class="nv">c</span>.<span class="nv">delete</span><span class="ss">(</span><span class="nv">j</span>[<span class="s1">&#39;jid&#39;</span>]<span class="ss">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>So there you have the basics. Let me know if you're interested and I can cover a few more topics.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

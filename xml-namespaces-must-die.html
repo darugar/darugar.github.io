@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"XML Namespaces must die" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="xml-namespaces-must-die.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"XML Namespaces must die"</a>
+    <header class="header-article">
+        <div class="text-sm">Fri 04 March 2005</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>I <em>hate</em> XML namespaces. I strongly dislike them.</p>
+<p>I will rant about this in detail in the future, as if there hasn't been enough
+vitriol on this topic already. But let me present my current problem:</p>
+<p>gsoap is returning this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;soap-ENV:Envelope</span> <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope …</span></code></pre></div>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>I <em>hate</em> XML namespaces. I strongly dislike them.</p>
+<p>I will rant about this in detail in the future, as if there hasn't been enough
+vitriol on this topic already. But let me present my current problem:</p>
+<p>gsoap is returning this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;soap-ENV:Envelope</span> <span class="na">xmlns:SOAP-ENV=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+<span class="na">xmlns:SOAP-ENC=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;</span>
+<span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="na">xmlns:cmoda=</span><span class="s">&quot;urn:ows:cmoda:0.1&quot;</span><span class="nt">&gt;</span>  
+<span class="nt">&lt;/soap&gt;&lt;soap-ENV:Body&gt;</span>  
+<span class="nt">&lt;cmoda:updateOfferBidsResponse&gt;</span>  
+<span class="nt">&lt;setofresults&gt;</span>  
+<span class="nt">&lt;item&gt;</span>  
+<span class="nt">&lt;source-id&gt;</span>1<span class="nt">&lt;/source&gt;</span>  
+<span class="nt">&lt;sequence-num&gt;</span>1<span class="nt">&lt;/sequence&gt;</span>  
+<span class="nt">&lt;offer-id&gt;</span>123<span class="nt">&lt;/offer&gt;</span>  
+<span class="nt">&lt;success&gt;</span>true<span class="nt">&lt;/success&gt;</span>  
+<span class="nt">&lt;reason&gt;</span>CMODA-UPDATE-OFFER-BID-UNDEF<span class="nt">&lt;/reason&gt;</span>  
+<span class="nt">&lt;/item&gt;</span>  
+<span class="nt">&lt;/setofresults&gt;</span>  
+<span class="nt">&lt;/cmoda&gt;</span>  
+<span class="nt">&lt;/soap&gt;</span>  
+</code></pre></div>
+
+<p>Axis is the client, and doesn't like it. Complains of source-id not being
+correct. Turns out, it has a problem with the namespace. Most SOAP servers
+would return the result as:</p>
+<div class="highlight"><pre><span></span><code> &lt;updateOfferBidsResponse xmlns=&quot;urn:ows:cmoda:0.1&quot;&gt;  
+</code></pre></div>
+
+<p>Note the inclusion of the namespace within this tag.</p>
+<p>I looked thru the XML namespace tutorials, and I can tell this version means
+the child nodes of updateOfferBidsResponse are in the namespace specified
+here. But what does the gsoap version mean? Does</p>
+<div class="highlight"><pre><span></span><code>&lt;cmoda:updateOfferBidsResponse&gt;
+</code></pre></div>
+
+<p>also mean all children of updateOfferBidsResponse are in the cmoda namespace,
+or are they in some other namespace? I'm no genius, but I've looked around a
+bit and I can't find the answer. In any case, either the
+<a href="/web/20120203082040/http://ws.apache.org/axis/">Axis</a> or the
+<a href="/web/20120203082040/http://gsoap2.sourceforge.net/">gSOAP</a> folks didn't quite
+get it either, or better yet, the XML libraries they're looking at got it
+wrong or disagree.</p>
+<p>I'm saying, people smarter than I don't get it.</p>
+<p>I'm trackback'ing <a href="/web/20120203082040/http://www.tbray.org/ongoing/">Mr. Tim Bray's</a> long ago post in
+case by some magic he becomes aware of this and sheds some light my way (he's
+the co-author of the spec, and I've met him once or twice, so why not bother
+him)</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

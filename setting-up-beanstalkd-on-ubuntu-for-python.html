@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Setting Up Beanstalkd on Ubuntu for Python" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="setting-up-beanstalkd-on-ubuntu-for-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Setting Up Beanstalkd on Ubuntu for Python"</a>
+    <header class="header-article">
+        <div class="text-sm">Sun 12 October 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p><a href="http://xph.us/software/beanstalkd/">beanstalkd</a> is a promising in-memory queuing system in the mold of memcached (minimal configuration, just works) with client libraries in a variety of languages. The following worked for me for installing it on Ubuntu 8.04:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+
+<span class="c1"># pre-requisite: libevent.</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">monkey</span><span class="o">.</span><span class="n">org</span><span class="o">/~</span><span class="n">provos</span><span class="o">/</span><span class="n">libevent</span><span class="o">-</span><span class="mf">1.4 …</span></code></pre></div>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p><a href="http://xph.us/software/beanstalkd/">beanstalkd</a> is a promising in-memory queuing system in the mold of memcached (minimal configuration, just works) with client libraries in a variety of languages. The following worked for me for installing it on Ubuntu 8.04:</p>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+
+<span class="c1"># pre-requisite: libevent.</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">monkey</span><span class="o">.</span><span class="n">org</span><span class="o">/~</span><span class="n">provos</span><span class="o">/</span><span class="n">libevent</span><span class="o">-</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">8</span><span class="o">-</span><span class="n">stable</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
+<span class="n">tar</span><span class="w"> </span><span class="n">zxvf</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">monkey</span><span class="o">.</span><span class="n">org</span><span class="o">/~</span><span class="n">provos</span><span class="o">/</span><span class="n">libevent</span><span class="o">-</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">8</span><span class="o">-</span><span class="n">stable</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="n">libevent</span><span class="o">-</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">8</span><span class="o">-</span><span class="n">stable</span><span class="w"></span>
+<span class="o">./</span><span class="n">configure</span><span class="w"></span>
+<span class="n">make</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">install</span><span class="w"></span>
+
+<span class="c1"># add /usr/local/lib to your load library path so beanstalkd can find libevent</span><span class="w"></span>
+<span class="n">vi</span><span class="w"> </span><span class="o">~/.</span><span class="n">bashrc</span><span class="w">   </span><span class="p">(</span><span class="n">add</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">somewhere</span><span class="w"> </span><span class="n">near</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">end</span><span class="p">):</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">LD_LIBRARY_PATH</span><span class="o">=$</span><span class="n">LD_LIBRYARY_PATH</span><span class="p">:</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="w"></span>
+
+<span class="p">(</span><span class="n">exit</span><span class="w"> </span><span class="n">vi</span><span class="p">)</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">~/.</span><span class="n">bashrc</span><span class="w"></span>
+
+<span class="c1"># need git in order to get latest code for beanstalkd</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">git</span><span class="o">-</span><span class="n">core</span><span class="w"></span>
+
+<span class="c1"># grab beanstalkd</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xph</span><span class="o">.</span><span class="n">us</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">beanstalkd</span><span class="o">.</span><span class="n">git</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="n">beanstalkd</span><span class="w"></span>
+<span class="n">make</span><span class="w"></span>
+
+<span class="c1"># now you should be able to start the beanstalkd daemon</span><span class="w"></span>
+<span class="o">./</span><span class="n">beanstalkd</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">99988</span><span class="w"></span>
+
+<span class="c1"># get the python beanstalkd client</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+<span class="n">svn</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pybeanstalk</span><span class="o">.</span><span class="n">googlecode</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">trunk</span><span class="o">/</span><span class="w"> </span><span class="n">pybeanstalk</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">only</span><span class="w"></span>
+
+<span class="n">cd</span><span class="w"> </span><span class="n">pybeanstalk</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">only</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">install</span><span class="w"></span>
+
+<span class="c1"># get pyyaml, a pre-requisite for the python beanstalkd client</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="w"></span>
+<span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">pyyaml</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="n">pyyaml</span><span class="o">/</span><span class="n">PyYAML</span><span class="o">-</span><span class="mf">3.06</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
+<span class="n">tar</span><span class="w"> </span><span class="n">zxvf</span><span class="w"> </span><span class="n">PyYAML</span><span class="o">-</span><span class="mf">3.06</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="n">PyYAML</span><span class="o">-</span><span class="mf">3.06</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">setup</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">install</span><span class="w"></span>
+
+<span class="c1"># open two different shells (or use screen) type the following in the two different shells:</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="n">packages</span><span class="o">/</span><span class="n">pybeanstalk</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">only</span><span class="o">/</span><span class="n">examples</span><span class="w"></span>
+<span class="n">python</span><span class="w"> </span><span class="n">simple_clients</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">producer</span><span class="w"> </span><span class="n">localhost</span><span class="w"> </span><span class="mi">99988</span><span class="w"></span>
+<span class="n">python</span><span class="w"> </span><span class="n">simple_clients</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="n">consumer</span><span class="w"> </span><span class="n">localhost</span><span class="w"> </span><span class="mi">99988</span><span class="w"></span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

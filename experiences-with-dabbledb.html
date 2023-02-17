@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Experiences with DabbleDB?" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="experiences-with-dabbledb.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Experiences with DabbleDB?"</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 02 November 2006</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>I've been interested in <a href="http://dabbledb.com/">DabbleDB</a> for some time now, since they first showed up on the scene with their <a href="http://dabbledb.com/explore/7minutedemo/">Under The Radar</a> demo. I immediately pointed a friend at them, who in turn got very excited and spent a few days integrating his app with theirs, only to give up …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>I've been interested in <a href="http://dabbledb.com/">DabbleDB</a> for some time now, since they first showed up on the scene with their <a href="http://dabbledb.com/explore/7minutedemo/">Under The Radar</a> demo. I immediately pointed a friend at them, who in turn got very excited and spent a few days integrating his app with theirs, only to give up as he hit scaling issues on the DabbleDB side (his data set was too large).</p>
+<p>I took another look, prompted by <a href="http://weblog.infoworld.com/udell/screenroom/dabble_flv.html">Jon Udell's latest screencast</a> (via <a href="http://paul.kedrosky.com/archives/2006/11/01/jon_udell_visit.html">Kedrosky</a>), and I understand better what they're going after. Seems they're targeting small business, where DabbleDB is used as a stand-alone app, very much as Excel on the Web with sharing built in.</p>
+<p>I could see that working for them, although the install base and more importantly experience base around Excel is a tough nut to crack. And then there is <a href="http://docs.google.com/">Google Docs</a> of course, which is not nearly as rich of an experience, but if the use case is excel-on-the-web-with-sharing, it may be good enough.</p>
+<p>But for me the more interesting side is being able to "mash up" DabbleDB into my own app. I have several side projects where having a nice tabular view that could explode out into the rich experience that Dabble offers would be fantastic. You're using my Web app, you come to a nice innocent looking table, you click on it, and you have all the power of Dabble underneath. I love the idea of being able to build multiple views in DabbleDB and offer them as pages in my app - I'd get a much richer experience in my app without having to build the backend and the UI for the data parts.</p>
+<p>However, as it stands the UI is not easily transplantable into my app. The data is offered out in reasonable ways, via an API and RSS, but I already have the data. I'm interested in DabbleDB the app. I don't think I can host my apps on Dabble, nor can I integrate the Dabble interface into into my app.</p>
+<p>DabbleDB could be my online database in a cloud. I can interact with my data via APIs, which is very nice. However, given that Dabble is a startup, do I really want to trust them with my data?</p>
+<p>Funny how that works - with <a href="http://www.amazon.com/S3-AWS-home-page-Money/b/ref=sc_fe_l_2/102-0987217-3863349?ie=UTF8&amp;node=16427261&amp;no=3435361&amp;me=A36L942TSJ2AJA">Amazon's S3</a> I have the opposite reaction. I'd like to back up all my data to it, because being in Amazon's data center gives me a feeling of security. There's also Google Base, but Google is starting to creep me out with their data policies and their <a href="http://www.parand.com/say/index.php/2005/12/13/adsense-login-nonsense/">customer support</a> (disclosure: I work at Yahoo!, but they started creeping me out before I started a Yahoo!).</p>
+<p>So let's forget mashups and go back to the shared-online-excel use case. Recently I was exchanging data with the business folks and ran into a dataset that would be nicely served by DabbleDB: the query and report capabilities would be very useful, as would online collaboration. But I don't think that would work either: I seriously doubt corporate policy would allow me to host confidential data on external servers. I realize there's plenty of data in the world that doesn't need to be secured, but that excludes pretty much all business / corporate data in any reasonably sized company.</p>
+<p>Maybe I'm just not the target audience for DabbleDB at the moment. But I'd like to be. I like the app and I like the idea. I'd like to find a way to use it.</p>
+<p>Have you had experience with DabbleDB or other hosted apps? What do you think?</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

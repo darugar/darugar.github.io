@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"RESTful URL Design For Search And Collections" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="restful-url-design-for-search-and-collections.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"RESTful URL Design For Search And Collections"</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 16 October 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>I'm trying to find the appropriate design for RESTful design of URLs for search and for collections of items.</p>
+<p>The setup: we have two models, Cars and Garages, where Cars can be in Garages. Base URLs:</p>
+<div class="highlight"><pre><span></span><code>/car/xxx           (xxx = car id)
+/garage/yyy     (yyy = garage id)
+</code></pre></div>
+
+<p>Now we want to …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>I'm trying to find the appropriate design for RESTful design of URLs for search and for collections of items.</p>
+<p>The setup: we have two models, Cars and Garages, where Cars can be in Garages. Base URLs:</p>
+<div class="highlight"><pre><span></span><code>/car/xxx           (xxx = car id)
+/garage/yyy     (yyy = garage id)
+</code></pre></div>
+
+<p>Now we want to provide a search for cars - eg. show me all the blue sedans with 4 doors. What's the appropriate URL?</p>
+<div class="highlight"><pre><span></span><code><span class="mf">1</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">cars</span><span class="o">/</span><span class="n">color</span><span class="o">/</span><span class="n">blue</span><span class="o">/</span><span class="n">type</span><span class="o">/</span><span class="n">sedan</span><span class="o">/</span><span class="n">doors</span><span class="o">/</span><span class="mf">4</span><span class="w"></span>
+<span class="mf">2</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">cars</span><span class="o">/</span><span class="n">color</span><span class="p">:</span><span class="n">blue</span><span class="o">/</span><span class="n">type</span><span class="p">:</span><span class="n">sedan</span><span class="o">/</span><span class="n">doors</span><span class="p">:</span><span class="mf">4</span><span class="w"></span>
+<span class="mf">3</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">cars</span><span class="o">/</span><span class="err">?</span><span class="n">color</span><span class="o">=</span><span class="n">blue</span><span class="err">&amp;</span><span class="n">type</span><span class="o">=</span><span class="n">sedan</span><span class="err">&amp;</span><span class="n">doors</span><span class="o">=</span><span class="mf">4</span><span class="w"></span>
+<span class="mf">4</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">car</span><span class="o">/</span><span class="n">search</span><span class="o">/</span><span class="mf">...</span><span class="w"></span>
+</code></pre></div>
+
+<p>None of these are satisfying.</p>
+<p>1 through 3 use "cars" as the base (as opposed to "car"). So the pattern for doing searches / collections would be to pluralize the model. This seems ok.</p>
+<p>1 has arbitrary ordering of the fields and no good way to distinguish fields versus their values. 2 is slightly better, but still doesn't seem right.</p>
+<p>3 uses the QUERYSTRING for the parameters instead of the PATHINFO, and frankly looks better to me, but I've heard of objections to using QUERYSTRING. The problem I have with it is it's not consistent - if I was searching on a single field my URL would probably be: <code>/cars/color/red</code> or something like that. Having the URL drastically change form just because there are more search parameters seems wrong.</p>
+<p>4 uses the "car" base url along with the verb "search". That seems wrong - verbs shouldn't be part of the URL, right? It's been suggested several times though.</p>
+<p>Now a slightly different case - let's find all the cars in a given garage:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">1</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">garage</span><span class="o">/</span><span class="n">yyy</span><span class="o">/</span><span class="n">cars</span><span class="w"></span>
+<span class="mf">2</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">cars</span><span class="o">/</span><span class="err">?</span><span class="n">garage</span><span class="o">=</span><span class="n">yyy</span><span class="w"></span>
+</code></pre></div>
+
+<p>1 seems pretty good in this case.</p>
+<p>Please chime in with your thoughts, either in the comments here or in the <a href="http://stackoverflow.com/questions/207477/restful-url-design-for-search">Stackoverflow thread</a>.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

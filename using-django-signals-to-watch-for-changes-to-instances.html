@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Using Django Signals To Watch For Changes To Instances" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="using-django-signals-to-watch-for-changes-to-instances.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Using Django Signals To Watch For Changes To Instances"</a>
+    <header class="header-article">
+        <div class="text-sm">Wed 11 June 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Say you want to monitor changes to instances of a model and update something based on the changes. In my example I wanted to maintain a sum of the values that had certain characteristics. You can accomplish this with <a href="/web/20101222043406/http://code.djangoproject.com/wiki/Signals">Django Signals</a>.</p>
+<p>Signals are events that fire at various pre-defined moments …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Say you want to monitor changes to instances of a model and update something based on the changes. In my example I wanted to maintain a sum of the values that had certain characteristics. You can accomplish this with <a href="/web/20101222043406/http://code.djangoproject.com/wiki/Signals">Django Signals</a>.</p>
+<p>Signals are events that fire at various pre-defined moments - for example, before an instance is saved, after it's saved, etc. You can subscribe to these events, allowing your callback handler to be called at those moments.</p>
+<p>The code below subscribes to the <em>post_init</em> and <em>post_save signals</em>. <em>post_init</em> gets triggered when a model's __init__ class is done executing, which generally means when a model instance is created for the first time or instantiated from a query to the DB. This is actually too frequent for the use case I have in mind (checking the before-modification and after-modification values of certain fields), but seems to be the only place I can hook in to get the pre-modification values.</p>
+<p><em>post_init</em> gets triggered after the instance is saved to the DB. The code below stores the pre-modification values in <em>pre_save</em> when it gets triggered by the <em>post_init</em> signal, and checks them against the post-modification values when it gets triggered by the <em>post_save</em> signal.</p>
+<p>Note that you'll probably want to clean up <em>pre_save</em> periodically. Unfortunately <em>post_init</em> and <em>post_save</em> are not symmetrical (you'll get a <em>post_init</em> anytime an instance is created, for example when you query the DB), so you can't simply delete from <em>pre_save</em> when the <em>post_save</em> signal gets triggered.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.dispatch</span> <span class="kn">import</span> <span class="n">dispatcher</span>
+<span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">signals</span>
+
+<span class="n">pre_save</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">def</span> <span class="nf">change_watcher</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="s2">&quot;SIGNAL:&quot;</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">report</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span>
+    <span class="k">if</span> <span class="n">signal</span> <span class="o">==</span> <span class="n">signals</span><span class="o">.</span><span class="n">post_init</span><span class="p">:</span>
+        <span class="n">pre_save</span><span class="p">[</span><span class="n">instance</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">field1</span><span class="p">,</span> <span class="n">instance</span><span class="o">.</span><span class="n">field2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pre_save</span><span class="p">[</span><span class="n">instance</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">instance</span><span class="o">.</span><span class="n">field1</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="s2">&quot;Changed field1&quot;</span>
+        <span class="k">if</span> <span class="n">pre_save</span><span class="p">[</span><span class="n">instance</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">instance</span><span class="o">.</span><span class="n">field2</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="s2">&quot;Changed field2&quot;</span>
+
+<span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">post_init</span><span class="p">,</span> <span class="n">signals</span><span class="o">.</span><span class="n">post_save</span><span class="p">):</span>
+    <span class="n">dispatcher</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">change_watcher</span><span class="p">,</span> <span class="n">sender</span> <span class="o">=</span> <span class="n">Expense</span><span class="p">,</span> <span class="n">signal</span> <span class="o">=</span> <span class="n">signal</span><span class="p">)</span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

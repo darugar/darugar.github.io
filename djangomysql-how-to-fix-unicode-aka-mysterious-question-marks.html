@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Django+MySQL: How To Fix Unicode (aka Mysterious Question Marks)" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="djangomysql-how-to-fix-unicode-aka-mysterious-question-marks.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Django+MySQL: How To Fix Unicode (aka Mysterious Question Marks)"</a>
+    <header class="header-article">
+        <div class="text-sm">Wed 11 June 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>If you're running into the problem where unicode items in your Django / MySQL project are displayed as question marks, here's the likely problem and solution, found in this <a href="/web/20101222043056/http://groups.google.com/group/django-users/browse_thread/thread/a9b53db451aa4590/0b99a2f071cc4404#0b99a2f071cc4404">django-users thread</a>:</p>
+<p>The likely problem is that your MySQL encoding is set to latin1, as opposed to utf8. You can check this …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>If you're running into the problem where unicode items in your Django / MySQL project are displayed as question marks, here's the likely problem and solution, found in this <a href="/web/20101222043056/http://groups.google.com/group/django-users/browse_thread/thread/a9b53db451aa4590/0b99a2f071cc4404#0b99a2f071cc4404">django-users thread</a>:</p>
+<p>The likely problem is that your MySQL encoding is set to latin1, as opposed to utf8. You can check this via:</p>
+<div class="highlight"><pre><span></span><code> mysqld --verbose --help | grep character-set
+</code></pre></div>
+
+<p>You'll probably see:</p>
+<div class="highlight"><pre><span></span><code>character-set-server              latin1
+</code></pre></div>
+
+<p>You want this to be uft8. To modify it, edit your my.conf file ( /etc/mysql/my.conf on ubuntu ), adding the following lines to the appropriate sections:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[client]</span><span class="w"></span>
+<span class="na">...</span><span class="w"></span>
+<span class="na">default-character-set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">utf8</span><span class="w"></span>
+
+<span class="k">[mysqld]</span><span class="w"></span>
+<span class="na">...</span><span class="w"></span>
+<span class="na">character-set-server</span><span class="o">=</span><span class="s">utf8</span><span class="w"></span>
+<span class="na">collation-server</span><span class="o">=</span><span class="s">utf8_unicode_ci</span><span class="w"></span>
+<span class="na">init_connect</span><span class="o">=</span><span class="s">&#39;set collation_connection = utf8_unicode_ci;&#39;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Now restart mysql:</p>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/mysql restart
+</code></pre></div>
+
+<p>And alter your existing tables to use the utf8 encoding:</p>
+<div class="highlight"><pre><span></span><code>mysql your_db_name
+
+alter table your_table_name convert to character set utf8;
+</code></pre></div>
+
+<p>And that should do it. </p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

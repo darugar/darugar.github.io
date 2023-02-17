@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Django: Using The Permission System" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="django-using-the-permission-system.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Django: Using The Permission System"</a>
+    <header class="header-article">
+        <div class="text-sm">Fri 19 February 2010</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>I was surprised at how little information I found on making use of Django's permission system. Here are some quick notes on one way to use it:</p>
+<p><em>Groups</em> are groups of users. For example, you could define a group of users who have premium accounts, or have been verified in …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>I was surprised at how little information I found on making use of Django's permission system. Here are some quick notes on one way to use it:</p>
+<p><em>Groups</em> are groups of users. For example, you could define a group of users who have premium accounts, or have been verified in some way, or are somehow special:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">Group</span><span class="p">,</span> <span class="n">Permission</span>
+<span class="n">special_users</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Special Users&#39;</span><span class="p">)</span>
+<span class="n">special_users</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="n">really_special_users</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Super Special Users&#39;</span><span class="p">)</span>
+<span class="n">really_special_users</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Now you have two groups defined and can define permissions for them. Django associates permissions with models (note: not model instances, but models). You'll need to select a model to apply the permissions to, and do a small dance with "ContentType" to find that model's content type:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.contenttypes.models</span> <span class="kn">import</span> <span class="n">ContentType</span>
+<span class="n">somemodel_ct</span> <span class="o">=</span> <span class="n">ContentType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">app_label</span><span class="o">=</span><span class="s1">&#39;myapp&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;somemodel&#39;</span><span class="p">)</span>
+
+<span class="n">can_view</span> <span class="o">=</span> <span class="n">Permission</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Can View&#39;</span><span class="p">,</span> <span class="n">codename</span><span class="o">=</span><span class="s1">&#39;can_view_something&#39;</span><span class="p">,</span>
+                       <span class="n">content_type</span><span class="o">=</span><span class="n">somemodel_ct</span><span class="p">)</span>
+<span class="n">can_view</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="n">can_modify</span> <span class="o">=</span> <span class="n">Permission</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Can Modify&#39;</span><span class="p">,</span> <span class="n">codename</span><span class="o">=</span><span class="s1">&#39;can_modify_something&#39;</span><span class="p">,</span>
+                       <span class="n">content_type</span><span class="o">=</span><span class="n">somemodel_ct</span><span class="p">)</span>
+<span class="n">can_modify</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div>
+
+<p>You've now defined two permissions and can associate them with your Groups:</p>
+<div class="highlight"><pre><span></span><code>special_users.permissions.add(can_view)
+really_special_users.permissions = [can_view, can_modify]
+</code></pre></div>
+
+<p>Our groups and their associated permissions are ready to go. Now we just have to associate these permissions with users:</p>
+<div class="highlight"><pre><span></span><code><span class="n">jack</span><span class="o">=</span><span class="n">User</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="err">&#39;</span><span class="p">[[</span><span class="n">email</span><span class="w"> </span><span class="n">protected</span><span class="p">]](</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="mi">20120325165629</span><span class="o">/</span><span class="n">http</span><span class="o">:</span><span class="c1">//cloudflare.com/email-protection.html)&#39;)</span>
+<span class="n">jack</span><span class="p">.</span><span class="n">groups</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">special_users</span><span class="p">)</span><span class="w"></span>
+
+<span class="n">jill</span><span class="o">=</span><span class="n">User</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="err">&#39;</span><span class="p">[[</span><span class="n">email</span><span class="w"> </span><span class="n">protected</span><span class="p">]](</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="mi">20120325165629</span><span class="o">/</span><span class="n">http</span><span class="o">:</span><span class="c1">//cloudflare.com/email-protection.html)&#39;)</span>
+<span class="n">jill</span><span class="p">.</span><span class="n">groups</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">really_special_users</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>We're all done. Now we can check the users' permissions:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; jack.has_perm(&#39;myapp.can_view_something&#39;)
+True
+&gt;&gt;&gt; jack.has_perm(&#39;myapp.can_modify_something&#39;)
+False
+
+&gt;&gt;&gt; jill.has_perm(&#39;myapp.can_view_something&#39;)
+True
+&gt;&gt;&gt; jill.has_perm(&#39;myapp.can_modify_something&#39;)
+True
+</code></pre></div>
+
+<p>And to use it in your templates:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">if</span> <span class="nv">perms.myapp.can_view_something</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Here is something for you to see.</span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Can&#39;t show you!</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

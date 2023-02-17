@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Hadoop Summit Notes" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="hadoop-summit-notes.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Hadoop Summit Notes"</a>
+    <header class="header-article">
+        <div class="text-sm">Tue 25 March 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p><img alt="" src="http://hadoop.apache.org/images/hadoop-logo.jpg"></p>
+<p>Spent the day at the <a href="http://developer.yahoo.com/hadoop/summit/">Hadoop Summit</a>. Here are some notes and impressions, in undetermined order, on 4 hours of sleep:</p>
+<p>I was impressed by the level of effort, participation, and momentum behind Hadoop. It's now used in so many places and forms the basis of so many projects I …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p><img alt="" src="http://hadoop.apache.org/images/hadoop-logo.jpg"></p>
+<p>Spent the day at the <a href="http://developer.yahoo.com/hadoop/summit/">Hadoop Summit</a>. Here are some notes and impressions, in undetermined order, on 4 hours of sleep:</p>
+<p>I was impressed by the level of effort, participation, and momentum behind Hadoop. It's now used in so many places and forms the basis of so many projects I think it has critical mass. Hadoop is poised to be the default implementation of a very important programming model that's about to become a lot more popular.</p>
+<p>I was also impressed that several of the talks were on non-Hadoop or not-completely-aligned-with Hadoop technologies - eg. DryadLINQ (Hadoop alternative) and JAQL (Pig alternative); it was a refreshing change from the vendor-pitch conferences and talks I've seen lately.</p>
+<p>Random notes:</p>
+<p><strong><a href="http://research.microsoft.com/research/sv/DryadLINQ/">DryadLINQ</a></strong> - treats the data flow as a general graph instead of forcing it into map/reduce. That seems quite nice, although someone did point out map/reduce generalizes to any graph, so it's only a matter of efficiency. Would be interesting to find out how much efficiency and/or more natural programming paradigm there is in Dryad. Apparently it'll be open sourced at some point in time.</p>
+<p>DryadLINQ integrates with <a href="http://en.wikipedia.org/wiki/Language_Integrated_Query">LINQ</a>; in effect Dryad becomes an implementation provider for LINQ. This is also very attractive - to use DryadLINQ you simply write regular LINQ, no special language to learn. I've heard nothing but good things about LINQ, so this seems good. As Micheal pointed out there are a number of other implementation providers for LINQ, such PLINQ for parallelized LINQ on multi-core processors, that DryadLINQ can take advantage of for free. </p>
+<p>LINQ is also nicely integrated with .Net, meaning it's available in a number of languages including C#, so you have access to the full language alongside Dryad. You could write regular C# + LINQ code, flip a switch, and have it run on the grid.</p>
+<p><strong><a href="http://zookeeper.sourceforge.net/">Zoo Keeper</a></strong>. Now this one was interesting - an approach to distributed coordination with simple semantics and good performance. It works something like this: Zoo Keeper provides atomic reads and writes on "nodes", which are simply pieces of data with a name. It uses a filesystem-like setup, so you create nodes in a directory structure - eg. you can write to the node "/servers/slaves/slave-23″, and others can read from it. Processes can set "watch"es on nodes, allowing them to be notified when the node is changed. </p>
+<p><img alt="ZooKeeper" src="http://zookeeper.sourceforge.net/Figures/service.png"></p>
+<p>High performance is achieved by containing the data in memory. Reads can be serviced by any ZooKeeper server and writes are handled by the "leader".</p>
+<p>There's a lot more to Zoo Keeper, check out their site to see more. I'm hoping someone will use it to build a simple queue + pub/sub server.</p>
+<p>The <a href="http://x-trace.net/wiki/doku.php">X-Trace</a> talk was also quite good. In short they patched Hadoop to throw X-Trace events, allowing them to instrument and visualize full execution path of map/reduce jobs. They had a couple of interesting examples - improving processing time of the full Wikipedia corpus from 2 hours to 8 minutes by realizing the reduce step was only running on 2 boxes, and finding a faulty/flaky disk by looking at graphs of the performance of a lagging server. </p>
+<p>X-Trace integration is due to be submitted for inclusion into the Hadoop source. I'm thinking some of the visualization graphs they showed (particularly the toothbrush looking one showing machine utilization for map and reduce steps) should be part of core Hadoop, available for every map/reduce run for free. It's pretty coarse grain info (which machine was running what when), so it can probably be divined from info Hadoop already spits out without the X-Trace additions.</p>
+<p><strong>HIVE</strong> was very interesting. FaceBook's internal data warehouse infrastructure, implemented as a query language on top of Hadoop. They found people are looking for two ways to access the warehouse: the analysts want SQL-like interfaces, and the programmers want to program in any language they want. The former is available via a query language they invented, and the latter is implemented by Hadoop Streaming. </p>
+<p>Hive is in use by ~40 people or ~25% of FaceBook's engineering team (thus FaceBook's engineering team size is 40*4 = 160). It stores a total of 22TB of compressed data, with ~200G daily increase.</p>
+<p>There was a lot more to the summit; maybe I'll write up the rest later. </p>
+<p>Final thought: you could really see the power of open-source at play here. With so many people not only using Hadoop but also taking so many different approaches to building systems on top of it (Pig, JAQL, Hive, Cascading, HBase, Mahout, X-Trace, the Amazon-EC2 integration), you have to think it's going to become the most vibrant implementation of Map/Reduce out there.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

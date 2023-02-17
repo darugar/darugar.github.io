@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"On RSS/Atom replacing SOAP" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="on-rssatom-replacing-soap.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"On RSS/Atom replacing SOAP"</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 21 July 2005</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Kurt Cagle has some interesting thoughts on <a href="http://www.understandingxml.com/archives/2005/07/how_rssatom_is.html">RSS/Atom as a replacement for SOAP</a>. He mentions WS vendors will likely poo-poo the idea, so I'm compelled as a reformed former vendor to comment.</p>
+<p>I think Kurt makes excellent points. A lot of the Web is syndication oriented, and certainly RSS …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Kurt Cagle has some interesting thoughts on <a href="http://www.understandingxml.com/archives/2005/07/how_rssatom_is.html">RSS/Atom as a replacement for SOAP</a>. He mentions WS vendors will likely poo-poo the idea, so I'm compelled as a reformed former vendor to comment.</p>
+<p>I think Kurt makes excellent points. A lot of the Web is syndication oriented, and certainly RSS/Atom will be a better solution than SOAP for those cases. I generally agree that RSS/Atom will gain acceptance and be used in a variety of interesting places faster and wider than SOAP. In fact I just ran into a surprising one that will be unveiled to the public a bit later.</p>
+<p>As Kurt says:</p>
+<blockquote>
+<p>If you make the syndication format too complex for people to use (as I believe is the case with SOAP) then they will migrate to simpler formats as they become available.</p>
+</blockquote>
+<p>Agreed.</p>
+<p>However, there's an important difference between SOAP and RSS/Atom that Kurt doesn't cover. Besides the basic complexity issue associated with SOAP, there's the issue of being able to process the data being passed around. The issue of encoding. This usually shows up as interop issues between toolkits, as well as in the XML-to-language-specific serialization / deserialization errors. It's part of what makes WSDL so complex (although to be sure there are plenty of other factors).</p>
+<p>With SOAP, you have to get the payload very exactly right. Otherwise your consumer or producer will get very angry and spew bile all over you. The SOAP oriented world has attempted to specify encoding in the description (WSDL) and use it in the protocol (SOAP). The implementation hasn't been pretty. To this day it's still difficult to pass around something as simple as an array and be sure the various toolkits can handle it.</p>
+<p>RSS and Atom basically punt on this point. They specify the framework for where to put your data and get out of the way. The actual content is a free for all. In Kurt's example, he declares it "text/xml", and goes on to put Job Control Language (JCL) in there. Nice.</p>
+<p>How is the consumer to know that the contents are JCL, what JCL is, and how to handle it? RSS/Atom don't really say. There's the namespace declaration at the top, but that's about it. </p>
+<p>Compare this with WSDL/SOAP. Your WSDL would have to contain the schema for JCL. You'd likely break it up into methods. You'd figure out what the appropriate input/output for each method should be. Then you'd hope each toolkit calling your service produces exactly the XML you're looking for. If not, you'd get a nasty message telling you some bizarre looking thing could not serialize. </p>
+<p>So which is better? Specifying it exactly or making it a free for all?</p>
+<p>To be fair, free for all is not a great description of what RSS/Atom lead to. It's better described as specifying the core information exchange framework and relying on existing/external means for understanding the specifics of the contents. At a base level, any RSS reader could read my feed and display it, if nothing else. No ugly serialization errors.</p>
+<p>Now all the enterprise architects, the folks who do serious things with serious systems, the ones who frown and grimace to keep our country running, will tell you that we need law and order. We need specific specifications. We need to know exaclty what is in that payload, and by golly, if you can't get it right, you've got no business talking to business. </p>
+<p>So which is it? </p>
+<p><strong>For the Web, free for all is better</strong>. As <a href="http://www.adambosworth.net/">smart</a> <a href="http://www.tbray.org/ongoing/">people</a> have said over and over, successful Web specifications are forgiving of errors. They're easy and forgiving. SOAP is trending towards neither of those. RSS and Atom will boldly go where SOAP should've gone if we'd done it better.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

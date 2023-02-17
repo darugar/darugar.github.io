@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"The Hamburger Theory of Threads and Processes" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="the-hamburger-theory-of-threads-and-processes.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"The Hamburger Theory of Threads and Processes"</a>
+    <header class="header-article">
+        <div class="text-sm">Tue 03 June 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p><img alt="Hamburger" src="http://farm4.static.flickr.com/3103/2516409131_a7770858bf_m_d.jpg"></p>
+<p>You're busy making hamburgers and suddenly you get lots of customers. You want to scale your service to take care of more customers more quickly.</p>
+<p>Threads: all of your workers share a single set of tools, utensils, and the same workspace. One puts mustard on the spreader, turns to grab …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p><img alt="Hamburger" src="http://farm4.static.flickr.com/3103/2516409131_a7770858bf_m_d.jpg"></p>
+<p>You're busy making hamburgers and suddenly you get lots of customers. You want to scale your service to take care of more customers more quickly.</p>
+<p>Threads: all of your workers share a single set of tools, utensils, and the same workspace. One puts mustard on the spreader, turns to grab the bun, and finds that someone else has put ketchup on there while he was turning. So you come up with complex rules about who must ask permission, under what circumstances, for grabbing what tools. Sometimes worker A is waiting for worker B to put down the knife, while B waits for A to put down the cheese, and they end up waiting forever.</p>
+<p>Processes: each worker gets his own tools, utensils, and work space. Any sharing is explicit: worker A must intentionally pass the utensil to worker B.</p>
+<p>More tools are used with processes, so in some sense it's less efficient. But the rules are much simpler.</p>
+<p>If the tools and utensils are very large and valuable, perhaps threads will work. Picture lots of bees each working on a piece of the beehive.</p>
+<p>When the tools are small their duplication is less wasteful. The simplicity of the rules makes it easy for you to get your system going, add new items to the menu, and spend a lot less time worrying about your workers waiting for somebody else to put down the cheese.</p>
+<p>Photo by <a href="http://flickr.com/photos/justabiggeek/">JustABigGeek</a>.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

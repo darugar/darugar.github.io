@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Python itertools.groupby : a clearer example" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="python-itertoolsgroupby-a-clearer-example.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Python itertools.groupby : a clearer example"</a>
+    <header class="header-article">
+        <div class="text-sm">Wed 16 January 2013</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>itertools.groupby allows you to group a sorted list (or any sorted iterable) by some key, giving you the grouping key and the list of items grouped by that key.</p>
+<p>For example, say you have a Django the model:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">Item</span>(<span class="n">models</span>.<span class="n">Model</span>):
+    <span class="n">user</span>     = <span class="n">models</span>.<span class="n">ForeignKey</span>( <span class="n">User</span>, <span class="n">verbose_name</span>=<span class="s">&quot;User&quot;</span>, <span class="n">db_index …</span></code></pre></div>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>itertools.groupby allows you to group a sorted list (or any sorted iterable) by some key, giving you the grouping key and the list of items grouped by that key.</p>
+<p>For example, say you have a Django the model:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">Item</span>(<span class="n">models</span>.<span class="n">Model</span>):
+    <span class="n">user</span>     = <span class="n">models</span>.<span class="n">ForeignKey</span>( <span class="n">User</span>, <span class="n">verbose_name</span>=<span class="s">&quot;User&quot;</span>, <span class="n">db_index</span>=<span class="nb">True</span> )
+    <span class="n">amount</span>   = <span class="n">models</span>.<span class="n">DecimalField</span>( <span class="n">max_digits</span>=<span class="mi">19</span>, <span class="n">decimal_places</span>=<span class="mi">2</span>, <span class="k">default</span>=<span class="mi">0</span>, <span class="n">null</span>=<span class="nb">True</span>, <span class="n">blank</span>=<span class="nb">True</span> )
+</code></pre></div>
+
+<p>And you want to group your Items by User. It'd be something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ordered_items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Item</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">item_list</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="w"> </span><span class="n">ordered_items</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">item</span><span class="o">.</span><span class="n">user</span><span class="w"> </span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="nb">print</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">(</span><span class="n">item_list</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>That'll display the user, followed by all of the Items for that user, for each user.</p>
+<p>Now let's say you wanted to display the user and the total amount for all of the items. You'd do something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ordered_items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Item</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">item_list</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="w"> </span><span class="n">ordered_items</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="n">item</span><span class="p">:</span><span class="w"> </span><span class="n">item</span><span class="o">.</span><span class="n">user</span><span class="w"> </span><span class="p">):</span><span class="w"></span>
+<span class="w">    </span><span class="nb">print</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="w"> </span><span class="n">item</span><span class="o">.</span><span class="n">amount</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">item_list</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

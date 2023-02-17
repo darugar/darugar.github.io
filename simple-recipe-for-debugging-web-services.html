@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Simple Recipe for Debugging Web Services" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="simple-recipe-for-debugging-web-services.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Simple Recipe for Debugging Web Services"</a>
+    <header class="header-article">
+        <div class="text-sm">Fri 11 March 2005</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Debugging Web services seems to be a black art, entirely related to your knowledge of the arcane details of your SOAP toolkit. Here's one approach I've found useful:</p>
+<p>A SOAP call is just XML over HTTP. All you have to do is capture the XML sent by the SOAP client …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Debugging Web services seems to be a black art, entirely related to your knowledge of the arcane details of your SOAP toolkit. Here's one approach I've found useful:</p>
+<p>A SOAP call is just XML over HTTP. All you have to do is capture the XML sent by the SOAP client, inspect it, modify it as you like, and send it to the SOAP provider. </p>
+<p>Grab yourself a copy of <a href="http://netcat.sourceforge.net/">netcat</a>. This is a great little command line utility that "reads and writes data across network connections, using the TCP/IP protocol." You can use it to capture data and send data on a socket very simply, which is what HTTP is about. Unfortunately I don't think there's a windows version; there are alternatives, but I'm too lazy to dig.</p>
+<p>Compiling and installing this thing is a breeze, and trust me, you'll be happy you did. It's quite a useful little tool. You can follow the supplied instructions for installation, or just do this:</p>
+<p><code>tar zxvf netcat-0.7.1.tar.gz  
+cd netcat-0.7.1  
+./configure  
+make  
+cp src/netcat /somewhere/in/your/path</code></p>
+<p>Once you have netcat running, setup it up as a listener:<br>
+<code>netcat -l -p 9000</code></p>
+<p>Now point your web browser at it:<br>
+http://youraddress:9000/test/path</p>
+<p>You should see the HTTP request on the command line where you're running netcat, and your browser waiting for a reply. Since you haven't told netcat to return any data, it'll just sit there. Hit stop on your browser. Congratulations, you've just captured data over a socket.</p>
+<p>To make this useful, you'll probably want to put the captured the data into a file:<br>
+<code>netcat -l -p 9000 &gt; incomingrequest.data</code></p>
+<p>Ok. Now let's try it with SOAP. Setup netcat to listen on port 9000 as shown on the line above. Now, point your SOAP client at it. Take your existing client, and set the 'endpoint' or 'proxy' or whatever your toolkit wants to call it, to <code>http://youraddress:9000/test</code> .</p>
+<p>Run the client. It'll send the request, the request will get captured by netcat, and it'll sit there since there is no reply from netcat. Hit Ctrl-C on the netcat command line.</p>
+<p>Now you can take a look at the incomingrequest.data file to see what your SOAP client is actually sending out. This may be the end of your debugging; you may see something you need to fix.</p>
+<p>If not, we need to take the next step and send the request to the actual SOAP service. This is pretty easy:</p>
+<p><code>cp incomingrequest.data outgoingrequest.data</code></p>
+<p>Open outgoingrequest.data in an editor. You'll see something like this:</p>
+<p><code>POST /test HTTP/1.0  
+Content-Type: text/xml; charset=utf-8  
+Accept: application/soap+xml, application/dime, multipart/related, text/\*  
+User-Agent: Axis/1.2RC2  
+Host: youaddress:9000  
+Cache-Control: no-cache  
+Pragma: no-cache  
+SOAPAction: ""  
+Content-Length: 411</code></p>
+<p>Followed by the XML for the SOAP message. This is the request sent by your SOAP client in all its glory. The very first line and the very last line are the ones you care about. Modify the first line, changing <code>/test</code> to whatever path the soap provider lives at. How do you find the value for this? By looking at the WSDL for the service. As an example, open up the XMethods stock quote WSDL:<br>
+<a href="http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl">http://services.xmethods.net/soap/urn:xmethods-delayed-quotes.wsdl</a></p>
+<p>You're looking for the location attribute of the address element under the port element, which typically appears at the very end of the WSDL file. In this case:<br>
+<code>&lt;soap:address location="http://64.124.140.30:9090/soap"/&gt;</code></p>
+<p>So the location is <code>http://64.124.140.30:9090/soap</code> , and the path we're looking for is the piece after the third slash, <code>/soap</code>. </p>
+<p>Change /test to /soap in your outgoingrequest.data file. Now you're ready to send the request to the provider. Run netcat as:</p>
+<p><code>netcat 64.124.140.30 9090 &lt; outgoingrequest.data</code></p>
+<p>This sends the request that you captured to the service provider, and captures the response from the provider. You may want to capture it to a file:<br>
+<code>netcat 64.124.140.30 9090 &lt; outgoingrequest.data &gt; incomingresponse.data</code></p>
+<p>There you have it. Now you've seen both the request and the response. If you want, you can modify the request and see how the server responds. This is very easy; just modify the XML in the outgoingrequest.data file as you like. The only thing you have to pay attention to is the Content-Length of the request, the last line of the headers we saw above. Make sure you update this to be accurate. If you add five extra characters to your SOAP message, increase the Content-Length header by five. You get the idea.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

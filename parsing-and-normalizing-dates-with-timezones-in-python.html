@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Parsing and Normalizing Dates with Timezones in Python" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="parsing-and-normalizing-dates-with-timezones-in-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Parsing and Normalizing Dates with Timezones in Python"</a>
+    <header class="header-article">
+        <div class="text-sm">Mon 11 February 2008</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>This was a bit painful and not well documented, so documenting here for future reference.</p>
+<p>Say you want to parse and normalize dates with timezones (eg. dates in email headers, I believe based on rfc822). Here's what you do:</p>
+<p>Install <a href="/web/20101222053903/http://pytz.sourceforge.net/">pytz</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">email</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="n">utctimestamp</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">Utils …</span></code></pre></div>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>This was a bit painful and not well documented, so documenting here for future reference.</p>
+<p>Say you want to parse and normalize dates with timezones (eg. dates in email headers, I believe based on rfc822). Here's what you do:</p>
+<p>Install <a href="/web/20101222053903/http://pytz.sourceforge.net/">pytz</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">email</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="n">utctimestamp</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">mktime_tz</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">parsedate_tz</span><span class="p">(</span> <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="p">))</span>
+<span class="n">utcdate</span><span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span> <span class="n">utctimestamp</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">utc</span> <span class="p">)</span>
+<span class="n">pacificdate</span> <span class="o">=</span> <span class="n">utcdate</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;US/Pacific&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>parsedate_tz produces a tuple that can be digested by mktime_tz, which in turn spits out a timestamp based on the UTC timezone. You can turn this into a datetime via fromtimestamp and set its timezone to UTC. Once you have the TZ aware datetime you can manipulate it to your heart's content; the final line above converts it to a US/Pacific date. </p>
+<p>Full example: </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">email</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">datetime</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pytz</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date_eastern</span> <span class="o">=</span> <span class="s1">&#39;Thu, 31 Jan 2008 17:56:13 -0500&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">utctimestamp</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">mktime_tz</span><span class="p">(</span><span class="n">email</span><span class="o">.</span><span class="n">Utils</span><span class="o">.</span><span class="n">parsedate_tz</span><span class="p">(</span> <span class="n">date_eastern</span> <span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">utcdate</span><span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span> <span class="n">utctimestamp</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">utc</span> <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">utcdate</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">UTC</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">utcdate</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;US/Pacific&#39;</span><span class="p">))</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">DstTzInfo</span> <span class="s1">&#39;US/Pacific&#39;</span> <span class="n">PST</span><span class="o">-</span><span class="mi">1</span> <span class="n">day</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">STD</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Taste Vectors: Own, Share Your Tastes via XML" - Parand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="taste-vectors-own-share-your-tastes-via-xml.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Taste Vectors: Own, Share Your Tastes via XML"</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 10 March 2005</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Each time you use Amazon it assembles a better profile of your tastes, your habits, your likes and dislikes. Why should they own your profile? I propose you publish your likes and dislikes via a simple XML format (RSS? Atom?), and we build collaborative filtering tools to help you find …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Each time you use Amazon it assembles a better profile of your tastes, your habits, your likes and dislikes. Why should they own your profile? I propose you publish your likes and dislikes via a simple XML format (RSS? Atom?), and we build collaborative filtering tools to help you find people who share your tastes and lead you to new things you'd like to taste. </p>
+<p>The basic idea is something like this: imagine we had a vector of likes and dislikes for a group of people. For each person, a long array that has a like or dislike for each item. We can use these vectors to calculate similarity between people's tastes, and to predict items they may like but have not tried. This sort of technology is fairly common now, with Amazon and Tivo being two<br>
+well known examples. </p>
+<p>Trouble is, Amazon may have a partial picture of what I'm interested in based on my interactions with them, but they're not sharing it with me. So why don't I keep and publish my own taste vector? If you do the same, and we can convince many others to do the same, we can get some meaningful info floating out there.</p>
+<p>Here's my basic proposal: let's come up with a dead-simple XML format for expressing these vectors, and a convention for where they live - say, http://yoursite/tastevector.xml . We need to agree on a couple of things: a consistent way of referring to items (so we both use the same ID for the same item), and a consistent way of expressing like and dislike. </p>
+<p>Consistent naming is a hard problem. So let's punt and go with a good-enough solution. We can use ISBN for books, IMDB ids for movies, Amazon id's for items carried by Amazon, and we'll figure out something for the rest. </p>
+<p>For expressing like and dislike, we can start with a very simple setup: <em>Like</em>, <em>Dislike</em>, <em>Neutral</em>, and <em>Own</em>, where <em>Own</em> indicates you've bought this thing but haven't bothered to publish an opinion on it.</p>
+<p>If you're a geek like me, we're pretty much there. But for the rest of the world, we'll need tools. This can be very simple - just a web page that lets you type in your item and your opinion of it, and spits back a piece of XML, or maybe updates your taste vector for you. This could be a service that stores and serves up your taste vector so you don't have to worry about it.</p>
+<p>But now we're publishing lots of details about what people like. What about privacy? Well, come up with a fake name or a fake identity for your taste vector if you're worried about it. And don't list the items you'd be embarrassed to tell other people about.</p>
+<p>With me so far? If we can get enough people to do this, a bunch of tools will emerge to gather intelligence from it and suggest new things for you to try. Believe me, this is data people would kill for - better yet, it's data marketers pay lots of money for today. </p>
+<p>Why do I care? Because my tastes are sometimes outside of the norm, and I want to find the other wierdos to turn me onto new wierd things to try. If you've been following the <a href="http://technorati.com/tag/long+tail">long tail</a> discussions, I may be able to convince you that there are a lot of outside-the-norm people there - in fact, it's very likely you are one yourself.</p>
+<p>Why do I think this may work? Well, it'd take a miracle to get this to really go where it could, but the success of <a href="http://technorati.com/tag/technorati">technorati</a> style <a href="http://technorati.com/tag/technorati">folksonomies</a> has me thinking miracles are happening these days. </p>
+<p>If you've read this far you must be interested, so drop a comment in here and we can see if this has any legs…</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/misc.html">misc</a>
+        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>
