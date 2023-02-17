@@ -48,124 +48,6 @@
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/the-hamburger-theory-of-threads-and-processes.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"The Hamburger Theory of Threads and Processes"</a>
-        <p class="leading-relaxed"><p><img alt="Hamburger" src="http://farm4.static.flickr.com/3103/2516409131_a7770858bf_m_d.jpg"></p>
-<p>You're busy making hamburgers and suddenly you get lots of customers. You want to scale your service to take care of more customers more quickly.</p>
-<p>Threads: all of your workers share a single set of tools, utensils, and the same workspace. One puts mustard on the spreader, turns to grab …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/the-hamburger-theory-of-threads-and-processes.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/your-choice-of-university-is-key-short-version.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Your Choice of University Is Key, Short Version"</a>
-        <p class="leading-relaxed"><p>In case you didn't believe my <a href="/web/20101222043140/http://parand.com/say/index.php/2008/03/13/your-choice-of-university-is-key/">earlier ramblings</a>, here's the short version:</p>
-<blockquote>
-<p>A small group of schools account for a disproportionate amount of billionaire education. Just 20 universities and colleges account for 52% of the billionaire graduates while 182 schools count for the remainder.</p>
-</blockquote>
-<p>Via <a href="/web/20101222043140/http://finance.yahoo.com/college-education/article/105175/The-Billionaire-Universities">Yahoo Finance</a>.</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/your-choice-of-university-is-key-short-version.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">31 May 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/sex-and-the-city-second-hand-review.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Sex and the City Second Hand Review"</a>
-        <p class="leading-relaxed"><p>My wife came back from the movie last night, not happy. "It was horrible". "Depressing". "Too serious".</p>
-<p>So there you have it. Not good, apparently.</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/sex-and-the-city-second-hand-review.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">30 May 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/running-shell-scripts-from-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Running Shell Scripts from Python"</a>
-        <p class="leading-relaxed"><p>There are about a million different ways to execute an external program from Python. Here's the right way:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;zcat </span><span class="si">%s</span><span class="s1"> | tr &#39;</span><span class="se">\02\03</span><span class="s1">&#39; &#39;</span><span class="se">\r\n</span><span class="s1">&#39; | ssh </span><span class="si">%s</span><span class="s1"> &quot;hadoop dfs -put - </span><span class="si">%s</span><span class="s1">&quot;&#39;&#39;&#39;</span> <span class="o">%</span>
-     <span class="p">(</span><span class="n">local</span><span class="p">,</span> <span class="n">DEST</span><span class="p">,</span> <span class="n">remote</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Where what you put inside the call statement is what …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/running-shell-scripts-from-python.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">28 May 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/multi-process-vs-multi-threaded-python-performance.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Multi-Process vs. Multi-Threaded Python Performance"</a>
-        <p class="leading-relaxed"><p>Interesting benchmarks in <a href="/web/20101222040541/http://www.python.org/dev/peps/pep-0371/">PEP 371 -- Addition of the Processing module to the standard library</a>. In short, standard Python threads perform worse than non-threaded in almost every benchmark, while the multi-process Processing module generally does as you'd expect and reduces processing time proportional to the number of processors / cores.</p>
-<p>You could …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/multi-process-vs-multi-threaded-python-performance.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">22 May 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/write-the-damned-email.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Write The Damned Email"</a>
-        <p class="leading-relaxed"><p>I gave a talk at UCSD a couple of days ago. After the talk several students came up to me asking about how to find internships and full time positions at Yahoo. As it so happened we had our HR folks right there and they got connected up.</p>
-<p>I told …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/write-the-damned-email.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">20 May 2008</span>
         <div></div>
     </div>
@@ -435,6 +317,115 @@
         </a>
     </div>
     </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">29 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/pimp-my-minivan.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Pimp My Minivan"</a>
+        <p class="leading-relaxed"><p>With 3 kids in tow I'm on the inevitable slope towards owning a minivan. Having long ago given up the last vestiges of pride in what type of car I drive, I'm perfectly ok with this, but the wife is not into minivans.</p>
+<p>Just about everyone I know is in …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/pimp-my-minivan.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">29 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/twitter-use-on-the-rise-in-iran.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Twitter Use On The Rise in Iran?"</a>
+        <p class="leading-relaxed"><p>I've noticed I'm picking up a lot of Twitter followers from Iran in the last few weeks. Anybody else noticing this? Is Twitter hitting mainstream in Iran?</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/twitter-use-on-the-rise-in-iran.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">28 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/americas-equipment-obssession.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"America&#8217;s Equipment Obssession"</a>
+        <p class="leading-relaxed"><p>I haven't yet met a nation more in love with its equipment.</p>
+<p>I live close to a bike path. Every weekend hordes of exercise minded Americans come to bike. It's a wondrous site to see.</p>
+<p>Some subset of these folks are a bit overweight, carrying perhaps an extra 40 or …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/americas-equipment-obssession.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">17 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/minimal-identifying-subset-keyword-based-navigation.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Minimal-Identifying-Subset Keyword Based Navigation"</a>
+        <p class="leading-relaxed"><p>Operating systems and applications need to support a mode wherein typing the smallest identifying subset of keys will cause the appropriate file/function to be opened. Firefox 3 does this for history urls - start typing and you'll see URLs that contain that set of keystrokes anywhere in them. iPhone's safari …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/minimal-identifying-subset-keyword-based-navigation.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">16 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/html-id-syntax.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"HTML ID Syntax"</a>
+        <p class="leading-relaxed"><p>From <a href="http://www.w3.org/TR/REC-html40/types.html#type-name">W3C HTML Recommendation</a>:</p>
+<blockquote>
+<p>ID and NAME tokens must begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_"), colons (":"), and periods (".").</p>
+</blockquote>
+<p>(Noting here because I always forget and have to look this up)</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/html-id-syntax.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">09 April 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/hadoop-is-the-linux-of-data-processing.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Hadoop Is the Linux of Data Processing"</a>
+        <p class="leading-relaxed"><p>Mentioned in passing by Roberto today. Sounds about right to me.</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/hadoop-is-the-linux-of-data-processing.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 </ul>
     
 <div class="pagination-block">
@@ -442,9 +433,9 @@
 <p class="paginator">
         <a href="../category/misc.html">&#8647;</a>
         <a href="../category/misc6.html">&laquo;</a>
-    Page 7 / 12
+    Page 7 / 11
         <a href="../category/misc8.html">&raquo;</a>
-        <a href="../category/misc12.html">&#8649;</a>
+        <a href="../category/misc11.html">&#8649;</a>
 </p>
 </div>
 
