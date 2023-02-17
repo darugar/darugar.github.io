@@ -53,13 +53,20 @@
     <section class='article'>
         
         <!-- div class="entry-summary">
-            <p>Placeholder for article that will detail how I set up this blog using Pelican, migrating away from a very
-old wordpress and then (I think) Jekyll based set up.</p>
+            <h1>Overview</h1>
+<p>I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> as the static website creation framework.</p>
+<p>I created the theme myself, I can open sores it if anyone is interested. It uses tailwind, which is mostly quite good, but a pain when it comes to 
+integration with Pelican: tailwind wants classes added to html, but the …</p>
         </div -->
     
         <div class="entry-content space-y-5">
-            <p>Placeholder for article that will detail how I set up this blog using Pelican, migrating away from a very
-old wordpress and then (I think) Jekyll based set up.</p>
+            <h1>Overview</h1>
+<p>I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> as the static website creation framework.</p>
+<p>I created the theme myself, I can open sores it if anyone is interested. It uses tailwind, which is mostly quite good, but a pain when it comes to 
+integration with Pelican: tailwind wants classes added to html, but the html is generated (as opposed to hand-written), so it's hard to style.</p>
+<p>The website is being served via github pages.</p>
+<p>I wrote a custom script to create redirects from the old wordpress style URLs to the URLs.</p>
+<p>Authoring: I write in markdown, run Pelican to generate the html, commit the output in git, push to github, and the website is updated. Fairly clunky, I'd like to make that smoother.</p>
         </div>
     </section>
     <footer class="footer-article py-8">
