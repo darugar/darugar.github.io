@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parand - Move Review category</title>
+    <title>Setting up the blog with Pelican - Parand</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Open+Sans">
@@ -65,34 +65,41 @@
         <div class="container px-5 py-10 mx-auto">
             <div class="-my-8 divide-y-2 divide-gray-100">
 
-<div class="py-6">
-</div>
+<div class="content-article">
 
-<ul>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/move-review.html">Move Review</a></span>
-        <span class="mt-1 text-gray-500 text-sm">04 February 2008</span>
-        <div><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="../tag/review.html">review </a><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="../tag/movie.html">movie </a><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="../tag/see-it.html">see-it </a></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/no-country-for-old-men-see-it.html" class="text-3xl font-medium text-gray-900 title-font mb-2">No Country For Old Men: See it</a>
-        <p class="leading-relaxed pt-6"><hr>
-<p><a href="http://www.imdb.com/title/tt0477348/">No Country For Old Men</a> is an odd film. The film ends and you're sitting there thinking: huh, that was strange…</p>
-<p>The next day: that was a good movie, I should watch it again…</p>
-<p>The following day: That was a great movie!</p>
-<p>It's the quintessential non-hollywood movie, consistently doing things …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/no-country-for-old-men-see-it.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-</ul>
+  <div class="py-8 row">
+    <a href="setting-up-the-blog-with-pelican.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Setting up the blog with Pelican</a>
+    <header class="header-article">
+        <div class="text-sm">Thu 16 February 2023</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <h1>Overview</h1>
+<p>I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> as the static website creation framework.</p>
+<p>I created the theme myself, I can open sores it if anyone is interested. It uses tailwind, which is mostly quite good, but a pain when it comes to 
+integration with Pelican: tailwind wants classes added to html, but the …</p>
+        </div -->
     
+        <div class="entry-content space-y-5">
+            <h1>Overview</h1>
+<p>I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> as the static website creation framework.</p>
+<p>I created the theme myself, I can open sores it if anyone is interested. It uses tailwind, which is mostly quite good, but a pain when it comes to 
+integration with Pelican: tailwind wants classes added to html, but the html is generated (as opposed to hand-written), so it's hard to style.</p>
+<p>The website is being served via github pages.</p>
+<p>I wrote a custom script to create redirects from the old wordpress style URLs to the URLs.</p>
+<p>Authoring: I write in markdown, run Pelican to generate the html, commit the output in git, push to github, and the website is updated. Fairly clunky, I'd like to make that smoother.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/technical.html">Technical</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="./tag/how-to.html">how-to </a>        </div>
+    </footer>
+    <!-- disqus  -->
 
+  </div>
             </div>
             </div>
           </div>
