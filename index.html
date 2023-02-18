@@ -16,6 +16,30 @@
         body {
           font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
         }
+        h1 { 
+          font-size: x-large !important;
+          font-weight: bold !important;
+        }
+        h2 { 
+          font-size: larger !important;
+          font-weight: bold !important;
+        }
+        div.highlight code {
+          border: 1px solid #AAA;
+          background-color: #fff !important;
+          font-size: medium !important;
+        }
+        table.dataframe {
+          background-color: #fff !important;
+          font-family: monospace !important;
+        }
+        table.dataframe th {
+          text-align: left !important;
+          padding-right: 5px;
+        }
+        section.article a {
+          color: brown !important;
+        }
     </style>
 </head>
 
@@ -48,16 +72,33 @@
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="./category/technical.html">Technical</a></span>
+        <span class="mt-1 text-gray-500 text-sm">18 February 2023</span>
+        <div><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="./tag/technical.html">technical </a><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="./tag/python.html">python </a></div>
+    </div>
+    <div class="md:flex-grow">
+        <a href="/a-practical-introduction-to-polars.html" class="text-3xl font-medium text-gray-900 title-font mb-2">A Practical Introduction to Polars for Python Data Processing</a>
+        <p class="leading-relaxed pt-6"><p><a href="https://www.pola.rs/">Polars</a> is a "lightning-fast DataFrame library for Rust and Python" - if you're familiar with <a href="https://pandas.pydata.org/">Pandas</a>, Polars is quite similar but significantly faster and with a cleaner API. This post is a brief tour of how to set up and use Polars, working through a pragmatic example of the things you …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/a-practical-introduction-to-polars.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="./category/technical.html">Technical</a></span>
         <span class="mt-1 text-gray-500 text-sm">16 February 2023</span>
         <div><a class="inline-block py-1 pr-2 rounded bg-indigo-50 text-indigo-500 text-sm font-medium tracking-widest" href="./tag/how-to.html">how-to </a></div>
     </div>
     <div class="md:flex-grow">
-        <a href="/setting-up-the-blog-via-pelican.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Setting up the blog via Pelican</a>
-        <p class="leading-relaxed"><h1>Overview</h1>
+        <a href="/setting-up-the-blog-with-pelican.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Setting up the blog with Pelican</a>
+        <p class="leading-relaxed pt-6"><h1>Overview</h1>
 <p>I'm using <a href="https://github.com/getpelican/pelican">Pelican</a> as the static website creation framework.</p>
 <p>I created the theme myself, I can open sores it if anyone is interested. It uses tailwind, which is mostly quite good, but a pain when it comes to 
 integration with Pelican: tailwind wants classes added to html, but the …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/setting-up-the-blog-via-pelican.html">More
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/setting-up-the-blog-with-pelican.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>
@@ -73,7 +114,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/everything-sad-is-untrue.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Everything Sad is Untrue: Book Review</a>
-        <p class="leading-relaxed"><p>Author: Daniel Nayeri</p>
+        <p class="leading-relaxed pt-6"><p>Author: Daniel Nayeri</p>
 <p>Quite good, nostalgic, I immediately decided to look for other books by the author.</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/everything-sad-is-untrue.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -91,7 +132,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/parable-of-the-sower.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Parable of the Sower: Book Review</a>
-        <p class="leading-relaxed"><p>Post-apocalyptic non-sci-fi book. Entertaining, not a bad read, not amazing. Verdict: Maybe Read It</p></p>
+        <p class="leading-relaxed pt-6"><p>Post-apocalyptic non-sci-fi book. Entertaining, not a bad read, not amazing. Verdict: Maybe Read It</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/parable-of-the-sower.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
@@ -108,7 +149,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/banshees-of-inisherin.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Banshees of Inisherin: Review</a>
-        <p class="leading-relaxed"><p>Verdict: See it</p>
+        <p class="leading-relaxed pt-6"><p>Verdict: See it</p>
 <p>Entertaining, quite funny, unexpected turn. </p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/banshees-of-inisherin.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -126,7 +167,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/python-itertoolsgroupby-a-clearer-example.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Python itertools.groupby : a clearer example"</a>
-        <p class="leading-relaxed"><p>itertools.groupby allows you to group a sorted list (or any sorted iterable) by some key, giving you the grouping key and the list of items grouped by that key.</p>
+        <p class="leading-relaxed pt-6"><p>itertools.groupby allows you to group a sorted list (or any sorted iterable) by some key, giving you the grouping key and the list of items grouped by that key.</p>
 <p>For example, say you have a Django the model:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">Item</span>(<span class="n">models</span>.<span class="n">Model</span>):
     <span class="n">user</span>     = <span class="n">models</span>.<span class="n">ForeignKey</span>( <span class="n">User</span>, <span class="n">verbose_name</span>=<span class="s">&quot;User&quot;</span>, <span class="n">db_index …</span></code></pre></div></p>
@@ -146,7 +187,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/undo-last-git-commit-merge.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Undo last git commit / merge"</a>
-        <p class="leading-relaxed"><p>Note to self: I quite stupidly merged and committed an unwanted branch into master. Took a surprisingly long time to figure out how to get rid of it:</p>
+        <p class="leading-relaxed pt-6"><p>Note to self: I quite stupidly merged and committed an unwanted branch into master. Took a surprisingly long time to figure out how to get rid of it:</p>
 <div class="highlight"><pre><span></span><code>git reset --hard HEAD^
 </code></pre></div>
 
@@ -167,7 +208,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/efficiently-finding-large-size-and-dimension-images.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Efficiently finding large (size and dimension) images"</a>
-        <p class="leading-relaxed"><p>I needed to efficiently find large images (those with dimensions greater than x). Here's what I came up with:</p>
+        <p class="leading-relaxed pt-6"><p>I needed to efficiently find large images (those with dimensions greater than x). Here's what I came up with:</p>
 <p>First, find images whose file size is greater than 3M:</p>
 <div class="highlight"><pre><span></span><code>find . -name &#39;*jpg&#39; -size 3M &gt; /tmp/big-receipts.txt
 </code></pre></div>
@@ -189,7 +230,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/hands-on-with-the-blackberry-playbook-actually-quite-nice.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Hands On With the BlackBerry Playbook: Actually Quite Nice"</a>
-        <p class="leading-relaxed"><p>Over the weekend I attended the Blackberry hackathon with the hopes of creating an <a href="http://xpenser.com/">Xpenser</a> blackberry app. The RIM folks were nice enough to give away a Playbook to everyone who presented, so I ended up with one.</p>
+        <p class="leading-relaxed pt-6"><p>Over the weekend I attended the Blackberry hackathon with the hopes of creating an <a href="http://xpenser.com/">Xpenser</a> blackberry app. The RIM folks were nice enough to give away a Playbook to everyone who presented, so I ended up with one.</p>
 <p><img alt="Blackberry Playbook" src="http://static8.businessinsider.com/image/4ca106617f8b9a5354760400/blackberry-playbook.jpg"></p>
 <p>I was skeptical, to say the least. I expected a sluggish, ugly …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/hands-on-with-the-blackberry-playbook-actually-quite-nice.html">More
@@ -208,7 +249,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/sftp-specifying-port-ssh-key.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"SFTP: Specifying Port, SSH key"</a>
-        <p class="leading-relaxed"><p><a href="http://www.mkssoftware.com/docs/man1/sftp.1.asp">This page</a> is helpful.</p>
+        <p class="leading-relaxed pt-6"><p><a href="http://www.mkssoftware.com/docs/man1/sftp.1.asp">This page</a> is helpful.</p>
 <p>Specifying port:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sftp</span><span class="w">  </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">-</span><span class="n">oPort</span><span class="o">=</span><span class="mi">6636</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">IdentityFile</span><span class="o">=</span><span class="n">keys</span><span class="o">/</span><span class="n">my</span><span class="o">-</span><span class="n">key</span><span class="p">.</span><span class="n">ssh</span><span class="w"> </span><span class="p">[[</span><span class="n">email</span><span class="w"> </span><span class="n">protected</span><span class="p">]](</span><span class="o">/</span><span class="n">web</span><span class="o">/</span><span class="mi">20120914064722</span><span class="o">/</span><span class="n">http</span><span class="o">:</span><span class="c1">//cloudflare.com/email-protection.html)</span>
 </code></pre></div></p>
@@ -228,7 +269,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/student-loans-are-killing-entrepreneurship.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Student Loans Are Killing Entrepreneurship"</a>
-        <p class="leading-relaxed"><p>If you know me you know I'm a huge fan of entrepreneurship - instead of renting yourself out to someone else, start a business that scales. Be your own pimp.</p>
+        <p class="leading-relaxed pt-6"><p>If you know me you know I'm a huge fan of entrepreneurship - instead of renting yourself out to someone else, start a business that scales. Be your own pimp.</p>
 <p>I gave a guest lecture at UCSD recently espousing this viewpoint. You are cheap right now, I told them, so take …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/student-loans-are-killing-entrepreneurship.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -246,7 +287,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/how-to-dynamically-import-python-modules.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"How To Dynamically Import Python Modules"</a>
-        <p class="leading-relaxed"><p>Here's how you import a python module dynamically: say your module is called "mysettings" and it's in the directory "config". Make sure you have a <code>__init__.py</code> in your "config" directory and use:</p>
+        <p class="leading-relaxed pt-6"><p>Here's how you import a python module dynamically: say your module is called "mysettings" and it's in the directory "config". Make sure you have a <code>__init__.py</code> in your "config" directory and use:</p>
 <div class="highlight"><pre><span></span><code>mysettings = __import__(&quot;config.mysettings&quot;, fromlist=[&quot;config&quot;])
 </code></pre></div>
 
@@ -269,7 +310,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/how-to-scan-multiple-pages-into-a-single-pdf-on-os-x.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"How To Scan Multiple Pages Into a Single PDF on OS X"</a>
-        <p class="leading-relaxed"><p>My new printer has a document feeder which makes scanning of multiple pages easy, but I didn't know how to kick off the scan on OS X. Turns out it's quite easy:</p>
+        <p class="leading-relaxed pt-6"><p>My new printer has a document feeder which makes scanning of multiple pages easy, but I didn't know how to kick off the scan on OS X. Turns out it's quite easy:</p>
 <ul>
 <li>Open the OS X Preview app</li>
 <li>Go to the File menu and select Import From Scanner</li>
@@ -290,7 +331,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/titanium-studio-how-to-view-android-log-messages.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Titanium Studio: How To View Android Log Messages"</a>
-        <p class="leading-relaxed"><p>Apparently with Titanium Studio it's not possible to see log messages in the Titanium console.</p>
+        <p class="leading-relaxed pt-6"><p>Apparently with Titanium Studio it's not possible to see log messages in the Titanium console.</p>
 <p>Here's how you see your log messages:</p>
 <div class="highlight"><pre><span></span><code>adb logcat | grep &quot;TiAPI&quot;
 </code></pre></div>
@@ -312,7 +353,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/easy-way-to-view-cookies-in-chrome.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Easy way to view cookies in Chrome"</a>
-        <p class="leading-relaxed"><p>Here's an easy way to see the cookies for the current site in Chrome:</p>
+        <p class="leading-relaxed pt-6"><p>Here's an easy way to see the cookies for the current site in Chrome:</p>
 <div class="highlight"><pre><span></span><code><span class="n">javascript</span><span class="o">:</span><span class="kc">void</span><span class="o">(</span><span class="n">document</span><span class="o">.</span><span class="na">cookie</span><span class="o">=</span><span class="n">prompt</span><span class="o">(</span><span class="n">document</span><span class="o">.</span><span class="na">cookie</span><span class="o">,</span><span class="n">document</span><span class="o">.</span><span class="na">cookie</span><span class="o">));</span><span class="w"></span>
 </code></pre></div>
 
@@ -333,7 +374,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/uniforms.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Uniforms"</a>
-        <p class="leading-relaxed"><p>I went to a school that required uniforms (private school in England). We were forced to be uniform.</p>
+        <p class="leading-relaxed pt-6"><p>I went to a school that required uniforms (private school in England). We were forced to be uniform.</p>
 <p>This afternoon driving by the high school near my house I was amused to see uniforms everywhere - here a patch of girls all wearing the same types of shorts, with hair pulled …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/uniforms.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -351,7 +392,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/future-of-work-and-new-dial-tones.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Future of Work and New Dial Tones"</a>
-        <p class="leading-relaxed"><p>My friend <a href="http://paul.kedrosky.com/archives/2010/12/the_future_of_w.html">Paul Kedrosky's post on one of his main investment theses</a>, the application of currently consumer oriented technologies to business (DropBox, Twitter, FaceBook, Yelp, …), got me thinking about how the future of work will look.</p>
+        <p class="leading-relaxed pt-6"><p>My friend <a href="http://paul.kedrosky.com/archives/2010/12/the_future_of_w.html">Paul Kedrosky's post on one of his main investment theses</a>, the application of currently consumer oriented technologies to business (DropBox, Twitter, FaceBook, Yelp, …), got me thinking about how the future of work will look.</p>
 <p><img alt="" src="http://parand.com/say/misc/retro-phone.jpg"></p>
 <p>I've made a career of working far from where I live. I've generally considered …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/future-of-work-and-new-dial-tones.html">More
@@ -370,7 +411,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/generating-static-html-from-markdown-in-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Generating static html from markdown in python"</a>
-        <p class="leading-relaxed"><p>Note to self, for future reference.</p>
+        <p class="leading-relaxed pt-6"><p>Note to self, for future reference.</p>
 <ul>
 <li><a href="http://markdoc.org/ref/markup">Markdown reference</a></li>
 </ul>
@@ -394,7 +435,7 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/retention-bonuses-dont-work.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Retention Bonuses Don&#8217;t Work"</a>
-        <p class="leading-relaxed"><p>Retention bonuses don't work because they only motivate presence, not contribution.</p></p>
+        <p class="leading-relaxed pt-6"><p>Retention bonuses don't work because they only motivate presence, not contribution.</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/retention-bonuses-dont-work.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
@@ -411,26 +452,8 @@ integration with Pelican: tailwind wants classes added to html, but the …</p><
     </div>
     <div class="md:flex-grow">
         <a href="/mocom-interviews-me.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"mo.com Interviews Me"</a>
-        <p class="leading-relaxed"><p>The lovely folks at mo.com recently asked me about my experiences at Yahoo, the background and business model for Xpenser, and thoughts on funding and raising VC money. The interview has been <a href="http://www.mo.com/parand-darugar">published here</a>, drop by and take a gander.</p></p>
+        <p class="leading-relaxed pt-6"><p>The lovely folks at mo.com recently asked me about my experiences at Yahoo, the background and business model for Xpenser, and thoughts on funding and raising VC money. The interview has been <a href="http://www.mo.com/parand-darugar">published here</a>, drop by and take a gander.</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/mocom-interviews-me.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">29 October 2010</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow">
-        <a href="/how-to-run-a-command-on-multiple-linux-boxes.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"How To Run A Command On Multiple Linux Boxes"</a>
-        <p class="leading-relaxed"><p>Here's a handy way of running a command on multiple boxes. In this case I wanted to check disk space on a series of machines.</p>
-<p>Assuming you're using bash as your shell, the following will list the hostname and run df on machines racb13 through racb28 and spit out the …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/how-to-run-a-command-on-multiple-linux-boxes.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>
