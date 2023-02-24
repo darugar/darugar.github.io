@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/</loc>
-<lastmod>2023-02-18T15:35:19-00:00</lastmod>
+<lastmod>2023-02-23T19:05:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -20,6 +20,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.parand.com/pages/writings.html</loc>
 <lastmod>2023-01-13T23:33:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/a-non-technical-explanation-of-neural-networks.html</loc>
+<lastmod>2023-02-18T23:38:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/machine-learning-vs-ai-whats-the-difference.html</loc>
+<lastmod>2023-02-18T23:38:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/the-parable-of-the-physics-professor.html</loc>
+<lastmod>2023-02-18T23:38:00-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1692,7 +1713,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/category/misc.html</loc>
-<lastmod>2013-01-16T10:00:00-07:53</lastmod>
+<lastmod>2023-02-18T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1720,7 +1741,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/category/technical.html</loc>
-<lastmod>2023-02-18T23:33:00-07:53</lastmod>
+<lastmod>2023-02-18T23:38:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/tag/machine-learning.html</loc>
+<lastmod>2023-02-18T23:38:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/tag/misc.html</loc>
+<lastmod>2023-02-18T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1818,7 +1853,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/author/parand-darugar.html</loc>
-<lastmod>2023-02-18T23:33:00-07:53</lastmod>
+<lastmod>2023-02-18T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
