@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Non-Technical Explanation of ChatGPT - Parand</title>
+    <link rel="shortcut icon" type="image/png" href="/theme/images/favico.png"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+        h1 { 
+          font-size: x-large !important;
+          font-weight: bold !important;
+        }
+        h2 { 
+          font-size: larger !important;
+          font-weight: bold !important;
+        }
+        div.highlight code {
+          border: 1px solid #AAA;
+          background-color: #fff !important;
+          font-size: medium !important;
+        }
+        table.dataframe {
+          background-color: #fff !important;
+          font-family: monospace !important;
+        }
+        table.dataframe th {
+          text-align: left !important;
+          padding-right: 5px;
+        }
+        section.article a {
+          color: brown !important;
+        }
+
+        .article-summary h1 {
+          margin-top: 10px !important;
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XGEBWVBEKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XGEBWVBEKP');
+</script>
+
+<link rel="canonical" href="https://www.parand.com/drafts/a-non-technical-explanation-of-chatgpt.html" />
+
+</head>
+
+
+<body>
+  
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100 rounded max-w-6xl">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <a href="drafts/a-non-technical-explanation-of-chatgpt.html" class="text-3xl font-medium text-gray-900 title-font mb-2">A Non-Technical Explanation of ChatGPT</a>
+    <header class="header-article">
+        <div class="text-sm">Sat 29 April 2023</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Continuing the series of non-technical explainers, let's figure out how ChatGPT (and in general Large Language Models, 
+or LLMs) work. It's helpful but not necessary to read the <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">non-technical explanation of AI</a> first, if you feel like it read that and come back.</p>
+<h1>Fill In The Blank</h1>
+<p>Let's play a …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Continuing the series of non-technical explainers, let's figure out how ChatGPT (and in general Large Language Models, 
+or LLMs) work. It's helpful but not necessary to read the <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">non-technical explanation of AI</a> first, if you feel like it read that and come back.</p>
+<h1>Fill In The Blank</h1>
+<p>Let's play a quick game of fill in the blank:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+to be or not to _____
+</blockquote>
+
+<p>Why did you immediately think of the word <em>be</em> to fill in that blank, instead of the word <em>banana</em> or <em>fish</em>? Because you've seen the phrase many times and your brain has learned the most likely next word is <em>be</em>.</p>
+<p>Let's do another one:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+rock and ____
+</blockquote>
+
+<p>Did you think of the word <em>roll</em>? Why? Because that's the word you see most often following the words <em>rock and</em>.</p>
+<p>How about this one:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+I am very _____
+</blockquote>
+
+<p>This is less clear - the next word depends on the context.</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+I just ran a marathon. I am very _____
+</blockquote>
+
+<p>Perhaps now you would say <em>tired</em>. Or <em>happy</em>, or <em>proud</em>.</p>
+<p>Your brain is picking the most likely next word based on the context of the sentence and based on what words it's seen most frequently in that context.</p>
+<h1>Aliens and CatGPT</h1>
+<p>In an astonishing turn of events a race of alien cats have landed on earth. Since you are <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">the world's foremost cat expert</a> you have been chosen to communicate with them.</p>
+<p><img src="/static/images/alien-cat.png"></p>
+<p>Your old boss from the cat classification days walks in and drops a massive print out of all the alien 
+cat communications we've ever seen on your desk.</p>
+<p>"Speak cat!" she commands.</p>
+<p>Unfortunately you don't speak alien cat.</p>
+<p>You page through the print outs - it looks like gibberish.</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+zoog zeeg zag.
+zoog zeeg kaz.
+zoog zeeg bah.
+rag zoog zeeg.
+rag zoog ko.
+kaz rag.
+zap zoog zeeg.
+...
+</blockquote>
+
+<h1>Markov to the Rescue</h1>
+<p>You suddenly remember your friend Markov who's always talking about languages, words,
+and their relationships. Maybe he can help. You show him the alien cat communications and
+ask him if he can help you say something in cat.</p>
+<p>"Yes!" he exclaims - "we can do this. We need a frequency table. We're going to create the
+cat sentence one word at a time. We just need to know what word should follow each other word"</p>
+<p>He shows you how to create the frequency table - you just note down how many times each word follows another.
+It takes a while to go through all the cat communications and do the counting. You end up with:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+<i>First word</i>: zoog . <i>Next Words</i>: zeeg 5 times, ko 1 time<br>
+<i>First word</i>: zeeg . <i>Next Words</i>: zag 1 time, kaz 1 time, bah 1 time<br>
+...
+</blockquote>
+
+<p>This table gives you a lot of help in forming sentences in alien cat language: you can start 
+with some alien word, then look up that word in the above table to see what the most 
+frequently occuring word next word is. For example, if you start with <em>zoog</em>, you'd choose
+<em>zeeg</em> as the next word since that's the what the table above shows. Then you look up
+<em>zeeg</em> in the above table, pick the word to follow it, and so forth, till you've formed a
+sentence. You are playing fill-in-the-blank by looking at the last word of your response
+and filling in the blank based on the most frequently occuring next word in the table.</p>
+<p>Does this work? It would be good if we could test it with English and see how well it does.</p>
+<p>You notice the book <a href="https://www.gutenberg.org/ebooks/11">Alice in Wonderland</a>
+sitting on your friend's desk and decide to create a frequency table for that.</p>
+<p><img src="/static/images/alice-in-wonderland-cat.png"></p>
+<p>You use that frequency table to create Alice in Wonderland inspired sentences. Here's an example of the result:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+the door, when i beg your verdict," it was quite plainly through the bottle, i'm afraid that they had its nest.
+</blockquote>
+
+<p>You can try this out for yourself on <a href="http://almeopedia.com/markovtest.html">almeopedia</a>.</p>
+<p>That's not great. Why is it so nonsensical? Think back to our fill in the blank examples at the start of 
+this post: in order to pick a good next word you need context. If someone asked you what word should 
+appear after <em>rock</em>, you'd have a hard time picking something reasonable, but if they gave you 
+<em>rock and</em>, you'd fairly quickly think of <em>roll</em>.</p>
+<p>What would happen if you considered two words instead of a single word for your context? 
+For one thing your frequency table creation would become harder - now instead of a single line for
+each word, you'd have a line for each word pair. You'd have to gather stats for all the two word 
+permutations, which is a lot more than the single word case.</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+<i>First two words</i>: zoog zeeg. <i>Next Words</i>: zag 1 time, kaz 1 time, bah 1 time<br>
+<i>First two words</i>: zeeg ko. <i>Next Words</i>: end-of-sentence 1 time, blah 2 times, zing 5 times<br>
+...
+</blockquote>
+
+<p>But this would give you much better results. Here's an example of two word context results, again
+based on Alice in Wonderland:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+the hatter, and, burning with curiosity, she decided on going into the garden.
+</blockquote>
+
+<p>You can try this out for yourself on <a href="http://www.almeopedia.com/markov3test.html">almeopedia</a>.</p>
+<p>That's looking better, it almost makes sense. Let's keep going - instead of two words
+of context, how about three? </p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+The Hatter’s remark seemed to have no sort of chance of her ever getting out of the water, and seemed to quiver all over with diamonds, and walked two and two, as the soldiers did.
+</blockquote>
+
+<p>Four?</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+So she swallowed one of the cakes, and was delighted to find that she knew the name of nearly everything there.
+</blockquote>
+
+<p>This is a little too good. It turns out a very similar sentence exists in the original Alice in Wonderland text:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+So she swallowed one of the cakes, and was delighted to find that she
+began shrinking directly.
+</blockquote>
+
+<p>Our simple method of picking the most likely next word can result in the system memorizing the text snippets -
+given long enough context, the next most likely word is exactly the word that appeared in the original text 
+following that context. </p>
+<p>We can fix this by introducing some randomness - instead of always picking the most likely next word, we can
+pick somewhat likely next words. This way we're less likely to regurgitate the original text.</p>
+<p>The good news is our method seems to work for English, so it'll probably work for alien cat language as well.</p>
+<p><i>Aside: You might run into the term "stochastic" as you look into language models - this just means randomly determined.
+For example, you might hear people argue whether these systems are <strong>Stochastic Parrots</strong>, implying the systems
+are simply parroting back the original text that they saw, with some randomness thrown in.
+</i></p>
+<h1>Large Language Models</h1>
+<p>ChatGPT and many other Large Language Models (LLMs) do essentially what you did above: they examine
+a very large amount of human communication, gather stats on what words are most likely to follow
+other words, and plays a continous game of fill-in-the-blank. You give them some context (your prompt or
+question), and they create the reply one word at a time by selecting the word most likely to appear next.
+They respond with a word, then look at their internal stats to pick a word to follow their first word, then
+a word to follow their second word, and so forth, one word at a time, until they've formed a response.</p>
+<h1>The Explosion</h1>
+<p>You decide to create the frequency table with 4 words of context for the alien cat language
+so you can create high quality sentences. You roll up your sleaves and get to work.</p>
+<p>A week goes by and you notice you've barely made a dent - you've filled up several notebooks with
+frequency counts, and you still have so very many word combinations to go through. What's going on?</p>
+<p>It's the explosion of course. You may have heard the term <em>combinatorial explosion</em>, where increasing
+the number of items you consider catastrophically increases the number of calculations you have
+to do or items you have to remember. Our case is a bit worse as we face <em>permutational explosion</em>. </p>
+<p><img src="/static/images/cat-fireworks.png"></p>
+<p>Think back to our simple frequency table above. If we were using a single word as our context window
+and wanted to have the vocabulary of an average native English speaker (30000 words),
+we'd need 30000 rows, one for each word in the English language. </p>
+<p>If we use two words of context we'd potentially be looking at the number of two word permutations of those 
+30k words. That's about 900 million rows. With three words of context we could have 27 trillion
+rows. That's a lot of rows. In practice the number of permutations is significantly smaller because many word permutations
+don't occur in English, but we'd still get to very large numbers very quickly.</p>
+<h1>Learning, Deeply</h1>
+<p>In the next post in this series we'll look at how to use deep learning to effectively deal with the
+explosion and create CatGPT.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="https://www.parand.com/category/misc.html">Misc</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/explainer.html">explainer </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/machine-learning.html">machine-learning </a>        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

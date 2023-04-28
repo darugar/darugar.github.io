@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/</loc>
-<lastmod>2023-04-21T08:59:17-00:00</lastmod>
+<lastmod>2023-04-27T19:57:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1742,6 +1742,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.parand.com/tag/misc.html</loc>
 <lastmod>2023-04-21T23:38:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/tag/explainer.html</loc>
+<lastmod>2023-04-14T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
