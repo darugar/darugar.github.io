@@ -42,7 +42,7 @@
           color: brown !important;
         }
 
-        .article-summary h1 {
+        .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
     </style>
@@ -133,11 +133,10 @@ I just ran a marathon. I am very _____
 <h1>Aliens and CatGPT</h1>
 <p>In an astonishing turn of events a race of alien cats have landed on earth. Since you are <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">the world's foremost cat expert</a> you have been chosen to communicate with them.</p>
 <p><img src="/static/images/alien-cat.png"></p>
-<p>Your old boss from the cat classification days walks in and drops a massive print out of all the alien 
-cat communications we've ever seen on your desk.</p>
+<p>Your boss walks in and drops a massive print out of all the alien cat communications on your desk.</p>
 <p>"Speak cat!" she commands.</p>
 <p>Unfortunately you don't speak alien cat.</p>
-<p>You page through the print outs - it looks like gibberish.</p>
+<p>You page through the print outs - it looks like pages and pages of gibberish.</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
 zoog zeeg zag.
 zoog zeeg kaz.
@@ -153,28 +152,37 @@ zap zoog zeeg.
 <p>You suddenly remember your friend Markov who's always talking about languages, words,
 and their relationships. Maybe he can help. You show him the alien cat communications and
 ask him if he can help you say something in cat.</p>
-<p>"Yes!" he exclaims - "we can do this. We need a frequency table. We're going to create the
-cat sentence one word at a time. We just need to know what word should follow each other word"</p>
+<p>"Yes!" he exclaims - "we can do this. We will create our response one word at a time, just
+by picking the best word to say next, and keep going until we have a sentence"</p>
+<p>"But how do we know what the best word to say next is? Don't we need to know what the words 
+mean?"</p>
+<p>"Nope, we just need to know what word to say next"</p>
+<p>"That... doesn't seem like it would work"</p>
+<p>"Let me show you", says Markov, and grabs the book on his desk, 
+<a href="https://www.gutenberg.org/ebooks/11">Alice in Wonderland</a>.</p>
+<p><img src="/static/images/alice-in-wonderland-cat.png"></p>
+<p>"We just need to know what word to say next. The best word to say next is simply
+the word that shows up most frequently after the word we're looking at. All we
+have to do is make a table of how often each word follows another word. We'll call
+this a frequency table"</p>
 <p>He shows you how to create the frequency table - you just note down how many times each word follows another.
-It takes a while to go through all the cat communications and do the counting. You end up with:</p>
+It takes a while to go through all Alice in Wonderland and do the counting. You end up with:</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
-<i>First word</i>: zoog . <i>Next Words</i>: zeeg 5 times, ko 1 time<br>
-<i>First word</i>: zeeg . <i>Next Words</i>: zag 1 time, kaz 1 time, bah 1 time<br>
+<pre>Next word after "Alice" → was: 17 times,  and: 16 times,  thought: 12 times,  had: 11 times, ...
+Next word after "sat" → down: 9 times,  silent: 2 times,  still: 2 times,  for: 1 times, ...
+Next word after "was" → a: 31 times,  the: 20 times,  not: 12 times,  going: 11 times, ...
+Next word after "and" → the: 80 times,  she: 52 times,  then: 31 times,  was: 19 times, ...
+Next word after "a" → little: 59 times,  very: 25 times,  large: 20 times,  great: 17 times
+Next word after "very" → much: 10 times,  soon: 7 times,  curious: 6 times,  glad: 5 times
 ...
+</pre>
 </blockquote>
 
-<p>This table gives you a lot of help in forming sentences in alien cat language: you can start 
-with some alien word, then look up that word in the above table to see what the most 
-frequently occuring word next word is. For example, if you start with <em>zoog</em>, you'd choose
-<em>zeeg</em> as the next word since that's the what the table above shows. Then you look up
-<em>zeeg</em> in the above table, pick the word to follow it, and so forth, till you've formed a
-sentence. You are playing fill-in-the-blank by looking at the last word of your response
-and filling in the blank based on the most frequently occuring next word in the table.</p>
-<p>Does this work? It would be good if we could test it with English and see how well it does.</p>
-<p>You notice the book <a href="https://www.gutenberg.org/ebooks/11">Alice in Wonderland</a>
-sitting on your friend's desk and decide to create a frequency table for that.</p>
-<p><img src="/static/images/alice-in-wonderland-cat.png"></p>
-<p>You use that frequency table to create Alice in Wonderland inspired sentences. Here's an example of the result:</p>
+<p>This table gives you a lot of help in forming sentences in the style of Alice in Wonderland. 
+For example, if you start with the word <em>Alice</em>, then you'd look that up in the above table
+and see that the most frequent next word is <em>was</em>. And after <em>was</em> you would select <em>a</em>. After <em>a</em>
+you would get <em>little</em>. You'd end up with <em>Alice was a little</em>.</p>
+<p>How well does this work? Let's create some sentences:</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
 the door, when i beg your verdict," it was quite plainly through the bottle, i'm afraid that they had its nest.
 </blockquote>
@@ -189,13 +197,15 @@ For one thing your frequency table creation would become harder - now instead of
 each word, you'd have a line for each word pair. You'd have to gather stats for all the two word 
 permutations, which is a lot more than the single word case.</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
-<i>First two words</i>: zoog zeeg. <i>Next Words</i>: zag 1 time, kaz 1 time, bah 1 time<br>
-<i>First two words</i>: zeeg ko. <i>Next Words</i>: end-of-sentence 1 time, blah 2 times, zing 5 times<br>
+<pre>Next word after "Alice was" → not: 3 times,  beginning: 2 times,  very: 2 times, ...
+Next word after "was not" → a: 3 times,  here: 1 times,  going: 1 times ...
+Next word after "not here" → before: 1 times
+Next word after "not a" → moment: 2 times,  bit: 2 times,  serpent: 2 times
+</pre>
 ...
 </blockquote>
 
-<p>But this would give you much better results. Here's an example of two word context results, again
-based on Alice in Wonderland:</p>
+<p>Let's create a sentence with this and see how it looks:</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
 the hatter, and, burning with curiosity, she decided on going into the garden.
 </blockquote>
@@ -212,7 +222,7 @@ The Hatter’s remark seemed to have no sort of chance of her ever getting out o
 So she swallowed one of the cakes, and was delighted to find that she knew the name of nearly everything there.
 </blockquote>
 
-<p>This is a little too good. It turns out a very similar sentence exists in the original Alice in Wonderland text:</p>
+<p>Hmm. This is a little too good. It turns out a very similar sentence exists in the original Alice in Wonderland text:</p>
 <blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
 So she swallowed one of the cakes, and was delighted to find that she
 began shrinking directly.
@@ -230,35 +240,19 @@ are simply parroting back the original text that they saw, with some randomness 
 </i></p>
 <h1>Large Language Models</h1>
 <p>ChatGPT and many other Large Language Models (LLMs) do essentially what you did above: they examine
-a very large amount of human communication, gather stats on what words are most likely to follow
-other words, and plays a continous game of fill-in-the-blank. You give them some context (your prompt or
+a very large amount of human communication, gather stats (or probabilities) on what words are most likely 
+to follow other words, and play a continous game of fill-in-the-blank. You give them some context (your prompt or
 question), and they create the reply one word at a time by selecting the word most likely to appear next.
 They respond with a word, then look at their internal stats to pick a word to follow their first word, then
 a word to follow their second word, and so forth, one word at a time, until they've formed a response.</p>
-<h1>The Explosion</h1>
-<p>You decide to create the frequency table with 4 words of context for the alien cat language
-so you can create high quality sentences. You roll up your sleaves and get to work.</p>
-<p>A week goes by and you notice you've barely made a dent - you've filled up several notebooks with
-frequency counts, and you still have so very many word combinations to go through. What's going on?</p>
-<p>It's the explosion of course. You may have heard the term <em>combinatorial explosion</em>, where increasing
-the number of items you consider catastrophically increases the number of calculations you have
-to do or items you have to remember. Our case is a bit worse as we face <em>permutational explosion</em>. </p>
-<p><img src="/static/images/cat-fireworks.png"></p>
-<p>Think back to our simple frequency table above. If we were using a single word as our context window
-and wanted to have the vocabulary of an average native English speaker (30000 words),
-we'd need 30000 rows, one for each word in the English language. </p>
-<p>If we use two words of context we'd potentially be looking at the number of two word permutations of those 
-30k words. That's about 900 million rows. With three words of context we could have 27 trillion
-rows. That's a lot of rows. In practice the number of permutations is significantly smaller because many word permutations
-don't occur in English, but we'd still get to very large numbers very quickly.</p>
-<h1>Learning, Deeply</h1>
-<p>In the next post in this series we'll look at how to use deep learning to effectively deal with the
-explosion and create CatGPT.</p>
+<h1>To be Continued...</h1>
+<p>In the next post in this series we'll look at the problems you'll run into with this method and 
+how deep learning helps us overcomes those problems.</p>
         </div>
     </section>
     <footer class="footer-article py-8">
-        <div class="tags-and-categories"><span class="italic">Category: </span><a href="https://www.parand.com/category/misc.html">Misc</a>
-| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/explainer.html">explainer </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/machine-learning.html">machine-learning </a>        </div>
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="https://www.parand.com/category/machine-learning.html">Machine Learning</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/explainer.html">explainer </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/machine-learning.html">machine-learning </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/llm.html">llm </a>        </div>
     </footer>
     <!-- disqus  -->
 
