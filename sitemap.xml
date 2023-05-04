@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/</loc>
-<lastmod>2023-05-04T08:09:13-00:00</lastmod>
+<lastmod>2023-05-04T08:13:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -26,7 +26,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/a-non-technical-explanation-of-chatgpt.html</loc>
-<lastmod>2023-04-29T23:38:00-07:00</lastmod>
+<lastmod>2023-05-04T08:10:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1713,7 +1713,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/category/machine-learning.html</loc>
-<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<lastmod>2023-05-04T08:10:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1755,21 +1755,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/tag/explainer.html</loc>
-<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<lastmod>2023-05-04T08:10:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.parand.com/tag/machine-learning.html</loc>
-<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<lastmod>2023-05-04T08:10:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.parand.com/tag/llm.html</loc>
-<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<lastmod>2023-05-04T08:10:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1874,7 +1874,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/author/parand-darugar.html</loc>
-<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<lastmod>2023-05-04T08:10:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
