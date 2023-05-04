@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/</loc>
-<lastmod>2023-05-01T12:00:12-00:00</lastmod>
+<lastmod>2023-05-04T07:55:51-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -20,6 +20,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.parand.com/pages/writings.html</loc>
 <lastmod>2023-01-13T23:33:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/a-non-technical-explanation-of-chatgpt.html</loc>
+<lastmod>2023-04-29T23:38:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1706,7 +1713,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/category/machine-learning.html</loc>
-<lastmod>2023-04-14T23:38:00-07:53</lastmod>
+<lastmod>2023-04-29T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1747,22 +1754,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.parand.com/tag/misc.html</loc>
-<lastmod>2023-04-21T23:38:00-07:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://www.parand.com/tag/explainer.html</loc>
-<lastmod>2023-04-14T23:38:00-07:53</lastmod>
+<lastmod>2023-04-29T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.parand.com/tag/machine-learning.html</loc>
-<lastmod>2023-04-14T23:38:00-07:53</lastmod>
+<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/tag/llm.html</loc>
+<lastmod>2023-04-29T23:38:00-07:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.parand.com/tag/misc.html</loc>
+<lastmod>2023-04-21T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1860,7 +1874,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.parand.com/author/parand-darugar.html</loc>
-<lastmod>2023-04-21T23:38:00-07:53</lastmod>
+<lastmod>2023-04-29T23:38:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

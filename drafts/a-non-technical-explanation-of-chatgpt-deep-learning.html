@@ -123,7 +123,9 @@ to do or items you have to remember. The technical term is <a href="https://en.w
 ( I just ran a marathon. I am very _____ ) would require more context. How do we deal with the explosion?</p>
 <p>You ask Markov and he gets a sour look on his face - "Yeah, this is a a problem. I don't have a great solution."</p>
 <h1>Learning, Deeply</h1>
-<p>Maybe we can use 
+<p>How do we deal with this explosion of calculation? Since we can't directly solve the problem maybe we can
+wave our hands and try the magic of Deep Learning.</p>
+<p>Let's see if we can use 
 <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">our experience from finding cats</a> here. 
 That also seemed a very complex problem, and we solved that using layers of workers to focus on different aspects
 of the problem, and formed our final opinion based on the opinions of the layers of workers giving
@@ -140,16 +142,31 @@ word. Can we turn that into a problem with rewards and punishments?</p>
 clever and use a frequency table to solve this. Let's not be clever: just like the cat classification
 task, let's not define the methods and process for solving the problem - let's instead hand it
 off to our layers of workers and reward and punish them until they figure it out.</p>
-<p>How do we turn our book of cat communication into a prediction task? Simple: grab 4 words of context 
+<p>How do we turn our book of cat communication into a prediction task? Simple: grab any 4 words of context 
 and hand them off to the group of workers and ask them to predict the next word. We know what the 
 next word should be (it's just the word that followed those words in the big book of cat communication) -
 if they get it right we give them a reward, if they get it wrong we give them a slap.</p>
-<p>This is great - we can open the book of alien cat communication on any page, pick 4 words, give that
+<p>This is great - we can open the book of alien cat communication on any page, pick 4 consecutive words, give that
 to the workers, and train them on what the next word should be. Now we have our training examples
 and our rewards and punishments.</p>
 <p>You grab your slapping gloves and lots of rewards and call your layers of trusty workers and start
 the the training.</p>
-<h1>It Works. Sort Of</h1>
+<h1>Deep Learning For Hard Problems</h1>
+<p>This is a great example of a situation where deep learning can be applied effectively:</p>
+<ul class="list-disc list-inside">
+    <li>Traditional methods (in this case, creating the exact frequency table) don't work</li>
+    <li>We have a lot of data</li>
+    <li>We can create a large number of training examples</li>
+</ul>
+
+<p>We have turned the task of creating a sentence into a predict-the-next-word task, and
+we have turned the book of cat communication into many examples that we can train on.</p>
+<p>The architecture of the deep learning system that powers ChatGPT is quite a bit
+more complex than what we discussed in the <a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html">non-technical explanation of AI</a> post, but the core ideas are the same. I'll
+touch on some of the technical aspects in future posts, but for now think of the same multi-layer
+groups of workers where rewards / punishments are propogated back through the network to train
+it to produce the desired output.</p>
+<h1>CatGPT Works. Sort Of</h1>
 <p>After lots of training you and your colleagues are getting good at predicting the next word
 in the cat language, and you're enjoying the rewards. But you're a bit stuck - there's only
 so much you can do with 4 words of context. Your colleagues are asking for more and more words
@@ -159,7 +176,7 @@ you give people more and more words their area of focus becomes too large - they
 foreign words to look at at a time. You get to a point where each worker can't effectively focus 
 on more words. Your training stalls and you're not getting as much reward as you want. Your 
 colleagues start complaining about losing out on the rewards - the loss is too high!</p>
-<h1>Attention Please!</h1>
+<h1>Attention Please</h1>
 <p>Your context window has gotten too large and things are stalling. You start doing the same thing
 you did with the cat classifying task: you tell each worker to focus on a small window of
 words and give their opinion on that instead of looking at all the words in the context. It's
@@ -197,6 +214,20 @@ to make sure people aren't just memorizing the whole cat communication book, so 
 one part of the book secret during training, and you use that part to test how good 
 your next-word prediction is. It's looking good. </p>
 <p>You have successfully built a Large (Cat) Language Model.</p>
+<h1>Transformers and Attention</h1>
+<p>One of the key breakthroughs that enabled the creation of sophisticated language
+models was the invention of <em>transformers</em>, which is the technical term for what we called 
+<em>attention</em> above. If you're interested in the details and examples I'd recommend
+<a href="https://jalammar.github.io/illustrated-transformer/">the illustrated transfomer</a> and 
+<a href="https://towardsdatascience.com/deconstructing-bert-part-2-visualizing-the-inner-workings-of-attention-60a16d86b5c1">visualizing attention</a>, both
+do a great job of giving you the math and intuition.</p>
+<p>I'll steal one of the illustrated transfomer's images to give you a real world example of 
+what attention looks like - the image shows what one of the "workers" is paying attention 
+to in the sentence  "The animal didn't cross the street because it was too tired":</p>
+<p><img src="https://jalammar.github.io/images/t/transformer_self-attention_visualization.png"></p>
+<p>The worker here is working on the word <em>it</em>, and the diagram shows <em>it</em> is paying the most
+attention to <em>The</em> and <em>animal</em>. That makes sense: in the above sentence <em>it</em> is referring to
+<em>The animal</em>, and the network has found a way allow that pronoun to be aware of its noun.</p>
 <h1>Cat Communication</h1>
 <p>You decide to try it out with the alien cats.</p>
 <p><img src="/static/images/alien-cat.png"></p>
@@ -209,8 +240,34 @@ at a time. </p>
 a "conversation". You're not sure what you or the cat are saying, but you're conversing.</p>
 <p>You notice some of your responses seem to upset the cat. You'd like to avoid that, so you
 start giving feedback to your team, increasing rewards for responses that make the cat
-happy and reducing rewards for responses that upset the cat. You call this Cat-in-Loop-Training.</p>
-<p>You have saved humanity, communicated with aliens, and created CatGPT.</p>
+happy and reducing rewards for responses that upset the cat. After a while your team
+learns to provide its responses in a way that makes the cat happy. You call this Cat-in-Loop-Training.</p>
+<h1>Human-in-the-Loop and Fine Tuning</h1>
+<p>ChatGPT is the fastest growing application in history - it went from zero to 1 million users
+in 5 days and to 100 million users in just two months.</p>
+<p>But did you know that GPT-3, the base language model that was subsequently improved to power
+ChatGPT, was released in June 2020? What happend in those 2.5 years - why didn't GPT-3 capture
+our imagination the way ChatGPT did?</p>
+<p>One of the main reasons was the "fine tuning" of the model based on human feedback to make it
+conversational and helpful. </p>
+<p>The base language model, GPT-3, was trained on a very large amount of text from very many sources.
+This taught the system to be able to create cohesive sentences and paragraphs. Think of this as
+a computer that has learned to speak.</p>
+<p>The human-in-the-loop fine tuning took this base system and further trained it to have chat-like
+conversations: the sentences created by the system were no longer just judged on how cohesive
+and valid they were, but also on how well they mimicked a helpful conversation.</p>
+<p>ChatGPT is polite and helpful because it was trained to be that way - the language model itself
+is capable of many forms of communication, including being rude and unhelpful, since the very
+large amount of text it was trained on included rude and unhelpful conversations. ChatGPT
+was specifically trained to be a helpful chatbot, as opposed to a sarcastic layabout.</p>
+<p>This idea of taking a base language model and further training it ("fine tuning" it) for your specific
+needs is very powerful: instead of having to create a complete model from scratch, you can take 
+existing models off the shelf and tune them to do what you want.</p>
+<p><em>(Another significant reason ChatGPT was so successful while GPT-3 was ignored was its easy to use and easy to understand
+user interface, but we'll conveniently ignore that here)</em></p>
+<h1>CatGPT</h1>
+<p>Congratulations, you have saved humanity, communicated with aliens, and perhaps understood a bit more
+about large language models and ChatGPT.</p>
 <p><img src="/static/images/man-cat-sunset.png"></p>
         </div>
     </section>
