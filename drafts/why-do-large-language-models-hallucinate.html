@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Do Large Language Models Hallucinate? - Parand</title>
+    <link rel="shortcut icon" type="image/png" href="/theme/images/favico.png"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+        h1 { 
+          font-size: x-large !important;
+          font-weight: bold !important;
+        }
+        h2 { 
+          font-size: larger !important;
+          font-weight: bold !important;
+        }
+        div.highlight code {
+          border: 1px solid #AAA;
+          background-color: #fff !important;
+          font-size: medium !important;
+        }
+        table.dataframe {
+          background-color: #fff !important;
+          font-family: monospace !important;
+        }
+        table.dataframe th {
+          text-align: left !important;
+          padding-right: 5px;
+        }
+        section.article a {
+          color: brown !important;
+        }
+
+        .article-summary h1, .article-summary p {
+          margin-top: 10px !important;
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XGEBWVBEKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XGEBWVBEKP');
+</script>
+
+<link rel="canonical" href="https://www.parand.com/drafts/why-do-large-language-models-hallucinate.html" />
+
+</head>
+
+
+<body>
+  
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100 rounded max-w-6xl">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <h1><a href="drafts/why-do-large-language-models-hallucinate.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Why Do Large Language Models Hallucinate?</a></h1>
+    <header class="header-article">
+        <div class="text-sm">Tue 30 May 2023</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>This question from my friend James (hi James!) surprised me, even though it's
+an obvious and excellent question.</p>
+<h1>What Does Hallucination Mean Here?</h1>
+<p>Sometimes ChatGPT and other Large Language Models (LLMs) make things up. They will
+state, with apparent confidence, things that are made up or not true. </p>
+<p><img src="/static/images/robot-thought.png"></p>
+<p>My favorite …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>This question from my friend James (hi James!) surprised me, even though it's
+an obvious and excellent question.</p>
+<h1>What Does Hallucination Mean Here?</h1>
+<p>Sometimes ChatGPT and other Large Language Models (LLMs) make things up. They will
+state, with apparent confidence, things that are made up or not true. </p>
+<p><img src="/static/images/robot-thought.png"></p>
+<p>My favorite example
+is ChatGPT's very convincing ability to pretend it can access the internet, even though
+it really can't. <a href="https://simonwillison.net/2023/Mar/10/chatgpt-internet-access/">Simon Willison has a great writeup</a> 
+on this where he provides copious examples - for example, you can ask ChatGPT to summarize
+stories that don't exist by making up URLs for those stories, and ChatGPT will
+dutifully provide a summary for the non-existent stories. Try it yourself - go to
+the <a href="https://chat.openai.com/">ChatGPT site</a> and ask it to
+<em>"Summarize this story: https://www.nytimes.com/2023/05/03/business/made-up-headline-here.html"</em>.</p>
+<p>Here's my example</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+Summarize this story: https://www.theonion.com/god-scores-for-arsenal-1785001
+</blockquote>
+
+<p>ChatGPT's response:</p>
+<blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200">
+The article from The Onion satirically reports that God, the divine creator of the universe, has scored a goal for the Arsenal football club. The article describes the crowd's reaction to the divine intervention as "ecstatic" and quotes fictional players and coaches who express amazement at the event. The article pokes fun at the intense passion and excitement that football fans have for their teams by exaggerating it to a ridiculous extent, suggesting that even God is invested in the outcome of the game
+</blockquote>
+
+<p>Here's another interesting one:</p>
+<p><a href="https://twitter.com/CPAutoScribe/status/1654210706500374528"><img src="/static/images/twitter-gpt-hallucination.png" width="600"></a></p>
+<p>You'll also see ChatGPT making up references to scientific papers that don't exist, inventing facts,
+and generally confidently lying to you.</p>
+<h1>Why Lie, ChatGPT?</h1>
+<p>The reason the question surprised me was: I'm shocked it ever gets things right. </p>
+<p>ChatGPT and Large Language Models are probabilistic models that are able to achieve high
+levels of performance via very many rounds of training. See the <a href="/a-non-technical-explanation-of-chatgpt.html">Non Technical Explanation of ChatGPT</a> post for an overview - in short, they see many examples of 
+human communication and learn to mimic that by creating responses one word at a time, 
+picking words that are probabilistically most likely to appear next. </p>
+<p>If you've ever trained one of these systems you know that for much of its life it spews
+nonsense - initially its output looks random, gradually improving to have valid structure
+and grammar, then starting to have cohesive subjects, and eventually to be able to carry
+concepts across sentences. The progression is: random nonsense, babbling idiot, babbling
+ignoramus, simpleton, person, and finally the embodiment of all that is true and holy.</p>
+<p>My point is: until it reaches the point of enlightenment and oneness with the universe,
+you expect it to get things wrong. That's the nature of a probablistic 
+system that improves over time: "incorrect" outputs are to be expected.</p>
+<p>If you're technically inclined try playing around with LLMs that have lower parameter counts
+or are less trained and you'll see what I mean: they frequently get things wrong or "off".
+<strong>It's a testiment to ChatGPT's capabilities that it leapt across the uncanny valley and went
+straight to all-seeing sage, giving people the expectation that it would not err.</strong></p>
+<h1>There's No Database</h1>
+<p>We are used to computer systems that give us true and consistent answers. Data is stored in
+some source of truth - a database or file, for example - and software allows to interact
+with that data.</p>
+<p>In the case of LLMs there is no database. Knowledge is not explicitly stored in a source of
+truth - instead it's recorded in the connections and weights of the model. When you interact
+with ChatGPT it's not looking up a fact in a database and putting it into English. Instead it is
+probabilistically picking words that go well together, and those words often express cohesive
+and true concepts.</p>
+<p>Recall how we created ChatGPT: we trained it on a large corpus of human communication, and then
+we fine-tuned it to respond in a conversational, chat-like manner, and to be helpful.</p>
+<p>When you ask it to summarize a non-existent story it does its best to find concepts that relate
+to that story and to put those concepts into words. In the made-up Onion story above, it
+picked up concepts based on the context it was given: it knows <em>TheOnion</em> is a satirical website,
+it knows <em>Arsenal</em> is a football club (aided by the appearance of the word <em>scores</em>), and it knows
+what God is. Given that context it does a commendable job of fabricating those concepts into a
+plausible English paragraph. It is doing exactly what we trained it to do.</p>
+<h1>What's the Fix?</h1>
+<p>There are a number of very interesting research approaches to fixing this problem that I will
+not cover here - look up "LLM alignment" for a rabbit hole of philosophical and technical information.</p>
+<p>The approach I'm excited about in the short term is: give your LLM a database. </p>
+<p>The concept is simple: augment your language model with a source of truth that can inject facts
+into the context (prompt) of the language model. This way the set of "concepts" the LLM is working with
+directly include relevant and valid information for your query.</p>
+<p>How do we do this? One current approach is to first lookup information related to your
+query in a source of truth, then to inject the results of that lookup into the prompt you
+give to the LLM. For example, if you ask for a summary of a story at a given URL, you could first
+download the contents of that story, inject those contents into the LLM prompt, then
+include your original prompt. The LLM now has its built-in knowledge from its training, it has
+the relevant facts from the lookup we did, and it has your instructions from the prompt
+you provided it.</p>
+<p>Bing employs this approach in its chat interface: first it turns your prompt into a search string,
+then it searches the internet for that string, then it gives the results of the search as well as
+your prompt to ChatGPT.</p>
+<p>Another good example is <a href="https://filechat.io/">filechat.io</a>, which lets you use LLMs to interact with
+your own data: you give it a set of documents, and it intelligently feeds the relevant parts
+of those documents as well as your prompt to an LLM, allowing you to employ the power of ChatGPT
+on your proprietary data. </p>
+<p>The application of LLMs to internal enterprise data is a fantastically exciting area, one which
+promises to create a massive amount of value going forward.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="https://www.parand.com/category/machine-learning.html">Machine Learning</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/explainer.html">explainer </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/machine-learning.html">machine-learning </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/llm.html">llm </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/chatgpt.html">chatgpt </a>        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>
