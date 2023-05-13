@@ -90,6 +90,32 @@
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">04 September 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/python-generator-expressions.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Python Generator Expressions"</a>
+        <p class="leading-relaxed pt-6"><p>I wasn't aware of generator expressions:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">wwwlog</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">open</span><span class="ss">(</span><span class="s2">&quot;access-log&quot;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">bytecolumn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">(</span><span class="nv">line</span>.<span class="nv">rsplit</span><span class="ss">(</span><span class="nv">None</span>,<span class="w"> </span><span class="mi">1</span><span class="ss">)</span>[<span class="mi">1</span>]<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">wwwlog</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">bytes</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="ss">(</span><span class="nv">int</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">bytecolumn</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="ss">)</span><span class="w"></span>
+<span class="nv">print</span><span class="w"> </span><span class="s2">&quot;Total&quot;</span>,<span class="w"> </span><span class="nv">sum</span><span class="ss">(</span><span class="nv">bytes</span><span class="ss">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>Similar to list comprehensions, but evaluated lazily. <a href="http://www.voidspace.org.uk/python/weblog/arch_d7_2008_08_30.shtml#e1008">Voidspace describes it</a>:</p>
+<blockquote>
+<p>None of the generators are consumed until the …</p></blockquote></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/python-generator-expressions.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">02 September 2008</span>
         <div></div>
     </div>
@@ -417,35 +443,6 @@
         <p class="leading-relaxed pt-6"><p>Excellent article on <a href="http://effbot.org/zone/simple-top-down-parsing.htm">Simple Top-Down Parsing in Python</a>. The nud and led business could be better explained, but the rest of the article and code is great. I learned several things I hope to employ shortly.</p>
 <p>I'm trying to remember if we studied this in compiler class or not. I …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/parsing-top-down-in-python.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">14 July 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/django-retrieving-backward-related-objects.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Django: Retrieving Backward Related Objects"</a>
-        <p class="leading-relaxed pt-6"><p>Another one in the category of always-forget-how-to-do-this-so-noting-here:</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">Entry</span>(<span class="n">models</span>.<span class="n">Model</span>):
-    <span class="n">blog</span> = <span class="n">models</span>.<span class="n">ForeignKey</span>(<span class="n">Blog</span>)
-
-<span class="n">b</span> = <span class="n">Blog</span>.<span class="n">objects</span>.<span class="nb">get</span>(<span class="nb">id</span>=<span class="mi">1</span>)
-<span class="n">b</span>.<span class="n">entry_set</span>.<span class="nb">all</span>() <span class="c1"># Returns all Entry objects related to Blog.</span>
-
-<span class="c1"># b.entry_set is a Manager that returns QuerySets.</span>
-<span class="n">b</span>.<span class="n">entry_set</span>.<span class="n">filter</span>(<span class="n">headline__contains</span>=<span class="s">&#39;Lennon&#39;</span>)
-<span class="n">b</span>.<span class="n">entry_set</span>.<span class="nb">count</span>()
-</code></pre></div>
-
-<p>Full docs <a href="/web/20101222050110/http://www.djangoproject.com/documentation/db-api/#backward">here …</a></p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/django-retrieving-backward-related-objects.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>
