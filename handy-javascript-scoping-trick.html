@@ -98,11 +98,11 @@
         <!-- div class="entry-summary">
             <p>Neat <a href="/web/20101222040408/http://www.dustindiaz.com/scoping-anonymous-functions/">Javascript function scoping trick from Dustin Diaz</a>, master of cool Javascript tricks. His Javascript Video Tutorials were the first time I was exposed to proper Javascript (Justin, do some more!).</p>
 <p>Here's the trick:</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="p">;</span>
 
-<span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">alert</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
-<span class="p">})</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w"></span>
+<span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">alert</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+<span class="p">})</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
 </code></pre></div>
 
 <p>And why is this neat? Because it …</p>
@@ -111,11 +111,11 @@
         <div class="entry-content space-y-5">
             <p>Neat <a href="/web/20101222040408/http://www.dustindiaz.com/scoping-anonymous-functions/">Javascript function scoping trick from Dustin Diaz</a>, master of cool Javascript tricks. His Javascript Video Tutorials were the first time I was exposed to proper Javascript (Justin, do some more!).</p>
 <p>Here's the trick:</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;hello world&#39;</span><span class="p">;</span>
 
-<span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">alert</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
-<span class="p">})</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">o</span><span class="p">);</span><span class="w"></span>
+<span class="p">(</span><span class="n">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">alert</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+<span class="p">})</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
 </code></pre></div>
 
 <p>And why is this neat? Because it lets you avoid the "that = this" funkiness (if you've had to do it you know what I'm talking about). Read Justin's post for actual info.</p>

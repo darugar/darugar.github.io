@@ -90,6 +90,24 @@
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">22 June 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/russia-wins.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Russia Wins!"</a>
+        <p class="leading-relaxed pt-6"><p>Just finished watching Russia vs. Netherlands. Most of it anyway - I'd only DVR'd the main match, missed most of the extra time.</p>
+<p>What a fantastic game. Arshavin is the real deal, looking forward to seeing more of him. Sorry to all my Dutch buddies, but Russia really looked like they …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/russia-wins.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">19 June 2008</span>
         <div></div>
     </div>
@@ -351,10 +369,10 @@ c …</code></pre></div></p>
     <div class="md:flex-grow article-summary">
         <a href="/running-shell-scripts-from-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Running Shell Scripts from Python"</a>
         <p class="leading-relaxed pt-6"><p>There are about a million different ways to execute an external program from Python. Here's the right way:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
-<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;zcat </span><span class="si">%s</span><span class="s1"> | tr &#39;</span><span class="se">\02\03</span><span class="s1">&#39; &#39;</span><span class="se">\r\n</span><span class="s1">&#39; | ssh </span><span class="si">%s</span><span class="s1"> &quot;hadoop dfs -put - </span><span class="si">%s</span><span class="s1">&quot;&#39;&#39;&#39;</span> <span class="o">%</span>
-     <span class="p">(</span><span class="n">local</span><span class="p">,</span> <span class="n">DEST</span><span class="p">,</span> <span class="n">remote</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;zcat </span><span class="si">%s</span><span class="s1"> | tr &#39;</span><span class="se">\02\03</span><span class="s1">&#39; &#39;</span><span class="se">\r\n</span><span class="s1">&#39; | ssh </span><span class="si">%s</span><span class="s1"> &quot;hadoop dfs -put - </span><span class="si">%s</span><span class="s1">&quot;&#39;&#39;&#39;</span><span class="w"> </span><span class="o">%</span>
+<span class="w">     </span><span class="p">(</span><span class="n">local</span><span class="p">,</span><span class="w"> </span><span class="n">DEST</span><span class="p">,</span><span class="w"> </span><span class="n">remote</span><span class="p">),</span><span class="w"> </span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Where what you put inside the call statement is what …</p></p>
@@ -430,7 +448,7 @@ c …</code></pre></div></p>
     <div class="md:flex-grow article-summary">
         <a href="/javascript-array-deferencing.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Javascript Array Deferencing?"</a>
         <p class="leading-relaxed pt-6"><p>I have an array, say:</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">pieces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">pieces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">];</span>
 </code></pre></div>
 
 <p>I'd like to create a date based on this; the equivalent of:</p>
@@ -459,23 +477,6 @@ c …</code></pre></div></p>
 <p>I briefly skirted the real world to the feeling of my 10 month old grabbing my feet to stand.</p>
 <p>Back into sleep, I was having a discussion, watching a movie, and generally experiencing a …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/football.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">13 May 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/flickr-capacity-planning-presentation.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Flickr Capacity Planning Presentation"</a>
-        <p class="leading-relaxed pt-6"><p>Unfortunately I missed the Web2.0 Expo this year, but I've been catching up on slides and presentations. I had <a href="/web/20101222040552/http://www.slideshare.net/jallspaw/capacity-planning-for-web-operations-web20-expo-2008">John Allspaw's Capacity Planning For Web Operations</a> open in a tab for several days and finally got to it. Turned out to be much more interesting than I'd anticipated. Slide …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/flickr-capacity-planning-presentation.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

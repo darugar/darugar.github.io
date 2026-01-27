@@ -97,13 +97,13 @@
         
         <!-- div class="entry-summary">
             <p>I'm trying to examine and modify form variables from jQuery by catching the submit event. jQuery has a serializeArray method that hands you the form variables in a nice array. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>$<span class="ss">(</span><span class="s1">&#39;#someform&#39;</span><span class="ss">)</span>.<span class="nv">submit</span><span class="ss">(</span><span class="w"> </span><span class="nv">function</span><span class="ss">()</span><span class="w"> </span>{<span class="w"></span>
-<span class="w">        </span>$.<span class="nv">post</span><span class="ss">(</span><span class="s2">&quot;/some/url/&quot;</span>,<span class="w"> </span>$<span class="ss">(</span><span class="nv">this</span><span class="ss">)</span>.<span class="nv">serializeArray</span><span class="ss">()</span>,<span class="w"></span>
-<span class="w">            </span><span class="nv">function</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">                </span><span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">            </span>},<span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">false</span><span class="c1">;</span><span class="w"></span>
-<span class="w">     </span>}<span class="w"> </span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>$<span class="ss">(</span><span class="s1">&#39;#someform&#39;</span><span class="ss">)</span>.<span class="nv">submit</span><span class="ss">(</span><span class="w"> </span><span class="nv">function</span><span class="ss">()</span><span class="w"> </span>{
+<span class="w">        </span>$.<span class="nv">post</span><span class="ss">(</span><span class="s2">&quot;/some/url/&quot;</span>,<span class="w"> </span>$<span class="ss">(</span><span class="nv">this</span><span class="ss">)</span>.<span class="nv">serializeArray</span><span class="ss">()</span>,
+<span class="w">            </span><span class="nv">function</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span>{
+<span class="w">                </span><span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span><span class="c1">;</span>
+<span class="w">            </span>},<span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">false</span><span class="c1">;</span>
+<span class="w">     </span>}<span class="w"> </span><span class="ss">)</span><span class="c1">;</span>
 </code></pre></div>
 
 <p>This is …</p>
@@ -111,25 +111,25 @@
     
         <div class="entry-content space-y-5">
             <p>I'm trying to examine and modify form variables from jQuery by catching the submit event. jQuery has a serializeArray method that hands you the form variables in a nice array. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span>$<span class="ss">(</span><span class="s1">&#39;#someform&#39;</span><span class="ss">)</span>.<span class="nv">submit</span><span class="ss">(</span><span class="w"> </span><span class="nv">function</span><span class="ss">()</span><span class="w"> </span>{<span class="w"></span>
-<span class="w">        </span>$.<span class="nv">post</span><span class="ss">(</span><span class="s2">&quot;/some/url/&quot;</span>,<span class="w"> </span>$<span class="ss">(</span><span class="nv">this</span><span class="ss">)</span>.<span class="nv">serializeArray</span><span class="ss">()</span>,<span class="w"></span>
-<span class="w">            </span><span class="nv">function</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">                </span><span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">            </span>},<span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">false</span><span class="c1">;</span><span class="w"></span>
-<span class="w">     </span>}<span class="w"> </span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>$<span class="ss">(</span><span class="s1">&#39;#someform&#39;</span><span class="ss">)</span>.<span class="nv">submit</span><span class="ss">(</span><span class="w"> </span><span class="nv">function</span><span class="ss">()</span><span class="w"> </span>{
+<span class="w">        </span>$.<span class="nv">post</span><span class="ss">(</span><span class="s2">&quot;/some/url/&quot;</span>,<span class="w"> </span>$<span class="ss">(</span><span class="nv">this</span><span class="ss">)</span>.<span class="nv">serializeArray</span><span class="ss">()</span>,
+<span class="w">            </span><span class="nv">function</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span>{
+<span class="w">                </span><span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">data</span><span class="ss">)</span><span class="c1">;</span>
+<span class="w">            </span>},<span class="w"> </span><span class="s2">&quot;json&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">false</span><span class="c1">;</span>
+<span class="w">     </span>}<span class="w"> </span><span class="ss">)</span><span class="c1">;</span>
 </code></pre></div>
 
 <p>This is great, but the result of serializeArray is an integer indexed array whose values are (key,value) pairs. Eg.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">serializeArray</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">output</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Object</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="n">somename</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="mi">537</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">serializeArray</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">output</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Object</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="n">somename</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="mi">537</span>
 </code></pre></div>
 
 <p>I'm wondering why the array looks like this, instead of being a dictionary (associate array, hash, or whatever you want to call it) such that the keys are "name"s and values are "value"s. Eg.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">serializeArray</span><span class="p">(),</span><span class="w"></span>
-<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">somename</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">output</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="o">.</span><span class="n">serializeArray</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="w"> </span><span class="n">data</span><span class="o">.</span><span class="n">somename</span><span class="w"> </span><span class="p">);</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">output</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span>
 </code></pre></div>
 
 <p>Anybody know the answer?</p>

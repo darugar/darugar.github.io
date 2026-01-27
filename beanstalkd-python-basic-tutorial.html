@@ -108,8 +108,8 @@
 <p>Terminology: a message is called a <em>job</em>, and queues are called <em>tubes</em>.</p>
 <p>Let's look at an example scenario. Say you want to create 2 tubes, one called "orders" and another called "emails", place orders into the first tube (or queue) and emails into the second, and have different processes handle orders and emails.</p>
 <p>You can create queues by simply naming and putting messages into them. On the producer side:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">beanstalk</span> <span class="kn">import</span> <span class="n">serverconn</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">99988</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">beanstalk</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">serverconn</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">99988</span><span class="p">)</span>
 
 <span class="c1"># put a message (or job) into the default queue:</span>
 <span class="n">c</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;first message, into default tube&#39;</span><span class="p">)</span>
@@ -120,15 +120,15 @@
 </code></pre></div>
 
 <p>Now on the consumer:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">beanstalk</span> <span class="kn">import</span> <span class="n">serverconn</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">99988</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">beanstalk</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">serverconn</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serverconn</span><span class="o">.</span><span class="n">ServerConn</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">99988</span><span class="p">)</span>
 
 <span class="c1"># by default your connection will be listening on the &#39;default&#39; tube.</span>
 <span class="c1"># switch it to use the &#39;orders&#39; tube.</span>
 <span class="c1"># This should return the &#39;orders&#39; message and ignore the &#39;default&#39; message:</span>
-<span class="n">c</span><span class="o">.</span><span class="n">watchlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orders&#39;</span><span class="p">]</span>
-<span class="n">j</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">reserve</span><span class="p">()</span>
-<span class="nb">print</span> <span class="n">j</span>
+<span class="n">c</span><span class="o">.</span><span class="n">watchlist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;orders&#39;</span><span class="p">]</span>
+<span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="o">.</span><span class="n">reserve</span><span class="p">()</span>
+<span class="nb">print</span><span class="w"> </span><span class="n">j</span>
 <span class="c1"># {&#39;data&#39;: &#39;second message, into orders tube&#39;, &#39;jid&#39;: 39, &#39;bytes&#39;: 32, &#39;state&#39;: &#39;ok&#39;}</span>
 </code></pre></div>
 
@@ -147,9 +147,9 @@ print j
 <p>The beanstalkd consumption model is to "reserve" a message (or job), process it, and then tell beanstalkd you've successfully dealt with the message so it can be thrown away. When you first get the job via c.reserve() you haven't actually fully consumed it; you've just reserved it for processing.</p>
 <p>What does this mean? Imagine a scenario where you reserve a message but your process dies before you have a chance to fully process it. Beanstalkd holds your message in reserve for a period of time, but since it hasn't heard from you confirming you've successfully dealt with the message, it eventually removes the reservation and makes the message available once again for the next consumer to grab. This is a basic handshake between the consumer and the server to allow for some level of resiliency.</p>
 <p>So once you're finished dealing with the message you've reserved, be sure to "delete" it, letting the beanstalkd server know it can throw that message away:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">c</span>.<span class="nv">reserve</span><span class="ss">()</span><span class="w"></span>
-#<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">some</span><span class="w"> </span><span class="nv">processing</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">j</span><span class="w"></span>
-<span class="nv">c</span>.<span class="nv">delete</span><span class="ss">(</span><span class="nv">j</span>[<span class="s1">&#39;jid&#39;</span>]<span class="ss">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">c</span>.<span class="nv">reserve</span><span class="ss">()</span>
+#<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">some</span><span class="w"> </span><span class="nv">processing</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">j</span>
+<span class="nv">c</span>.<span class="nv">delete</span><span class="ss">(</span><span class="nv">j</span>[<span class="s1">&#39;jid&#39;</span>]<span class="ss">)</span>
 </code></pre></div>
 
 <p>So there you have the basics. Let me know if you're interested and I can cover a few more topics.</p>

@@ -111,15 +111,15 @@
 </code></pre></div>
 
 <p>You want this to be uft8. To modify it, edit your my.conf file ( /etc/mysql/my.conf on ubuntu ), adding the following lines to the appropriate sections:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[client]</span><span class="w"></span>
-<span class="na">...</span><span class="w"></span>
-<span class="na">default-character-set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">utf8</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">[client]</span>
+<span class="na">...</span>
+<span class="na">default-character-set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">utf8</span>
 
-<span class="k">[mysqld]</span><span class="w"></span>
-<span class="na">...</span><span class="w"></span>
-<span class="na">character-set-server</span><span class="o">=</span><span class="s">utf8</span><span class="w"></span>
-<span class="na">collation-server</span><span class="o">=</span><span class="s">utf8_unicode_ci</span><span class="w"></span>
-<span class="na">init_connect</span><span class="o">=</span><span class="s">&#39;set collation_connection = utf8_unicode_ci;&#39;</span><span class="w"></span>
+<span class="k">[mysqld]</span>
+<span class="na">...</span>
+<span class="na">character-set-server</span><span class="o">=</span><span class="s">utf8</span>
+<span class="na">collation-server</span><span class="o">=</span><span class="s">utf8_unicode_ci</span>
+<span class="na">init_connect</span><span class="o">=</span><span class="s">&#39;set collation_connection = utf8_unicode_ci</span><span class="c1">;&#39;</span>
 </code></pre></div>
 
 <p>Now restart mysql:</p>

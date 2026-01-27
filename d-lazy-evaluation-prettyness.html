@@ -97,16 +97,16 @@
         
         <!-- div class="entry-summary">
             <p><a href="http://www.digitalmars.com/d/2.0/lazy-evaluation.html">This</a> is kind of pretty:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span>
+}
 
-<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span>
+}
 </code></pre></div>
 
 <p>Note the <strong>lazy</strong> keyword in the definition of the log function, which tells D to only evaluate the value if needed (ie …</p>
@@ -114,16 +114,16 @@
     
         <div class="entry-content space-y-5">
             <p><a href="http://www.digitalmars.com/d/2.0/lazy-evaluation.html">This</a> is kind of pretty:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span>
+}
 
-<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span>
+}
 </code></pre></div>
 
 <p>Note the <strong>lazy</strong> keyword in the definition of the log function, which tells D to only evaluate the value if needed (ie. lazily).</p>

@@ -581,25 +581,25 @@ f64
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>[&#39;VendorID&#39;,
- &#39;tpep_pickup_datetime&#39;,
- &#39;tpep_dropoff_datetime&#39;,
- &#39;passenger_count&#39;,
- &#39;trip_distance&#39;,
- &#39;RatecodeID&#39;,
- &#39;store_and_fwd_flag&#39;,
- &#39;PULocationID&#39;,
- &#39;DOLocationID&#39;,
- &#39;payment_type&#39;,
- &#39;fare_amount&#39;,
- &#39;extra&#39;,
- &#39;mta_tax&#39;,
- &#39;tip_amount&#39;,
- &#39;tolls_amount&#39;,
- &#39;improvement_surcharge&#39;,
- &#39;total_amount&#39;,
- &#39;congestion_surcharge&#39;,
- &#39;airport_fee&#39;]
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="err">&#39;</span><span class="nx">VendorID</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">tpep_pickup_datetime</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">tpep_dropoff_datetime</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">passenger_count</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">trip_distance</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">RatecodeID</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">store_and_fwd_flag</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">PULocationID</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">DOLocationID</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">payment_type</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">fare_amount</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">extra</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">mta_tax</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">tip_amount</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">tolls_amount</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">improvement_surcharge</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">total_amount</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">congestion_surcharge</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w"> </span><span class="err">&#39;</span><span class="nx">airport_fee</span><span class="err">&#39;</span><span class="p">]</span>
 </code></pre></div>
 
 <p>Pretty easy to guess what the columns mean. </p>
@@ -607,28 +607,28 @@ f64
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;total_amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">22.247540895418666</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">22.247540895418666</span>
 </code></pre></div>
 
 <p>I wonder how many passengers there are in each ride?</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">[</span><span class="s2">&quot;passenger_count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">1.3846936672698376</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">1.3846936672698376</span>
 </code></pre></div>
 
 <p>How about the average fare from the airport? I noticed the <code>airport_fee</code> column, let's look at average <code>total_amount</code> when the airport fee is greater than zero:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;airport_fee&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)[</span><span class="s2">&quot;total_amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">55.83249747837022</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">55.83249747837022</span>
 </code></pre></div>
 
 <p>How about the average non-airport ride cost?</p>
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;airport_fee&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)[</span><span class="s2">&quot;total_amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">18.957161390687517</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">18.957161390687517</span>
 </code></pre></div>
 
 <h2>Most expensive rides</h2>
@@ -4216,8 +4216,8 @@ f64
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;tpep_pickup_datetime&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="s2">&quot;2020&quot;</span> <span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">Comparing</span><span class="w"> </span><span class="n">date</span><span class="sr">/datetime/</span><span class="n">time</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">value</span><span class="o">,</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">lead</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">unlikely</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="o">.</span><span class="w"></span>
-<span class="n">If</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">intended</span><span class="o">,</span><span class="w"> </span><span class="n">consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">explicit</span><span class="w"> </span><span class="n">cast</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">silence</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">warning</span><span class="o">.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">Comparing</span><span class="w"> </span><span class="n">date</span><span class="sr">/datetime/</span><span class="n">time</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">value</span><span class="o">,</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">lead</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">unlikely</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="o">.</span>
+<span class="n">If</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">intended</span><span class="o">,</span><span class="w"> </span><span class="n">consider</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">explicit</span><span class="w"> </span><span class="n">cast</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">silence</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">warning</span><span class="o">.</span>
 </code></pre></div>
 
 <div>
@@ -9881,10 +9881,10 @@ null
 After the anti-join we end up with 3649512 rows. We had and 25899 rows with negative values.</p>
 <div class="highlight"><pre><span></span><code><span class="n">n_rows_original</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">n_rows_negative</span> <span class="o">=</span> <span class="n">negative_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We are expecting </span><span class="si">{</span><span class="n">n_rows_original</span> <span class="o">-</span> <span class="n">n_rows_negative</span><span class="si">}</span><span class="s2"> rows if our removal worked perfectly&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;We are expecting </span><span class="si">{</span><span class="n">n_rows_original</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n_rows_negative</span><span class="si">}</span><span class="s2"> rows if our removal worked perfectly&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="nv">We</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">expecting</span><span class="w"> </span><span class="mi">3649512</span><span class="w"> </span><span class="nv">rows</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">our</span><span class="w"> </span><span class="nv">removal</span><span class="w"> </span><span class="nv">worked</span><span class="w"> </span><span class="nv">perfectly</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">We</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">expecting</span><span class="w"> </span><span class="mi">3649512</span><span class="w"> </span><span class="nv">rows</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">our</span><span class="w"> </span><span class="nv">removal</span><span class="w"> </span><span class="nv">worked</span><span class="w"> </span><span class="nv">perfectly</span>
 </code></pre></div>
 
 <p>Sure enough the result of the anti-join has 3649512 rows (you can see that from the shape output a few cells above), so our method is working well. We should sanity check to make sure it's working as expected, but for now let's assume all is well.</p>
@@ -11540,7 +11540,7 @@ null
 <div class="highlight"><pre><span></span><code><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">clean_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="mf">45288</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">45288</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="n">clean_data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don’t Be A Tourist In Your Own Code Base - Parand</title>
+    <link rel="shortcut icon" type="image/png" href="/theme/images/favico.png"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+        h1 { 
+          font-size: x-large !important;
+          font-weight: bold !important;
+        }
+        h2 { 
+          font-size: larger !important;
+          font-weight: bold !important;
+        }
+        div.highlight code {
+          border: 1px solid #AAA;
+          background-color: #fff !important;
+          font-size: medium !important;
+        }
+        table.dataframe {
+          background-color: #fff !important;
+          font-family: monospace !important;
+        }
+        table.dataframe th {
+          text-align: left !important;
+          padding-right: 5px;
+        }
+        section.article a {
+          color: brown !important;
+        }
+
+        .article-summary h1, .article-summary p {
+          margin-top: 10px !important;
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XGEBWVBEKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XGEBWVBEKP');
+</script>
+
+<link rel="canonical" href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html" />
+
+</head>
+
+
+<body>
+  
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100 rounded max-w-6xl">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <h1><a href="dont-be-a-tourist-in-your-own-code-base.html" class="text-3xl font-medium text-gray-900 title-font mb-2">Don’t Be A Tourist In Your Own Code Base</a></h1>
+    <header class="header-article">
+        <div class="text-sm">Mon 26 January 2026</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <h1>Or: Vibecoding versus LAD</h1>
+<p>Software development with the assistance of coding agents is <strong>incredibly</strong> more productive than without - it’s the difference between building a house brick by brick yourself versus having a crew of expert tradespeople helping you.</p>
+<p>However, vibecoding isn’t quite the right approach – that’s akin …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <h1>Or: Vibecoding versus LAD</h1>
+<p>Software development with the assistance of coding agents is <strong>incredibly</strong> more productive than without - it’s the difference between building a house brick by brick yourself versus having a crew of expert tradespeople helping you.</p>
+<p>However, vibecoding isn’t quite the right approach – that’s akin to asking the tradespeople to design and architect your house.</p>
+<h2>Write The Spec, Let the AI Design?</h2>
+<p>Most of the recommendations I’ve seen for using coding agents involve writing the design doc and design principles and letting the AI implement the software. You specify, walk away, a swarm of coding agents implements, and you enjoy the results.</p>
+<p>I’ve tried this in earnest multiple times and it’s failed every time.</p>
+<p>The pattern is: AI writes the software and I’m overjoyed with the incredible pace of implementation. It works! Amazing!</p>
+<p>Eventually there’s a problem in the operation of the software. I give the error message or the symptoms to the coding agent, it dutifully researches the problem and tries solutions, but fails with every attempt.</p>
+<p>Now I have to deal with it myself. I crack open the code (that I supposedly reviewed before committing) and realize:</p>
+<p><strong>I’m a tourist in a land of extremely mediocre code and design.</strong></p>
+<p>I’ve allowed a diligent but naive junior developer to design my system. I’m now charged with digging into this idiot’s code, and at every turn I curse his decisions and approach.</p>
+<p>To be fair I also curse my own decisions and idiotic approach when I look at code I have written myself, but at least I’m not a tourist. I know what’s where and why it’s there, even if it was placed there stupidly.</p>
+<h2>Is It Just Me?</h2>
+<p>I don’t think so. The number of times I’ve asked colleagues and friends why their code does X and gotten the response “I have no idea” is terrifying. </p>
+<p>You can let the AI design all your code, but I think you’re just punting the pain down the road. You write code once but you maintain it for a long time, and being a tourist is just setting you up to have your pocket picked that whole time.</p>
+<h2>Terrible At Architecture</h2>
+<p>LLMs are great at design of small things - a django model, a function, a database table. They are (currently) very bad at architectural decisions for maintainable software.</p>
+<p>Let me convince you with anecdata from the last few days:</p>
+<h3><em>Big Picture Blindness</em></h3>
+<p>The LLM has implemented 3 new API endpoints, all subtle filtering variants of existing APIs. I ask it: wouldn’t it be cleaner to add filters to the existing APIs? <em>Oh yes you great genius, let me do that right away!</em></p>
+<h3><em>The Rabbit Hole</em></h3>
+<p>There’s a subtlety in the way a sub-system has to be written (due to <a href="https://temporal.io/">Temporal</a> sandboxes and non-determinism rules). The LLM tries to do a reasonable thing that won’t work because of the subtlety. It correctly identifies the issue, but instead of stepping back and changing approach, <em>the LLM starts to rewrite the entire subsystem piece by piece trying to work around the subtlety, pursuing an approach that will never work.</em></p>
+<h3><em>Plain Stupidity</em></h3>
+<p>The LLM decides to build a whole shadow API as an abstraction on top of our existing nice clean API. I still have no idea why. Why not just use the API? <em>Great idea you divine light of wisdom, let me do that right away!</em></p>
+<h2>What Works? LAD</h2>
+<p><strong>LLM Assisted Development. LAD.</strong> </p>
+<p>Treat the LLM as a diligent, well meaning, extremely hardworking, but naive and inexperienced junior developer. He’s just a lad trying his best to help you, but left to his own devices he’ll make terrible big picture decisions.</p>
+<p><strong>Pair program with the LAD. Use the AI to replace typing, not thinking</strong>.</p>
+<p><em>You</em> design the software, think deeply about architecture, and plan out an incremental approach to building the system. You include the lad in this process, asking its opinion, asking it to research, having it write the design document.</p>
+<p>Then you ask the lad to implement a small step in that incremental plan, look carefully at the code as if you’re pair programming with a human, test the result, and then move to the next step.</p>
+<h2>Fun and Profit</h2>
+<p>Developing software this way is incredibly more efficient than writing code yourself. Pair programming with the LAD gives you the positives - <em>you</em> have designed the system, <em>you</em> understand every part of the code - and avoids the negatives of a naive, unknown, and unsustainable design.</p>
+<p>AI slop and the low quality of LLM generated software may have made you skeptical, but the answer is not to throw the baby out with the bathwater. Try it this way. Pair program. It is fun and very high quality - frankly the code I’m getting is higher quality than if I’d hand-written it, because the lad is an extremely diligent coder and has an encyclopedic knowledge of almost everything under the sun.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="https://www.parand.com/category/technical.html">Technical</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/llm.html">llm </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="https://www.parand.com/tag/programming.html">programming </a>        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>
