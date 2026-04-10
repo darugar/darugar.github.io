@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Productivity Lie - Parand</title>
+    <link rel="shortcut icon" type="image/png" href="/theme/images/favico.png"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
+    <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600" data-optimized-fonts="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        body {
+          font-family: "EB Garmond",warnock-pro,Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+        }
+        h1 { 
+          font-size: x-large !important;
+          font-weight: bold !important;
+        }
+        h2 { 
+          font-size: larger !important;
+          font-weight: bold !important;
+        }
+        div.highlight code {
+          border: 1px solid #AAA;
+          background-color: #fff !important;
+          font-size: medium !important;
+        }
+        table.dataframe {
+          background-color: #fff !important;
+          font-family: monospace !important;
+        }
+        table.dataframe th {
+          text-align: left !important;
+          padding-right: 5px;
+        }
+        section.article a {
+          color: brown !important;
+        }
+
+        .article-summary h1, .article-summary p {
+          margin-top: 10px !important;
+        }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XGEBWVBEKP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XGEBWVBEKP');
+</script>
+
+<link rel="canonical" href="./the-ai-productivity-lie.html" />
+
+</head>
+
+
+<body>
+  
+<div id="root" class="container py-2 mx-auto text-lg bg-gray-100 rounded max-w-6xl">
+
+    <header class="text-gray-100 body-font bg-gray-700">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center text-xl bg-[url('/theme/images/header-bg-1-1920.jpg')]">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0" href="/">
+            <img width=180 src="/theme/images/logo-parand.png">
+            <span class="ml-5 text-3xl">Standard Deviations</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center justify-center text-2xl">
+            <a class="mr-5 hover:text-gray-400" href="/">Blog</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/writings.html">Writings</a>
+            <a class="mr-5 hover:text-gray-400" href="/pages/parand-tony-darugar.html">About</a>
+          </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+
+<div class="content-article">
+
+  <div class="py-8 row">
+    <h1><a href="the-ai-productivity-lie.html" class="text-3xl font-medium text-gray-900 title-font mb-2">The AI Productivity Lie</a></h1>
+    <header class="header-article">
+        <div class="text-sm">Fri 10 April 2026</div>
+    </header>
+  </div>
+
+    <section class='article'>
+        
+        <!-- div class="entry-summary">
+            <p>Many (myself included) claim AI driven (or in my case, <a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html">assisted</a>) development is resulting in massive productivity acceleration and gains. But there is some obvious and troubling evidence to the contrary.</p>
+<p>The frontier AI labs, OpenAI, Anthropic, Google, etc, are the leaders in the creation and adoption of tooling and …</p>
+        </div -->
+    
+        <div class="entry-content space-y-5">
+            <p>Many (myself included) claim AI driven (or in my case, <a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html">assisted</a>) development is resulting in massive productivity acceleration and gains. But there is some obvious and troubling evidence to the contrary.</p>
+<p>The frontier AI labs, OpenAI, Anthropic, Google, etc, are the leaders in the creation and adoption of tooling and systems for AI driven development - eg. <a href="https://www.eweek.com/news/ai-writing-code-anthropic-openai/">Anthropic and OpenAI claim 100% of their code is written by AI</a> .</p>
+<p>If so, why is the pace of innovation and updates in their AI development products (Codex, Claude Code, Antigravity) so pedestrian? Compare the rate of improvement in their products to products from other multi-billion dollar companies, or indeed to the rate of innovation before the advent of AI driven development, and you’re hard pressed to find anything justifying the claims of acceleration. The release notes are so mundane I barely care.</p>
+<p>Where are the productivity gains? I’m certainly seeing it in <a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html">our own development process</a> - I’m absolutely convinced we’d be far behind where we are had we not embraced AI assisted development processes - but industry-wide something is amiss. </p>
+<p>I don’t have a clear thesis yet, but I’m working on a few ideas. For one, I think writing code is not the major bottleneck to development - indeed if you examine software development processes in the “enterprise” you’ll see that both from a time and resource perspective, writing code is a fraction of the overall allocation. According to IDC <a href="https://www.infoworld.com/article/3831759/developers-spend-most-of-their-time-not-coding-idc-report.html">application development is only 16% of developers’ time</a>. Similarly, the number of developers in “enterprise” application development is generally ¼ of the overall team size, with the PM, architecture, design, QA, security, and DevOps teams making up the remaining ¾.</p>
+<p>With AI driven or assisted development we’re optimizing a local bottleneck in a large and complex process, and are therefore constrained in how much acceleration we achieve. Future phases will need to look at the overall process holistically and optimize the entire pipeline, perhaps in the mold of Toyota Production Systems approaches (Lean, Muda, Muri, Mura, and Takt Time).</p>
+<p>I’ll explore a couple of other ideas in future posts, but I’m most curious to hear what others are seeing and thinking.</p>
+        </div>
+    </section>
+    <footer class="footer-article py-8">
+        <div class="tags-and-categories"><span class="italic">Category: </span><a href="./category/machine-learning.html">Machine Learning</a>
+| <span class="italic">Tags:</span> <a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="./tag/llm.html">llm </a><a class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-base font-medium tracking-widest" href="./tag/programming.html">programming </a>        </div>
+    </footer>
+    <!-- disqus  -->
+
+  </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+
+</body>
+</html>

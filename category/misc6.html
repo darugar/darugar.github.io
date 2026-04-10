@@ -89,7 +89,7 @@
 <ul>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">02 July 2008</span>
         <div></div>
     </div>
@@ -108,7 +108,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">30 June 2008</span>
         <div></div>
     </div>
@@ -126,23 +126,23 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">27 June 2008</span>
         <div></div>
     </div>
     <div class="md:flex-grow article-summary">
         <a href="/d-lazy-evaluation-prettyness.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"D Lazy Evaluation Prettyness"</a>
         <p class="leading-relaxed pt-6"><p><a href="http://www.digitalmars.com/d/2.0/lazy-evaluation.html">This</a> is kind of pretty:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nv">void</span><span class="w"> </span><span class="nv">log</span><span class="ss">(</span><span class="nv">lazy</span><span class="w"> </span><span class="nv">char</span>[]<span class="w"> </span><span class="nv">dg</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">logging</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">fwritefln</span><span class="ss">(</span><span class="nv">logfile</span>,<span class="w"> </span><span class="nv">dg</span><span class="ss">())</span><span class="c1">;</span>
+}
 
-<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span><span class="w"></span>
-{<span class="w"></span>
-<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<span class="nv">void</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">i</span><span class="ss">)</span>
+{
+<span class="w">    </span><span class="nv">log</span><span class="ss">(</span><span class="s2">&quot;Entering foo() with i set to &quot;</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nv">toString</span><span class="ss">(</span><span class="nv">i</span><span class="ss">))</span><span class="c1">;</span>
+}
 </code></pre></div>
 
 <p>Note the <strong>lazy</strong> keyword in the definition of the log function, which tells D to only evaluate the value if needed (ie …</p></p>
@@ -156,7 +156,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">27 June 2008</span>
         <div></div>
     </div>
@@ -173,7 +173,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">26 June 2008</span>
         <div></div>
     </div>
@@ -191,7 +191,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">23 June 2008</span>
         <div></div>
     </div>
@@ -210,7 +210,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">22 June 2008</span>
         <div></div>
     </div>
@@ -228,7 +228,7 @@
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">19 June 2008</span>
         <div></div>
     </div>
@@ -249,7 +249,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">18 June 2008</span>
         <div></div>
     </div>
@@ -268,7 +268,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">16 June 2008</span>
         <div></div>
     </div>
@@ -285,7 +285,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">11 June 2008</span>
         <div></div>
     </div>
@@ -303,7 +303,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">11 June 2008</span>
         <div></div>
     </div>
@@ -324,7 +324,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">11 June 2008</span>
         <div></div>
     </div>
@@ -342,7 +342,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
         <div></div>
     </div>
@@ -361,7 +361,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
         <div></div>
     </div>
@@ -382,7 +382,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
         <div></div>
     </div>
@@ -403,7 +403,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
         <div></div>
     </div>
@@ -422,7 +422,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">03 June 2008</span>
         <div></div>
     </div>
@@ -443,17 +443,17 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">30 May 2008</span>
         <div></div>
     </div>
     <div class="md:flex-grow article-summary">
         <a href="/running-shell-scripts-from-python.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Running Shell Scripts from Python"</a>
         <p class="leading-relaxed pt-6"><p>There are about a million different ways to execute an external program from Python. Here's the right way:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
-<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;zcat </span><span class="si">%s</span><span class="s1"> | tr &#39;</span><span class="se">\02\03</span><span class="s1">&#39; &#39;</span><span class="se">\r\n</span><span class="s1">&#39; | ssh </span><span class="si">%s</span><span class="s1"> &quot;hadoop dfs -put - </span><span class="si">%s</span><span class="s1">&quot;&#39;&#39;&#39;</span> <span class="o">%</span>
-     <span class="p">(</span><span class="n">local</span><span class="p">,</span> <span class="n">DEST</span><span class="p">,</span> <span class="n">remote</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;zcat </span><span class="si">%s</span><span class="s1"> | tr &#39;</span><span class="se">\02\03</span><span class="s1">&#39; &#39;</span><span class="se">\r\n</span><span class="s1">&#39; | ssh </span><span class="si">%s</span><span class="s1"> &quot;hadoop dfs -put - </span><span class="si">%s</span><span class="s1">&quot;&#39;&#39;&#39;</span><span class="w"> </span><span class="o">%</span>
+<span class="w">     </span><span class="p">(</span><span class="n">local</span><span class="p">,</span><span class="w"> </span><span class="n">DEST</span><span class="p">,</span><span class="w"> </span><span class="n">remote</span><span class="p">),</span><span class="w"> </span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Where what you put inside the call statement is what …</p></p>
@@ -467,7 +467,7 @@ c …</code></pre></div></p>
     </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="https://www.parand.com/category/misc.html">misc</a></span>
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
         <span class="mt-1 text-gray-500 text-sm">28 May 2008</span>
         <div></div>
     </div>
@@ -488,11 +488,11 @@ c …</code></pre></div></p>
 <div class="pagination-block">
 
 <p class="paginator">
-        <a href="https://www.parand.com/category/misc.html">&#8647;</a>
-        <a href="https://www.parand.com/category/misc5.html">&laquo;</a>
+        <a href="../category/misc.html">&#8647;</a>
+        <a href="../category/misc5.html">&laquo;</a>
     Page 6 / 11
-        <a href="https://www.parand.com/category/misc7.html">&raquo;</a>
-        <a href="https://www.parand.com/category/misc11.html">&#8649;</a>
+        <a href="../category/misc7.html">&raquo;</a>
+        <a href="../category/misc11.html">&#8649;</a>
 </p>
 </div>
 

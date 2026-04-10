@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Parand - Machine Learning</title><link href="https://www.parand.com/" rel="alternate"/><link href="https://www.parand.com/feeds/machine-learning.atom.xml" rel="self"/><id>https://www.parand.com/</id><updated>2026-04-10T08:10:00-07:00</updated><entry><title>The AI Productivity Lie</title><link href="https://www.parand.com/the-ai-productivity-lie.html" rel="alternate"/><published>2026-04-10T08:10:00-07:00</published><updated>2026-04-10T08:10:00-07:00</updated><author><name>Parand Darugar</name></author><id>tag:www.parand.com,2026-04-10:/the-ai-productivity-lie.html</id><summary type="html">&lt;p&gt;Many (myself included) claim AI driven (or in my case, &lt;a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html"&gt;assisted&lt;/a&gt;) development is resulting in massive productivity acceleration and gains. But there is some obvious and troubling evidence to the contrary.&lt;/p&gt;
+&lt;p&gt;The frontier AI labs, OpenAI, Anthropic, Google, etc, are the leaders in the creation and adoption of tooling and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Many (myself included) claim AI driven (or in my case, &lt;a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html"&gt;assisted&lt;/a&gt;) development is resulting in massive productivity acceleration and gains. But there is some obvious and troubling evidence to the contrary.&lt;/p&gt;
+&lt;p&gt;The frontier AI labs, OpenAI, Anthropic, Google, etc, are the leaders in the creation and adoption of tooling and systems for AI driven development - eg. &lt;a href="https://www.eweek.com/news/ai-writing-code-anthropic-openai/"&gt;Anthropic and OpenAI claim 100% of their code is written by AI&lt;/a&gt; .&lt;/p&gt;
+&lt;p&gt;If so, why is the pace of innovation and updates in their AI development products (Codex, Claude Code, Antigravity) so pedestrian? Compare the rate of improvement in their products to products from other multi-billion dollar companies, or indeed to the rate of innovation before the advent of AI driven development, and you’re hard pressed to find anything justifying the claims of acceleration. The release notes are so mundane I barely care.&lt;/p&gt;
+&lt;p&gt;Where are the productivity gains? I’m certainly seeing it in &lt;a href="https://www.parand.com/dont-be-a-tourist-in-your-own-code-base.html"&gt;our own development process&lt;/a&gt; - I’m absolutely convinced we’d be far behind where we are had we not embraced AI assisted development processes - but industry-wide something is amiss. &lt;/p&gt;
+&lt;p&gt;I don’t have a clear thesis yet, but I’m working on a few ideas. For one, I think writing code is not the major bottleneck to development - indeed if you examine software development processes in the “enterprise” you’ll see that both from a time and resource perspective, writing code is a fraction of the overall allocation. According to IDC &lt;a href="https://www.infoworld.com/article/3831759/developers-spend-most-of-their-time-not-coding-idc-report.html"&gt;application development is only 16% of developers’ time&lt;/a&gt;. Similarly, the number of developers in “enterprise” application development is generally ¼ of the overall team size, with the PM, architecture, design, QA, security, and DevOps teams making up the remaining ¾.&lt;/p&gt;
+&lt;p&gt;With AI driven or assisted development we’re optimizing a local bottleneck in a large and complex process, and are therefore constrained in how much acceleration we achieve. Future phases will need to look at the overall process holistically and optimize the entire pipeline, perhaps in the mold of Toyota Production Systems approaches (Lean, Muda, Muri, Mura, and Takt Time).&lt;/p&gt;
+&lt;p&gt;I’ll explore a couple of other ideas in future posts, but I’m most curious to hear what others are seeing and thinking.&lt;/p&gt;</content><category term="Machine Learning"/><category term="llm"/><category term="programming"/></entry><entry><title>Why Do Large Language Models Hallucinate?</title><link href="https://www.parand.com/why-do-large-language-models-hallucinate.html" rel="alternate"/><published>2023-05-14T09:00:00-07:00</published><updated>2023-05-14T09:00:00-07:00</updated><author><name>Parand Darugar</name></author><id>tag:www.parand.com,2023-05-14:/why-do-large-language-models-hallucinate.html</id><summary type="html">&lt;p&gt;The above question from my friend James (hi James!) surprised me, even though it's
+an obvious and excellent question.&lt;/p&gt;
+&lt;h1&gt;What Does Hallucination Mean Here?&lt;/h1&gt;
+&lt;p&gt;Sometimes ChatGPT and other Large Language Models (LLMs) make things up. They will
+state, with apparent confidence, things that are made up or not true. &lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/robot-thought.png"&gt;&lt;/p&gt;
+&lt;p&gt;My …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The above question from my friend James (hi James!) surprised me, even though it's
+an obvious and excellent question.&lt;/p&gt;
+&lt;h1&gt;What Does Hallucination Mean Here?&lt;/h1&gt;
+&lt;p&gt;Sometimes ChatGPT and other Large Language Models (LLMs) make things up. They will
+state, with apparent confidence, things that are made up or not true. &lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/robot-thought.png"&gt;&lt;/p&gt;
+&lt;p&gt;My favorite example
+is ChatGPT's very convincing ability to pretend it can access the internet, even though
+it really can't. &lt;a href="https://simonwillison.net/2023/Mar/10/chatgpt-internet-access/"&gt;Simon Willison has a great writeup&lt;/a&gt; 
+on this where he provides copious examples - for example, you can ask ChatGPT to summarize
+stories that don't exist by making up URLs for those stories, and ChatGPT will
+dutifully provide a summary for the non-existent stories. Try it yourself - go to
+the &lt;a href="https://chat.openai.com/"&gt;ChatGPT site&lt;/a&gt; and ask it to
+&lt;em&gt;"Summarize this story: https://www.nytimes.com/2023/05/03/business/made-up-headline-here.html"&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Here's my example&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+Summarize this story: https://www.theonion.com/god-scores-for-arsenal-1785001
+&lt;/blockquote&gt;
+
+&lt;p&gt;ChatGPT's response:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+The article from The Onion satirically reports that God, the divine creator of the universe, has scored a goal for the Arsenal football club. The article describes the crowd's reaction to the divine intervention as "ecstatic" and quotes fictional players and coaches who express amazement at the event. The article pokes fun at the intense passion and excitement that football fans have for their teams by exaggerating it to a ridiculous extent, suggesting that even God is invested in the outcome of the game
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here's another interesting one:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/CPAutoScribe/status/1654210706500374528"&gt;&lt;img src="/static/images/twitter-gpt-hallucination.png" width="600"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You'll also see ChatGPT making up references to scientific papers that don't exist, inventing facts,
+and generally confidently lying to you.&lt;/p&gt;
+&lt;h1&gt;Why Lie, ChatGPT?&lt;/h1&gt;
+&lt;p&gt;The reason the question surprised me was: I'm shocked it ever gets things right. &lt;/p&gt;
+&lt;p&gt;ChatGPT and Large Language Models are probabilistic models that are able to achieve high
+levels of performance via very many rounds of training. See the &lt;a href="/a-non-technical-explanation-of-chatgpt.html"&gt;Non Technical Explanation of ChatGPT&lt;/a&gt; post for an overview - in short, they see many examples of 
+human communication and learn to mimic that by creating responses one word at a time, 
+picking words that are probabilistically most likely to appear next. &lt;/p&gt;
+&lt;p&gt;If you've ever trained one of these systems you know that for much of its life it spews
+nonsense - initially its output looks random, gradually improving to have valid structure
+and grammar, then starting to have cohesive subjects, and eventually to be able to carry
+concepts across sentences. The progression is: random nonsense, babbling idiot, babbling
+ignoramus, simpleton, person, and finally the embodiment of all that is true and holy.&lt;/p&gt;
+&lt;p&gt;My point is: until it reaches the point of enlightenment and oneness with the universe,
+you expect it to get things wrong. That's the nature of a probablistic 
+system that improves over time: "incorrect" outputs are to be expected.&lt;/p&gt;
+&lt;p&gt;If you're technically inclined try playing around with LLMs that have lower parameter counts
+or are less trained and you'll see what I mean: they frequently get things wrong or "off".
+&lt;strong&gt;It's a testiment to ChatGPT's capabilities that it leapt across the uncanny valley and went
+straight to all-seeing sage, giving people the expectation that it would never err.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;There's No Database&lt;/h1&gt;
+&lt;p&gt;We are used to computer systems that give us true and consistent answers. Data is stored in
+some source of truth - a database or file, for example - and software allows us to interact
+with that data.&lt;/p&gt;
+&lt;p&gt;In the case of LLMs there is no database. Knowledge is not explicitly stored in a source of
+truth - instead it's recorded in the connections and weights of the model. When you interact
+with ChatGPT it's not looking up a fact in a database and putting it into English. Instead it is
+probabilistically picking words that go well together, and those words often express cohesive
+and true concepts.&lt;/p&gt;
+&lt;p&gt;Recall how we created ChatGPT: we trained it on a large corpus of human communication, and then
+we fine-tuned it to respond in a conversational, chat-like manner, and to be helpful.&lt;/p&gt;
+&lt;p&gt;When you ask it to summarize a non-existent story it does its best to find concepts that relate
+to that story and to put those concepts into words. In the made-up Onion story above, it
+picked up concepts based on the context it was given: it knows &lt;em&gt;TheOnion&lt;/em&gt; is a satirical website,
+it knows &lt;em&gt;Arsenal&lt;/em&gt; is a football club (aided by the appearance of the word &lt;em&gt;scores&lt;/em&gt;), and it knows
+what God is. Given that context it does a commendable job of fabricating those concepts into a
+plausible English paragraph. It is doing exactly what we trained it to do.&lt;/p&gt;
+&lt;h1&gt;What's the Fix?&lt;/h1&gt;
+&lt;p&gt;There are a number of very interesting research approaches to fixing this problem that I will
+not cover here - look up "LLM alignment" for a rabbit hole of philosophical and technical information.&lt;/p&gt;
+&lt;p&gt;The approach I'm excited about in the short term is: give your LLM a database. &lt;/p&gt;
+&lt;p&gt;The concept is simple: augment your language model with a source of truth that can inject facts
+into the context (prompt) of the language model. This way the set of "concepts" the LLM is working with
+directly include relevant and valid information for your query.&lt;/p&gt;
+&lt;p&gt;How do we do this? One current approach is to first lookup information related to your
+query in a source of truth, then to inject the results of that lookup into the prompt you
+give to the LLM. For example, if you ask for a summary of a story at a given URL, you could first
+download the contents of that story, inject those contents into the LLM prompt, then
+include your original prompt. The LLM now has its built-in knowledge from its training, it has
+the relevant facts from the lookup we did, and it has your instructions from the prompt
+you provided it.&lt;/p&gt;
+&lt;p&gt;Bing employs this approach in its chat interface: first it turns your prompt into a search string,
+then it searches the internet for that string, then it gives the results of the search as well as
+your prompt to ChatGPT.&lt;/p&gt;
+&lt;p&gt;Another good example is &lt;a href="https://filechat.io/"&gt;filechat.io&lt;/a&gt;, which lets you use LLMs to interact with
+your own data: you give it a set of documents, and it intelligently feeds the relevant parts
+of those documents as well as your prompt to an LLM, allowing you to employ the power of ChatGPT
+on your proprietary data. &lt;/p&gt;
+&lt;p&gt;The application of LLMs to internal enterprise data is a fantastically exciting area, one which
+promises to create a massive amount of value going forward.&lt;/p&gt;
+&lt;h1&gt;Further Reading&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;If you're interested in this topic you might also enjoy the other posts in the &lt;a href="/tag/explainer.html"&gt;Non-Technical Explainer&lt;/a&gt; series as well.&lt;/em&gt;&lt;/p&gt;</content><category term="Machine Learning"/><category term="explainer"/><category term="machine-learning"/><category term="llm"/><category term="chatgpt"/></entry><entry><title>A Non-Technical Explanation of ChatGPT: Deep Learning</title><link href="https://www.parand.com/a-non-technical-explanation-of-chatgpt-deep-learning.html" rel="alternate"/><published>2023-05-09T11:15:00-07:00</published><updated>2023-05-09T11:15:00-07:00</updated><author><name>Parand Darugar</name></author><id>tag:www.parand.com,2023-05-09:/a-non-technical-explanation-of-chatgpt-deep-learning.html</id><summary type="html">&lt;p&gt;This is part two of the &lt;a href="https://www.parand.com/a-non-technical-explanation-of-chatgpt.html"&gt;non-technical explanation of ChatGPT&lt;/a&gt; series, please read that first. It's also helpful to read the &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;non-technical explanation of AI&lt;/a&gt; so you have some background on how deep learning is used here.&lt;/p&gt;
+&lt;h1&gt;Creating CatGPT&lt;/h1&gt;
+&lt;p&gt;Convinced that Markov's method is a good path forward, you decide …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is part two of the &lt;a href="https://www.parand.com/a-non-technical-explanation-of-chatgpt.html"&gt;non-technical explanation of ChatGPT&lt;/a&gt; series, please read that first. It's also helpful to read the &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;non-technical explanation of AI&lt;/a&gt; so you have some background on how deep learning is used here.&lt;/p&gt;
+&lt;h1&gt;Creating CatGPT&lt;/h1&gt;
+&lt;p&gt;Convinced that Markov's method is a good path forward, you decide to create the frequency table with 4 words 
+of context for the alien cat language so you can create high quality sentences. You roll up your sleeves and get to work.&lt;/p&gt;
+&lt;p&gt;A week goes by and you notice you've barely made a dent - you've filled up several notebooks with
+frequency counts, and you still have so very many word combinations to go through. What's going on?&lt;/p&gt;
+&lt;p&gt;How much work is necessary to create the frequency table? If we were using a single word 
+as our context window and wanted to have the vocabulary of an average native English speaker (30000 words),
+we'd need 30000 rows, one for each word in the English language. &lt;/p&gt;
+&lt;p&gt;If we use two words of context we'd potentially be looking at the number of two word permutations of those 
+30k words. That's about 900 million rows. With three words of context we could have 27 trillion
+rows. That's a lot of rows. In practice the number of permutations is significantly smaller because many word 
+permutations don't occur in English, but we'd still get to very large numbers very quickly.&lt;/p&gt;
+&lt;p&gt;This is an unfortunate reality when dealing with combinations and permutations - increasing
+the number of items you consider catastrophically increases the number of calculations you have
+to do or items you have to remember. The technical term is &lt;a href="https://en.wikipedia.org/wiki/Combinatorial_explosion"&gt;&lt;em&gt;combinatorial explosion&lt;/em&gt;&lt;/a&gt;, which is a good description of how your head feels after all that counting.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/cat-fireworks.png"&gt;&lt;/p&gt;
+&lt;p&gt;This is not good. Four words of context is not very much - something as simple as our marathon example
+( I just ran a marathon. I am very _____ ) would require more context. How do we deal with the explosion?&lt;/p&gt;
+&lt;p&gt;You ask Markov and he gets a sour look on his face - "Yeah, this is a a problem. I don't have a great solution."&lt;/p&gt;
+&lt;h1&gt;Learning, Deeply&lt;/h1&gt;
+&lt;p&gt;How do we deal with this explosion of calculation? Since we can't directly solve the problem maybe we can
+wave our hands and try the magic of Deep Learning.&lt;/p&gt;
+&lt;p&gt;Let's see if we can use 
+&lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;our experience from finding cats&lt;/a&gt; here. 
+That also seemed a very complex problem, and we solved that using layers of workers to focus on different aspects
+of the problem, and formed our final opinion based on the opinions of the layers of workers giving
+us information.&lt;/p&gt;
+&lt;p&gt;We have a bit of a problem though - in that case the boss was giving us the examples as well as the correct
+answers. She was also giving us rewards and punishments. We don't have that here - we just have a big book of alien cat communication and a desire to create a frequency table.&lt;/p&gt;
+&lt;p&gt;That's too bad - you have your slapping gloves ready to go, you were really hoping you could use the same
+technique as last time.&lt;/p&gt;
+&lt;h1&gt;Eureka: We can Train&lt;/h1&gt;
+&lt;p&gt;What is the actual problem we're trying solve with the frequency table? We are trying to predict the next
+word. Can we turn that into a problem with rewards and punishments?&lt;/p&gt;
+&lt;p&gt;Yes we can!&lt;/p&gt;
+&lt;p&gt;The problem we're trying to solve is: given 4 words of context, predict the next word. We tried to be
+clever and use a frequency table to solve this. Let's not be clever: just like the cat classification
+task, let's not define the methods and process for solving the problem - let's instead hand it
+off to our layers of workers and reward and punish them until they figure it out.&lt;/p&gt;
+&lt;p&gt;How do we turn our book of cat communication into a prediction task? Simple: grab any 4 words of context 
+and hand them off to the group of workers and ask them to predict the next word. We know what the 
+next word should be (it's just the word that followed those words in the big book of cat communication) -
+if they get it right we give them a reward, if they get it wrong we give them a slap.&lt;/p&gt;
+&lt;p&gt;This is great - we can open the book of alien cat communication on any page, pick 4 consecutive words, give that
+to the workers, and train them on what the next word should be. Now we have our training examples
+and our rewards and punishments.&lt;/p&gt;
+&lt;p&gt;You grab your slapping gloves and lots of rewards and call your layers of trusty workers and start
+the the training.&lt;/p&gt;
+&lt;h1&gt;Deep Learning For Hard Problems&lt;/h1&gt;
+&lt;p&gt;This is a great example of a situation where deep learning can be applied effectively:&lt;/p&gt;
+&lt;ul class="list-disc list-inside"&gt;
+    &lt;li&gt;Traditional methods (in this case, creating the exact frequency table) don't work&lt;/li&gt;
+    &lt;li&gt;We have a lot of data&lt;/li&gt;
+    &lt;li&gt;We can create a large number of training examples&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We have turned the task of creating a sentence into a predict-the-next-word task, and
+we have turned the book of cat communication into many examples that we can train on.&lt;/p&gt;
+&lt;p&gt;The architecture of the deep learning system that powers ChatGPT is quite a bit
+more complex than what we discussed in the &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;non-technical explanation of AI&lt;/a&gt; post, but the core ideas are the same. I'll
+touch on some of the technical aspects in future posts, but for now think of the same multi-layer
+groups of workers where rewards / punishments are propogated back through the network to train
+it to produce the desired output.&lt;/p&gt;
+&lt;h1&gt;CatGPT Works. Sort Of&lt;/h1&gt;
+&lt;p&gt;After lots of training you and your colleagues are getting good at predicting the next word
+in the cat language, and you're enjoying the rewards. But you're a bit stuck - there's only
+so much you can do with 4 words of context. Your colleagues are asking for more and more words
+of context. You start to increase the context window from 4 words to 5, 6, and so on, and your 
+responses start getting better. But the workers' task is also getting much more complex: as 
+you give people more and more words their area of focus becomes too large - they have too many 
+foreign words to look at at a time. You get to a point where each worker can't effectively focus 
+on more words. Your training stalls and you're not getting as much reward as you want. Your 
+colleagues start complaining about losing out on the rewards - the loss is too high!&lt;/p&gt;
+&lt;h1&gt;Attention Please&lt;/h1&gt;
+&lt;p&gt;Your context window has gotten too large and things are stalling. You start doing the same thing
+you did with the cat classifying task: you tell each worker to focus on a small window of
+words and give their opinion on that instead of looking at all the words in the context. It's
+going ok, but the window of words each worker looks at isn't enough to understand the whole
+context, and increasing each worker's window makes their individual task too difficult.&lt;/p&gt;
+&lt;p&gt;One day one of the workers, frustrated that she can't predict the next
+word, yells out "I think this word is an adverb. I can't predict the next word -  I don't
+have a verb in the part of the context I'm looking at!"&lt;/p&gt;
+&lt;p&gt;One of the other workers looks up. "I have a verb in my part! I've been looking for an adverb!"&lt;/p&gt;
+&lt;p&gt;The two of them exchange information and both improve their predictions.&lt;/p&gt;
+&lt;p&gt;Why didn't you think of that? You should let the workers communicate about the parts they're
+looking into. You grab your English grammar book and start telling the workers they should 
+call out the parts of speech they have. &lt;/p&gt;
+&lt;p&gt;The problem is cat language doesn't follow English grammar rules, so what you're asking
+for doesn't really make sense.&lt;/p&gt;
+&lt;p&gt;You remember your motto: don't solve the problem in a clever way, just provide rewards and
+punishments. You tell the workers: feel free to tell others the type of thing you're looking 
+at and ask others for the information you need to predict the next word. &lt;/p&gt;
+&lt;p&gt;"What do you mean by &lt;em&gt;type of thing you're looking at&lt;/em&gt;?" ask the workers.&lt;/p&gt;
+&lt;p&gt;"I have no idea", you respond. "Whatever helps you."&lt;/p&gt;
+&lt;p&gt;The workers are skeptical, but they decide to give it a try. They start telling others what
+they think is relevant in the group of words they're looking at and paying attention to what 
+the others are saying. It's challenging - each worker has to decide what to to say about
+their piece and what to pay attention to from others - but they work out a system. 
+"I think this has something to do with whiskers, and I'm looking 
+for something about whether the cat's in a small or large space". "I have information about
+the cat being alone and I'm trying to see if they're scared or not". "My tail is low between
+my legs, does anyone have information about a threat?"&lt;/p&gt;
+&lt;p&gt;A lot of what they communicate isn't useful, so they don't get rewarded for it. The workers 
+focus on the information that gives them the most rewards, and because the rewards come from the 
+next-word prediciton being right the whole system starts producing internal information that
+leads to better predictions.&lt;/p&gt;
+&lt;p&gt;Your training has gotten to the point where you're barely losing any rewards. You want 
+to make sure people aren't just memorizing the whole cat communication book, so you kept
+one part of the book secret during training, and you use that part to test how good 
+your next-word prediction is. It's looking good. &lt;/p&gt;
+&lt;p&gt;You have successfully built a Large (Cat) Language Model.&lt;/p&gt;
+&lt;h1&gt;Transformers and Attention&lt;/h1&gt;
+&lt;p&gt;One of the key breakthroughs that enabled the creation of sophisticated language
+models was the invention of &lt;em&gt;transformers&lt;/em&gt;, which is the technical term for what we called 
+&lt;em&gt;attention&lt;/em&gt; above. If you're interested in the details and examples I'd recommend
+&lt;a href="https://jalammar.github.io/illustrated-transformer/"&gt;the illustrated transfomer&lt;/a&gt; and 
+&lt;a href="https://towardsdatascience.com/deconstructing-bert-part-2-visualizing-the-inner-workings-of-attention-60a16d86b5c1"&gt;visualizing attention&lt;/a&gt;, both
+do a great job of giving you the math and intuition.&lt;/p&gt;
+&lt;p&gt;I'll steal one of the illustrated transfomer's images to give you a real world example of 
+what attention looks like - the image shows what one of the "workers" is paying attention 
+to in the sentence  "The animal didn't cross the street because it was too tired":&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://jalammar.github.io/images/t/transformer_self-attention_visualization.png"&gt;&lt;/p&gt;
+&lt;p&gt;The worker here is working on the word &lt;em&gt;it&lt;/em&gt;, and the diagram shows &lt;em&gt;it&lt;/em&gt; is paying the most
+attention to &lt;em&gt;The&lt;/em&gt; and &lt;em&gt;animal&lt;/em&gt;. That makes sense: in the above sentence &lt;em&gt;it&lt;/em&gt; is referring to
+&lt;em&gt;The animal&lt;/em&gt;, and the network has found a way allow that pronoun to be aware of its noun.&lt;/p&gt;
+&lt;h1&gt;Cat Communication&lt;/h1&gt;
+&lt;p&gt;You decide to try it out with the alien cats.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/alien-cat.png"&gt;&lt;/p&gt;
+&lt;p&gt;The cat representative is sitting across from you. It says something. You hand that over
+to your team of colleagues and they start their process of creating a response, one word
+at a time. &lt;/p&gt;
+&lt;p&gt;You give your response to the cat. &lt;/p&gt;
+&lt;p&gt;It gives you a surprised look, and raises its tail in a let's-be-friends gesture.&lt;/p&gt;
+&lt;p&gt;Back and forth, you try several exchanges, and it seems to be working - you're able to have
+a "conversation". You're not sure what you or the cat are saying, but you're conversing.&lt;/p&gt;
+&lt;p&gt;You notice some of your responses seem to upset the cat. You'd like to avoid that, so you
+start giving feedback to your team, increasing rewards for responses that make the cat
+happy and reducing rewards for responses that upset the cat. After a while your team
+learns to provide its responses in a way that makes the cat happy. You call this Cat-in-Loop-Training.&lt;/p&gt;
+&lt;h1&gt;Human-in-the-Loop and Fine Tuning&lt;/h1&gt;
+&lt;p&gt;ChatGPT is the fastest growing application in history - it went from zero to 1 million users
+in 5 days and to 100 million users in just two months.&lt;/p&gt;
+&lt;p&gt;But did you know that GPT-3, the base language model that was subsequently improved to power
+ChatGPT, was released in June 2020? What happend in those 2.5 years - why didn't GPT-3 capture
+our imagination the way ChatGPT did?&lt;/p&gt;
+&lt;p&gt;One of the main reasons was the "fine tuning" of the model based on human feedback to make it
+conversational and helpful. &lt;/p&gt;
+&lt;p&gt;The base language model, GPT-3, was trained on a very large amount of text from very many sources.
+This taught the system to be able to create cohesive sentences and paragraphs. Think of this as
+a computer that has learned to speak.&lt;/p&gt;
+&lt;p&gt;The human-in-the-loop fine tuning took this base system and further trained it to have chat-like
+conversations: the sentences created by the system were no longer just judged on how cohesive
+and valid they were, but also on how well they mimicked a helpful conversation.&lt;/p&gt;
+&lt;p&gt;ChatGPT is polite and helpful because it was trained to be that way - the language model itself
+is capable of many forms of communication, including being rude and unhelpful, since the very
+large amount of text it was trained on included rude and unhelpful conversations. ChatGPT
+was specifically trained to be a helpful chatbot, as opposed to a sarcastic layabout.&lt;/p&gt;
+&lt;p&gt;This idea of taking a base language model and further training it ("fine tuning" it) for your specific
+needs is very powerful: instead of having to create a complete model from scratch, you can take 
+existing models off the shelf and tune them to do what you want.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Another significant reason ChatGPT was so successful while GPT-3 was ignored was its easy to use and easy to understand
+user interface, but we'll conveniently ignore that here)&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;CatGPT&lt;/h1&gt;
+&lt;p&gt;Congratulations, you have saved humanity, communicated with aliens, and perhaps understood a bit more
+about large language models and ChatGPT.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/man-cat-sunset.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Further Reading&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;If you're interested in this topic you might also enjoy the other posts in the &lt;a href="/tag/explainer.html"&gt;Non-Technical Explainer&lt;/a&gt; series as well.&lt;/em&gt;&lt;/p&gt;</content><category term="Machine Learning"/><category term="explainer"/><category term="machine-learning"/><category term="llm"/></entry><entry><title>A Non-Technical Explanation of ChatGPT</title><link href="https://www.parand.com/a-non-technical-explanation-of-chatgpt.html" rel="alternate"/><published>2023-05-04T08:10:00-07:00</published><updated>2023-05-04T08:10:00-07:00</updated><author><name>Parand Darugar</name></author><id>tag:www.parand.com,2023-05-04:/a-non-technical-explanation-of-chatgpt.html</id><summary type="html">&lt;p&gt;Continuing the series of non-technical explainers, let's figure out how ChatGPT (and in general Large Language Models, 
+or LLMs) work. This is part one of the ChatGPT explainer, with part two coming soon.&lt;/p&gt;
+&lt;p&gt;It's helpful but not necessary to read the &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;non-technical explanation of AI&lt;/a&gt; first, if you feel like …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuing the series of non-technical explainers, let's figure out how ChatGPT (and in general Large Language Models, 
+or LLMs) work. This is part one of the ChatGPT explainer, with part two coming soon.&lt;/p&gt;
+&lt;p&gt;It's helpful but not necessary to read the &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;non-technical explanation of AI&lt;/a&gt; first, if you feel like it read that and come back.&lt;/p&gt;
+&lt;h1&gt;Fill In The Blank&lt;/h1&gt;
+&lt;p&gt;Let's play a quick game of fill in the blank:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+to be or not to _____
+&lt;/blockquote&gt;
+
+&lt;p&gt;Why did you immediately think of the word &lt;em&gt;be&lt;/em&gt; to fill in that blank, instead of the word &lt;em&gt;banana&lt;/em&gt; or &lt;em&gt;fish&lt;/em&gt;? Because you've seen the phrase many times and your brain has learned the most likely next word is &lt;em&gt;be&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Let's do another one:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+rock and ____
+&lt;/blockquote&gt;
+
+&lt;p&gt;Did you think of the word &lt;em&gt;roll&lt;/em&gt;? Why? Because that's the word you see most often following the words &lt;em&gt;rock and&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;How about this one:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+I am very _____
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is less clear - the next word depends on the context.&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+I just ran a marathon. I am very _____
+&lt;/blockquote&gt;
+
+&lt;p&gt;Perhaps now you would say &lt;em&gt;tired&lt;/em&gt;. Or &lt;em&gt;happy&lt;/em&gt;, or &lt;em&gt;proud&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Your brain is picking the most likely next word based on the context of the sentence and based on what words it's seen most frequently in that context.&lt;/p&gt;
+&lt;h1&gt;Aliens and CatGPT&lt;/h1&gt;
+&lt;p&gt;In an astonishing turn of events a race of alien cats have landed on earth. Since you are &lt;a href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html"&gt;the world's foremost cat expert&lt;/a&gt; you have been chosen to communicate with them.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/alien-cat.png"&gt;&lt;/p&gt;
+&lt;p&gt;Your boss walks in and drops a massive print out of all the alien cat communications on your desk.&lt;/p&gt;
+&lt;p&gt;"Speak cat!" she commands.&lt;/p&gt;
+&lt;p&gt;Unfortunately you don't speak alien cat.&lt;/p&gt;
+&lt;p&gt;You page through the print outs - it looks like pages and pages of gibberish.&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+zoog zeeg zag.
+zoog zeeg kaz.
+zoog zeeg bah.
+rag zoog zeeg.
+rag zoog ko.
+kaz rag.
+zap zoog zeeg.
+...
+&lt;/blockquote&gt;
+
+&lt;h1&gt;Markov to the Rescue&lt;/h1&gt;
+&lt;p&gt;What to do? You remember your friend Markov who's always talking about languages, words,
+and their relationships. Maybe he can help. You show him the alien cat communications and
+ask him if he can help you say something in cat.&lt;/p&gt;
+&lt;p&gt;"Yes!" he exclaims - "We can do this. We will create our response one word at a time, just
+by picking the best word to say next, and keep going until we have a sentence"&lt;/p&gt;
+&lt;p&gt;"But how do we know what the best word to say next is? Don't we need to know what the words 
+mean?"&lt;/p&gt;
+&lt;p&gt;"Nope, we just need to know what word to say next"&lt;/p&gt;
+&lt;p&gt;"That... doesn't seem like it would work"&lt;/p&gt;
+&lt;p&gt;"Let me show you", says Markov, and grabs the book on his desk, 
+&lt;a href="https://www.gutenberg.org/ebooks/11"&gt;Alice in Wonderland&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/alice-in-wonderland-cat.png"&gt;&lt;/p&gt;
+&lt;p&gt;"We just need to know what word to say next. The best word to say next is simply
+the word that shows up most frequently after the word we're looking at. All we
+have to do is make a table of how often each word follows another word. We'll call
+this a frequency table"&lt;/p&gt;
+&lt;p&gt;He shows you how to create the frequency table - you just note down how many times each word follows another.
+It takes a while to go through all Alice in Wonderland and do the counting. You end up with:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+&lt;pre&gt;Next word after "Alice" → was: 17 times,  and: 16 times,  thought: 12 times,  had: 11 times, ...
+Next word after "sat" → down: 9 times,  silent: 2 times,  still: 2 times,  for: 1 times, ...
+Next word after "was" → a: 31 times,  the: 20 times,  not: 12 times,  going: 11 times, ...
+Next word after "and" → the: 80 times,  she: 52 times,  then: 31 times,  was: 19 times, ...
+Next word after "a" → little: 59 times,  very: 25 times,  large: 20 times,  great: 17 times
+Next word after "very" → much: 10 times,  soon: 7 times,  curious: 6 times,  glad: 5 times
+...
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This table gives you a lot of help in forming sentences in the style of Alice in Wonderland. 
+For example, if you start with the word &lt;em&gt;Alice&lt;/em&gt;, then you'd look that up in the above table
+and see that the most frequent next word is &lt;em&gt;was&lt;/em&gt;. And after &lt;em&gt;was&lt;/em&gt; you would select &lt;em&gt;a&lt;/em&gt;. After &lt;em&gt;a&lt;/em&gt;
+you would get &lt;em&gt;little&lt;/em&gt;. You'd end up with &lt;em&gt;Alice was a little&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;How well does this work? Let's create some sentences:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+the door, when i beg your verdict," it was quite plainly through the bottle, i'm afraid that they had its nest.
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can try this out for yourself on &lt;a href="http://almeopedia.com/markovtest.html"&gt;almeopedia&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That's not great. Why is it so nonsensical? Think back to our fill in the blank examples at the start of 
+this post: in order to pick a good next word you need context. If someone asked you what word should 
+appear after &lt;em&gt;rock&lt;/em&gt;, you'd have a hard time picking something reasonable, but if they gave you 
+&lt;em&gt;rock and&lt;/em&gt;, you'd fairly quickly think of &lt;em&gt;roll&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;What would happen if you considered two words instead of a single word for your context? 
+For one thing your frequency table creation would become harder - now instead of a single line for
+each word, you'd have a line for each word pair. You'd have to gather stats for all the two word 
+permutations, which is a lot more than the single word case.&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+&lt;pre&gt;Next word after "Alice was" → not: 3 times,  beginning: 2 times,  very: 2 times, ...
+Next word after "was not" → a: 3 times,  here: 1 times,  going: 1 times ...
+Next word after "not here" → before: 1 times
+Next word after "not a" → moment: 2 times,  bit: 2 times,  serpent: 2 times
+&lt;/pre&gt;
+...
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let's create a sentence with this and see how it looks:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+the hatter, and, burning with curiosity, she decided on going into the garden.
+&lt;/blockquote&gt;
+
+&lt;p&gt;You can try this out for yourself on &lt;a href="http://www.almeopedia.com/markov3test.html"&gt;almeopedia&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That's looking better, it almost makes sense. Let's keep going - instead of two words
+of context, how about three? &lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+The Hatter’s remark seemed to have no sort of chance of her ever getting out of the water, and seemed to quiver all over with diamonds, and walked two and two, as the soldiers did.
+&lt;/blockquote&gt;
+
+&lt;p&gt;Four?&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+So she swallowed one of the cakes, and was delighted to find that she knew the name of nearly everything there.
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hmm. This is a little too good. It turns out a very similar sentence exists in the original Alice in Wonderland text:&lt;/p&gt;
+&lt;blockquote class="p-4 my-4 border-l-2 border-gray-300 bg-gray-200"&gt;
+So she swallowed one of the cakes, and was delighted to find that she
+began shrinking directly.
+&lt;/blockquote&gt;
+
+&lt;p&gt;Our simple method of picking the most likely next word can result in the system memorizing the text snippets -
+given long enough context, the next most likely word is exactly the word that appeared in the original text 
+following that context. &lt;/p&gt;
+&lt;p&gt;We can fix this by introducing some randomness - instead of always picking the most likely next word, we can
+pick somewhat likely next words. This way we're less likely to regurgitate the original text.&lt;/p&gt;
+&lt;p&gt;The good news is our method seems to work for English, so it'll probably work for alien cat language as well.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Aside: You might run into the term "stochastic" as you look into language models - this just means randomly determined.
+For example, you might hear people argue whether these systems are &lt;strong&gt;Stochastic Parrots&lt;/strong&gt;, implying the systems
+are simply parroting back the original text that they saw, with some randomness thrown in.
+&lt;/i&gt;&lt;/p&gt;
+&lt;h1&gt;Large Language Models&lt;/h1&gt;
+&lt;p&gt;ChatGPT and many other Large Language Models (LLMs) do essentially what you did above: they examine
+a very large amount of human communication, gather stats (or probabilities) on what words are most likely 
+to follow other words, and play a continous game of fill-in-the-blank. You give them some context (your prompt or
+question), and they create the reply one word at a time by selecting the word most likely to appear next.
+They respond with a word, then look at their internal stats to pick a word to follow their first word, then
+a word to follow their second word, and so forth, one word at a time, until they've formed a response.&lt;/p&gt;
+&lt;h1&gt;To be Continued...&lt;/h1&gt;
+&lt;p&gt;In &lt;a href="/a-non-technical-explanation-of-chatgpt-deep-learning.html"&gt;part two of this series&lt;/a&gt; we'll look at the problems you'll run into with this method and how deep learning helps you overcome those problems.&lt;/p&gt;
+&lt;h1&gt;Further Reading&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;If you're interested in this topic you might also enjoy the other posts in the &lt;a href="/tag/explainer.html"&gt;Non-Technical Explainer&lt;/a&gt; series as well.&lt;/em&gt;&lt;/p&gt;</content><category term="Machine Learning"/><category term="explainer"/><category term="machine-learning"/><category term="llm"/></entry><entry><title>A Completely Non-Technical Explanation of AI and Deep Learning</title><link href="https://www.parand.com/a-completely-non-technical-explanation-of-ai.html" rel="alternate"/><published>2023-04-14T23:38:00-07:00</published><updated>2023-04-14T23:38:00-07:00</updated><author><name>Parand Darugar</name></author><id>tag:www.parand.com,2023-04-14:/a-completely-non-technical-explanation-of-ai.html</id><summary type="html">&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;This document will explain what neural networks are and how they work, which will help you
+understand how AI and machine learning work. In the scenario below you'll play the part of 
+the neural network.&lt;/p&gt;
+&lt;h1&gt;Day One&lt;/h1&gt;
+&lt;p&gt;First day of your new job as a "classifier" your boss walks …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Overview&lt;/h1&gt;
+&lt;p&gt;This document will explain what neural networks are and how they work, which will help you
+understand how AI and machine learning work. In the scenario below you'll play the part of 
+the neural network.&lt;/p&gt;
+&lt;h1&gt;Day One&lt;/h1&gt;
+&lt;p&gt;First day of your new job as a "classifier" your boss walks in and drops a big spreadsheet of 
+numbers on your desk.&lt;/p&gt;
+&lt;p&gt;"Is this a cat?" she asks.&lt;/p&gt;
+&lt;p&gt;Confused you ask "What?"&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/neural-cat.png"&gt;&lt;/p&gt;
+&lt;p&gt;"Is this a cat?"&lt;/p&gt;
+&lt;p&gt;Even more confused, you respond "I don't know".&lt;/p&gt;
+&lt;p&gt;"Wrong!" she says, and slaps you across the face.&lt;/p&gt;
+&lt;p&gt;Before you've had a chance to be shocked she drops another large spreadsheet on your desk. "Is this a cat?"&lt;/p&gt;
+&lt;p&gt;"I don't understand" you respond.&lt;/p&gt;
+&lt;p&gt;"Wrong!" she says, and slaps you again.&lt;/p&gt;
+&lt;p&gt;Another spreadsheet. "Is this a cat?"&lt;/p&gt;
+&lt;p&gt;Not wanting another slap, you meekly respond "Yes?"&lt;/p&gt;
+&lt;p&gt;"Correct! Good job!" she says, and gives you a wonderful reward. Almost makes up for the slaps.&lt;/p&gt;
+&lt;p&gt;Another spreadsheet. Cat?&lt;/p&gt;
+&lt;p&gt;Slightly more confident and wanting another reward you respond "Yes"&lt;/p&gt;
+&lt;p&gt;"Wrong!". Another slap.&lt;/p&gt;
+&lt;p&gt;You are very confused. "I don't understand what's going on. You haven't told me the rules,
+you haven't told me how to figure out something is a cat, you haven't given me the logic
+to figure this out. You haven't trained me."&lt;/p&gt;
+&lt;p&gt;"Correct" says the boss. "This is training. Trust me, you're going to get very good at 
+recognizing cats"&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/woman-carrot-stick.png"&gt;&lt;/p&gt;
+&lt;p&gt;Another spreadsheet. This time you focus on the sheet. It's 256 columns and 256 rows, filled
+with numbers. Is it a cat? You don't know, so you guess. &lt;/p&gt;
+&lt;p&gt;Another and another. Right, wrong, wrong, right again, it keeps going. Slaps and rewards. &lt;/p&gt;
+&lt;p&gt;You're starting to notice some patterns - if the sheet is almost all zeros then it's not a cat.
+You look at the center of the sheet - that part should have larger numbers. &lt;/p&gt;
+&lt;p&gt;It's getting slightly better - you're getting more rewards than slaps, guessing correctly more
+often than not. It's all about the patterns of the numbers.&lt;/p&gt;
+&lt;h1&gt;Day Two&lt;/h1&gt;
+&lt;p&gt;This is the strangest job you've ever had. The slaps are terrible, but the rewards are so great
+you don't want to quit. How do you get better at this? It's not really possible for one person. 
+If you had more people they could focus on different aspects of the sheet,
+look for different patterns, and you could use their findings to make better guesses. &lt;/p&gt;
+&lt;p&gt;You hire 10 people and bring them to work the next day. When you get a spreadsheet you show it
+to those 10 people and ask them "Is this a cat?"&lt;/p&gt;
+&lt;p&gt;They are as confused as you were. You force them to guess. The first guy looks like an idiot, 
+so you decide to go with the opposite of what he says. The third lady looks really thoughtful 
+so you put a lot of weight on what she says. In your mind you assign a weight to each of 
+their guesses to come up with your final answer.&lt;/p&gt;
+&lt;p&gt;Each time you get a reward or punishment you share it with the 10 people you've hired: you
+reward or slap them based on how much weight you put on their input and how much they contributed
+to you getting the answer right or wrong. You learn the patterns: if the first guy says a strong
+no and the third lady a strong yes then it's very likely a cat. You learn many more patterns
+like this.&lt;/p&gt;
+&lt;p&gt;The 10 people are learning to hone their opinions based on the rewards and punishments they get.
+They can focus on different aspects of the sheet, and their opinions together can tell you a lot
+about the sheet.&lt;/p&gt;
+&lt;p&gt;After what feels like an epoch and a lot of spreadsheets, eventually you get better.
+You're getting more rewards. This is working. Your boss says you're very perceptive, and
+starts calling you Perceptron.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/man-people.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Day Ten&lt;/h1&gt;
+&lt;p&gt;What if you get more people involved? You could make it 50 people reporting to you, but that'd
+be hard to manage. How about we add another layer of people before your 10?&lt;/p&gt;
+&lt;p&gt;You hire 50 more people, have them give their guesses to the 10 people that report to you. 
+You're now very removed from looking at the spreadsheets - instead you rely on the patterns
+found by the first layer of the people, who give their opinions to the second layer of the people,
+who then inform you. Everybody passes the slaps and rewards down the line based on how much
+each earlier person's guess contributed to their guess.&lt;/p&gt;
+&lt;p&gt;It takes even longer, but eventually the system starts working. You're much more accurate in
+identifying when it's a cat. &lt;/p&gt;
+&lt;p&gt;Interestingly you were never taught the rules or logic, and you didn't teach your people the
+logic or rules. You just propagated the rewards and punishments back through each layer: the
+more each person's opinion contributes to the answer, the more rewards or punishment you shared
+with them, and they in turn with the people in the layer behind them. Each person uses the same
+method to propogate their rewards and punishment back to the people in the layer below them.&lt;/p&gt;
+&lt;h1&gt;Neural Networks&lt;/h1&gt;
+&lt;p&gt;This is how neural networks work: they see many examples and get rewarded or punished based on
+whether their guesses are correct. They use multiple layers of workers and eventually
+learn patterns. Importantly no one is teaching them what patterns they should be looking for
+or telling them the logic or the rules - the networks eventually figure out the patterns and
+logic based on very many rounds of example, reward, and punishment. This is called 
+&lt;strong&gt;machine learning&lt;/strong&gt;, because the machine is learning the rules by itself.&lt;/p&gt;
+&lt;p&gt;Neural networks work well when you have many examples of something (eg. pictures of cats), but
+it's hard to write the logic and rules to describe how to recognize that thing. Try it - write
+down some rules for how to recognize a cat (eg. "has 4 legs"), then look at pictures of cats
+and see where the rules fail (eg. a picture of a cat's head). In these cases you use machine 
+learning so the machine learns the rules by itself.&lt;/p&gt;
+&lt;p&gt;Also note that computers see things as multi-dimensional tables of data. They don't look
+at a "picture" - they see 3 spreadsheets of numbers representing the RGB values of the picture.&lt;/p&gt;
+&lt;h1&gt;Day Forty&lt;/h1&gt;
+&lt;p&gt;Identifying cats is a lucrative business and you're pretty good at it. But not good enough. 
+How can we get even better? More people, more layers!&lt;/p&gt;
+&lt;p&gt;Unfortunately it takes a long time for people to do their calculations, so you've been stuck 
+with just a few layers of people for a while. Having a lot more people would make the process
+take too long.&lt;/p&gt;
+&lt;p&gt;One day you run into a group of people who call themselves Gaming People United (GPU). 
+These people play a game that has taught them to be very good at looking at spreadsheets and 
+calculating numbers - in fact they can do a lot of calculations in parallel, very quickly.&lt;/p&gt;
+&lt;p&gt;Excited, you hire a bunch of them and put them to work recognizing cats. Now instead of two
+layers of people you can have 10! Each layer can focus on higher and higher concepts - 
+the first layer can look for small details (eg. do I see a pattern that looks like a small 
+circle? Do I see a pattern that looks like a sharp edge?), the second layer can look for patterns
+from the results of the first layer (eg. are there two circles close to each other), 
+the third layer can build on that (eg. are there two circle close to each other, and a 
+triangle below them), and so forth. By the time the results of the layers get to you you have
+some fairly sophisticated concepts - we see a pattern that looks like a face, 
+we also see patterns that could be legs, and a sharp thing that might be a beak. Now your
+guess is more informed than ever.&lt;/p&gt;
+&lt;p&gt;You train the layers sending slaps and rewards down through each layer, and after many epochs
+you get really good at recognizing cats.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/images/man-cat.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Deep Learning&lt;/h1&gt;
+&lt;p&gt;One of the major break-throughs in machine learning was the advent of &lt;em&gt;Deep Learning&lt;/em&gt;,
+which is basically what we describe above - GPUs (Graphics Processing Units) got popular
+because they enable fast 3D graphics for games. They also happen to be very good at
+quickly doing the types of calculations neural networks need. Machine learning people
+started using GPUs for training neural networks, and with this extra speed they
+could have many more layers - from 3 or 4 layers to 10 or 11, and then hundreds. &lt;/p&gt;
+&lt;p&gt;This addition of layers led to significant advances in neural network performance - very
+quickly neural networks became the best solution for voice recognition, for image
+recognition, image creation, and sophisticated language models. This is called 
+&lt;strong&gt;Deep Learning&lt;/strong&gt; because there are so many layers, not because it's profound.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;You can stop reading here if you want, the following portion is only here because someone
+asked me what "convolutional neural networks" are.&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Day Fifty&lt;/h1&gt;
+&lt;p&gt;How can we make the process even more efficient? You start to realize that looking at
+the entire sheet is too hard - the first layer of people literally have to stare at the
+whole thing and try to guess based on that. What if we give them a small portion of the
+sheet to look at, give a guess for that portion, then move on to the next portion of 
+the sheet, and so on? The first layer of people are focused on lower level concepts
+anyway - looking for edges, things that look like circles, and so forth - and they 
+can find those in the small portions of the sheet, without the need to look at
+the whole thing at once.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src="https://iq.opengenus.org/content/images/2020/04/Convolving.gif" width="400"&gt;
+    &lt;figcaption&gt;&lt;a href="https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1"&gt;Via towardsdatascience&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;You tell the first layer of people this is what they should start doing. They respond
+that this sounds very convoluted and they'll only agree to do it if you call
+them "colonel". &lt;/p&gt;
+&lt;p&gt;This makes the process even faster and more accurate: the first layer become specialists
+in small features of the sheet, and they learn to be very efficient and fast. You try 
+the same idea for the next several layers: you tell people to focus on small portions of
+the feedback they get from the layer below them, moving the portion they focus on so 
+eventually the scan across all of the feedback.&lt;/p&gt;
+&lt;p&gt;This specialization and focus makes you even more accurate. Congratulations, you are 
+officially recognized as the best cat classifier in the world.&lt;/p&gt;
+&lt;h1&gt;Convolutional Neural Networks&lt;/h1&gt;
+&lt;p&gt;Convolutions are this idea of applying a specific set of calculations, sometimes called
+a kernel, to each portion of the input, and scanning your window of attention across the
+entire image. The set of calculations, or kernel, is learned by each worker - you don't
+tell it what to calculate or how, it learns what's useful based on rewards and punishments.
+Convolutional Neural Networks (CNNs) were a significant step forward in the capability of
+neural networks.&lt;/p&gt;
+&lt;h1&gt;Further Reading&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;If you're interested in this topic you might also enjoy the other posts in the &lt;a href="/tag/explainer.html"&gt;Non-Technical Explainer&lt;/a&gt; series as well.&lt;/em&gt;&lt;/p&gt;</content><category term="Machine Learning"/><category term="explainer"/><category term="machine-learning"/></entry></feed>
