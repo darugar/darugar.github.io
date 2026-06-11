@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,27 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">15 November 2011</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/how-to-scan-multiple-pages-into-a-single-pdf-on-os-x.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"How To Scan Multiple Pages Into a Single PDF on OS X"</a>
+        <p class="leading-relaxed pt-6"><p>My new printer has a document feeder which makes scanning of multiple pages easy, but I didn't know how to kick off the scan on OS X. Turns out it's quite easy:</p>
+<ul>
+<li>Open the OS X Preview app</li>
+<li>Go to the File menu and select Import From Scanner</li>
+<li>Select your …</li></ul></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/how-to-scan-multiple-pages-into-a-single-pdf-on-os-x.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
@@ -443,24 +480,6 @@ sudo vi /etc/vim/vimrc
         <p class="leading-relaxed pt-6"><p>Impressive Ted Talk by Chimamanda Adichie on how stories, and in particular "single stories", shape our views of cultures. Many parallels with how people typically see Iran. </p>
 <p>A great quote from the talk: "<em>The problem with stereotypes is not that they are untrue - it is that they are incomplete</em>". </p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/the-power-of-stories-in-shaping-views-of-cultures.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">11 October 2009</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/eclipse-pydev-i-recommend-it.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Eclipse + PyDev : I Recommend It"</a>
-        <p class="leading-relaxed pt-6"><p>I used to be a vi guy who finally made the move to graphical editors. I looked for the simplest, lightest possible solutions, using <a href="http://www.contexteditor.org/">ConTEXT</a> for quite a while.</p>
-<p>Some years ago I was forced into using Eclipse for reasons I can't quite recall; probably Java development. I didn't like …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/eclipse-pydev-i-recommend-it.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,31 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">19 May 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/javascript-array-deferencing.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Javascript Array Deferencing?"</a>
+        <p class="leading-relaxed pt-6"><p>I have an array, say:</p>
+<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">pieces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2008</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">];</span>
+</code></pre></div>
+
+<p>I'd like to create a date based on this; the equivalent of:</p>
+<div class="highlight"><pre><span></span><code>new Date( 2008, 5, 19, 13, 49 );
+</code></pre></div>
+
+<p>Is there a way to do that in Javascript? Can I dereference the array in my date create call …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/javascript-array-deferencing.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
@@ -438,23 +479,6 @@
         <a href="/hadoop-is-the-linux-of-data-processing.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Hadoop Is the Linux of Data Processing"</a>
         <p class="leading-relaxed pt-6"><p>Mentioned in passing by Roberto today. Sounds about right to me.</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/hadoop-is-the-linux-of-data-processing.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">09 April 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/university-engineering-optimization-function.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"University Engineering Optimization Function"</a>
-        <p class="leading-relaxed pt-6"><p>I was surprised by the persistent constraint of "4 years, x dollars" that came up in the <a href="/say/index.php/2008/04/07/engineering-skills-for-the-future.html">Engineering Dean's conference</a>. Apparently any change to the university curriculum that challenges the 4 years or the cost basis for graduating is virtually impossible to make. This came up in the context of …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/university-engineering-optimization-function.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

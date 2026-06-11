@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,23 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">18 July 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/thats-how-i-roll-mofo.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"That&#8217;s How I Roll, MoFo"</a>
+        <p class="leading-relaxed pt-6"><p><a href="http://bigeyedeer.wordpress.com/2008/07/15/this-cartoon-wrote-a-sweary-word-on-your-toilet-wall/">Funny.</a></p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/thats-how-i-roll-mofo.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
@@ -460,24 +493,6 @@
         <a href="/the-performance-penalty-of-virtualization.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"The Performance Penalty of Virtualization"</a>
         <p class="leading-relaxed pt-6"><p>If you've spent any time with virtualized environments you know how effective and productive they are. The process of expanding capacity for <a href="http://faceddouble.com/">FaceDouble</a>, for example, became significantly simpler once they moved to depolying virtual servers, and SmugMug has been <a href="http://blogs.smugmug.com/don/2008/06/03/skynet-lives-aka-ec2-smugmug/">singing the praises of Amazon's EC2</a> with a clever system to …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/the-performance-penalty-of-virtualization.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">26 June 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/openid-for-email-verification.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"OpenID for Email Verification?"</a>
-        <p class="leading-relaxed pt-6"><p>I have a need to verify user email addresses, which I've been doing the traditional way - sending an email with a secret to the user's address and having them reply or click on a URL.</p>
-<p>Unfortunately this is not optimal - emails tend to not make it to the user, go …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/openid-for-email-verification.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

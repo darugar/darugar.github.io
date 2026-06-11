@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,24 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">03 March 2008</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/memcache-as-a-general-protocol.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"MemCache as a General Protocol"</a>
+        <p class="leading-relaxed pt-6"><p>I've been messing around with <a href="/web/20101222033503/http://rubyforge.org/projects/starling/">Starling</a>. Working well so far, although I haven't done anything fancy with it yet.</p>
+<p>I also need to create several simple, small, single purpose servers (eg. one to translate IP addresses to country codes). I have the python code, I just need to turn them …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/memcache-as-a-general-protocol.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
@@ -439,23 +473,6 @@
         <p class="leading-relaxed pt-6"><p>My laptop broke, leading to a visit to fatwallet, leading to the same old frustration with the lack of a notifier for specific new deals. I decided to finally put together a deal watcher.</p>
 <p>I started with the python Universal Feed Reader, which makes it amazingly simple to deal with …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/my-first-yahoo-pipe-fatwallet-deal-watcher.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="../category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">08 December 2006</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/google-reader-interface-everywhere.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Google Reader interface everywhere"</a>
-        <p class="leading-relaxed pt-6"><p>As I was moderating the 37 pieces of comment spam I received this morning (must've been a hiccup in <a href="/web/20101222040836/http://akismet.com/">Akismet</a>) I was struck by how much the activity resembles reading RSS feeds. Quick scan of the contents, followed by an action. Not to mention the abundance of junk in both …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/google-reader-interface-everywhere.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

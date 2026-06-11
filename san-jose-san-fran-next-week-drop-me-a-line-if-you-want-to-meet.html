@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }

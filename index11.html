@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,23 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">08 December 2006</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/google-reader-interface-everywhere.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Google Reader interface everywhere"</a>
+        <p class="leading-relaxed pt-6"><p>As I was moderating the 37 pieces of comment spam I received this morning (must've been a hiccup in <a href="/web/20101222040836/http://akismet.com/">Akismet</a>) I was struck by how much the activity resembles reading RSS feeds. Quick scan of the contents, followed by an action. Not to mention the abundance of junk in both …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/google-reader-interface-everywhere.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
@@ -426,24 +459,6 @@
         <a href="/more-tagging.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"More Tagging"</a>
         <p class="leading-relaxed pt-6"><p><a href="http://members.optusnet.com.au/benjamincarlyle/benjamin/blog/2005/07/16/#file-tagging">Sound Advice</a> and <a href="http://blueslugs.com/wordpress/index.php/archives/2005/07/12/tag1-delicious-style-file-tagging/">Blueslugs</a> weighing in on tagging in general and for unix file system respectively. You may have seen <a href="http://www.pooya.com/poo/index.php/2005/07/13/tagging-powerpoint/">Pooya's</a> and <a href="http://www.parand.com/say/index.php/2005/07/14/generalized-tagging-tool/">my</a> thoughts on this.</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/more-tagging.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">14 July 2005</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/generalized-tagging-tool.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Generalized Tagging Tool"</a>
-        <p class="leading-relaxed pt-6"><p><a href="http://www.pooya.com/poo/index.php/2005/07/13/tagging-powerpoint/">Pooya's onto something here</a>. He talks about tagging powerpoint slides to allow for easy find-and-paste into new presentations. He's proposing it would be a feature of Powerpoint.</p>
-<p>But why not make it more general and have it be a cross application / medium / location capability? You can tag anything if you …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/generalized-tagging-tool.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>

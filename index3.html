@@ -42,6 +42,22 @@
           color: brown !important;
         }
 
+        .entry-content ul, .entry-content ol,
+        .article-summary ul, .article-summary ol {
+          list-style: revert;
+          padding-left: 1.5rem;
+          margin: revert;
+        }
+        .entry-content li,
+        .article-summary li {
+          margin: revert;
+          margin-bottom: 0.5em;
+        }
+        .entry-content ul ul, .entry-content ol ol, .entry-content ul ol, .entry-content ol ul,
+        .article-summary ul ul, .article-summary ol ol, .article-summary ul ol, .article-summary ol ul {
+          margin-top: 0;
+        }
+
         .article-summary h1, .article-summary p {
           margin-top: 10px !important;
         }
@@ -89,6 +105,24 @@
 </div>
 
 <ul>
+<div class="py-6 flex flex-wrap md:flex-nowrap">
+    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
+        <span class="mt-1 text-gray-500 text-sm">11 October 2009</span>
+        <div></div>
+    </div>
+    <div class="md:flex-grow article-summary">
+        <a href="/eclipse-pydev-i-recommend-it.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Eclipse + PyDev : I Recommend It"</a>
+        <p class="leading-relaxed pt-6"><p>I used to be a vi guy who finally made the move to graphical editors. I looked for the simplest, lightest possible solutions, using <a href="http://www.contexteditor.org/">ConTEXT</a> for quite a while.</p>
+<p>Some years ago I was forced into using Eclipse for reasons I can't quite recall; probably Java development. I didn't like …</p></p>
+        <a class="text-indigo-500 inline-flex items-center mt-4" href="/eclipse-pydev-i-recommend-it.html">More
+        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+        </a>
+    </div>
+    </div>
 <div class="py-6 flex flex-wrap md:flex-nowrap">
     <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
         <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
@@ -424,24 +458,6 @@
         <a href="/python-scripts-for-dumping-oracle-data-and-loading-onto-hadoop-dfs.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"Python Scripts For Dumping Oracle Data And Loading Onto Hadoop DFS"</a>
         <p class="leading-relaxed pt-6"><p>There have been several requests for this, so I might as well post it here for general use. I put together a simple system for dumping data out of Oracle databases and loading onto Hadoop DFS. The slightly interesting part is the parallelism - <a href="http://pyprocessing.berlios.de/">Python's Processing library</a> is used to dump …</p></p>
         <a class="text-indigo-500 inline-flex items-center mt-4" href="/python-scripts-for-dumping-oracle-data-and-loading-onto-hadoop-dfs.html">More
-        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M12 5l7 7-7 7"></path>
-        </svg>
-        </a>
-    </div>
-    </div>
-<div class="py-6 flex flex-wrap md:flex-nowrap">
-    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span class="font-semibold title-font text-gray-700"><a href="./category/misc.html">misc</a></span>
-        <span class="mt-1 text-gray-500 text-sm">20 October 2008</span>
-        <div></div>
-    </div>
-    <div class="md:flex-grow article-summary">
-        <a href="/gmail-contact-groups-add-by-tag-search.html" class="text-3xl font-medium text-gray-900 title-font mb-2">"GMail Contact Groups: Add By Tag / Search"</a>
-        <p class="leading-relaxed pt-6"><p>I'm trying to setup ad-hoc small mailing lists using GMail. They have a contact groups feature that mostly does what I need. However, the interface for adding contacts is quite limited - you pick from a list.</p>
-<p>It'd make a lot more sense to allow addition of contacts to groups based …</p></p>
-        <a class="text-indigo-500 inline-flex items-center mt-4" href="/gmail-contact-groups-add-by-tag-search.html">More
         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"></path>
             <path d="M12 5l7 7-7 7"></path>
